@@ -298,6 +298,14 @@ nav a[aria-current]::before { color: var(--accent); }
   .code-preview > div { gap: 10px; }
   .code-preview code { font-size: 11px; }
 }
+/* Center each skill group within its content column. */
+.skill-list article > div {
+  min-width: 0;
+  text-align: center;
+}
+.skill-list article > div .tags {
+  justify-content: center;
+}
 /* Translucent category plaques keep skill labels prominent and easy to read. */
 .skill-list article > .eyebrow {
   position: relative;
