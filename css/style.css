@@ -298,6 +298,42 @@ nav a[aria-current]::before { color: var(--accent); }
   .code-preview > div { gap: 10px; }
   .code-preview code { font-size: 11px; }
 }
+/* Translucent category plaques keep skill labels prominent and easy to read. */
+.skill-list article > .eyebrow {
+  position: relative;
+  align-self: start;
+  display: block;
+  margin: 0;
+  padding: 22px 24px;
+  color: var(--accent);
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: .045em;
+  text-transform: none;
+  overflow-wrap: anywhere;
+  background: linear-gradient(120deg, #facc1510, #111820cc 75%);
+  border: 1px solid #facc154d;
+  border-left: 3px solid var(--accent);
+  box-shadow: inset 0 0 20px #facc1505, 0 8px 24px #0002;
+  backdrop-filter: blur(8px);
+}
+.skill-list article > .eyebrow::after {
+  content: "";
+  position: absolute;
+  right: 7px;
+  bottom: 7px;
+  width: 10px;
+  height: 10px;
+  border-right: 1px solid var(--accent);
+  border-bottom: 1px solid var(--accent);
+  pointer-events: none;
+}
+@media (max-width: 850px) {
+  .skill-list article > .eyebrow { padding: 18px 16px; }
+}
+@media (max-width: 580px) {
+  .skill-list article > .eyebrow { margin-bottom: 16px; }
+}
 @media (prefers-reduced-motion: reduce) {
   a { transition: none; }
 }
