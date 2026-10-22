@@ -7,13 +7,21 @@ showcase my work and skills, and provide a way to contact me.
 
 Planned pages:
 - `index.html`: Home page with an introduction and links to featured projects.
-- `about.html`: Background, interests, education, and skills.
+- `about.html`: Background, interests, and education.
 - `projects.html`: Project descriptions, screenshots, and links to available work.
+- `skills.html`: Technical skills grouped by type; do not invent proficiency ratings.
 - `contact.html`: Contact information and relevant profile links.
 
 Use consistent navigation and a footer across all pages. Do not invent personal
 details, project accomplishments, or contact information; use clearly labeled
 placeholders until I provide the content.
+
+The owner is Louis Valderrama, an NJIT Software and Data Engineering student.
+The Projects page must eventually include at least three real projects, each
+with a description, image or screenshot, and a link if applicable. Clearly
+labeled placeholders are temporary until Louis supplies the project details.
+Contact uses a direct email link to LV285@njit.edu. A form is optional; if added,
+validate it with JavaScript and direct visitors to email without claiming it sends.
 
 ## Design
 
