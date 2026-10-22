@@ -25,14 +25,28 @@ validate it with JavaScript and direct visitors to email without claiming it sen
 
 ## Design
 
-- Colors: off-white (`#F8FAFC`) page backgrounds, navy (`#0F172A`) text and
-  navigation, teal (`#0F766E`) accents and buttons, and light gray (`#E2E8F0`)
-  borders.
-- Fonts: Arial, Helvetica, sans-serif for body text and headings. Use bold
-  headings and a comfortable line height for readability.
-- Style: clean, modern, and simple, with generous spacing, clear headings,
-  restrained project cards, and consistent buttons.
-- Layout: responsive pages that work on phones, tablets, and desktops.
+- Direction: a sleek personal portfolio inspired by Batman's main computer in
+  the Batcave: dark, precise, technical, and cinematic. Keep Louis's identity,
+  education, and work as the focus of the experience.
+- Colors: near-black (`#080B10`) page backgrounds, charcoal (`#111820`) panels,
+  steel gray (`#334155`) borders, off-white (`#E5E7EB`) primary text, and cool
+  gray (`#94A3B8`) secondary text. Use signal yellow (`#FACC15`) sparingly for
+  active navigation, key actions, and keyboard focus.
+- Fonts: Arial, Helvetica, sans-serif for readable body copy and bold headings.
+  Use Consolas, Courier New, monospace for small console-style labels and section
+  numbers. Keep long paragraphs in the body font.
+- Style: organized command-console panels, thin borders, crisp alignment,
+  subtle grid backgrounds, and mostly square corners. Use generous spacing and
+  clear hierarchy so the interface feels polished and remains easy to scan.
+- Details: use restrained glows, small technical labels, and geometric accents.
+  Keep decorative details subtle and create them with CSS or simple local SVGs.
+  Avoid clutter, fake system alerts, invented live metrics, and distracting
+  terminal text. Navigation labels should still clearly name the portfolio pages.
+- Motion: keep hover and focus transitions brief and subtle. Respect
+  `prefers-reduced-motion`; avoid flashing, constant animation, and effects that
+  interfere with reading.
+- Layout: responsive pages that work on phones, tablets, and desktops. Console
+  panels should stack naturally on smaller screens without horizontal scrolling.
 - Accessibility: semantic HTML, descriptive image alt text, visible keyboard
   focus, readable contrast, and labels for form controls. Do not rely on color
   alone to convey meaning.
