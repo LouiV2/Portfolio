@@ -28,6 +28,10 @@ validate it with JavaScript and direct visitors to email without claiming it sen
 - Direction: a sleek personal portfolio inspired by Batman's main computer in
   the Batcave: dark, precise, technical, and cinematic. Keep Louis's identity,
   education, and work as the focus of the experience.
+- Layer in Tony Stark / JARVIS-inspired interface details: concentric HUD rings,
+  fine radial markings, angular panel corners, and numbered navigation. Keep the
+  black-and-yellow palette and use decoration around, rather than over, content.
+  Decorative instruments must not imply real monitoring or an AI assistant.
 - Colors: near-black (`#080B10`) page backgrounds, charcoal (`#111820`) panels,
   steel gray (`#334155`) borders, off-white (`#E5E7EB`) primary text, and cool
   gray (`#94A3B8`) secondary text. Use signal yellow (`#FACC15`) sparingly for

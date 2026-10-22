@@ -138,6 +138,111 @@ footer p { margin: 0; }
   footer { flex-wrap: wrap; }
   footer span { width: 100%; }
 }
+/* HUD details frame the content without adding simulated system activity. */
+.interface-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font: 10px/1.5 Consolas, "Courier New", monospace;
+  text-transform: uppercase;
+  letter-spacing: .13em;
+}
+.interface-bar > span:nth-child(2) { color: var(--accent); }
+.interface-mark { display: flex; gap: 4px; }
+.interface-mark i { width: 4px; height: 12px; background: var(--accent); opacity: .65; transform: skewX(-25deg); }
+.interface-mark i:nth-child(n+4) { opacity: .15; }
+nav { counter-reset: navigation; gap: 18px; }
+nav a { gap: 7px; }
+nav a::before {
+  counter-increment: navigation;
+  content: "0" counter(navigation);
+  color: var(--muted);
+  font: 10px Consolas, "Courier New", monospace;
+}
+nav a[aria-current]::before { color: var(--accent); }
+.brand::before { content: "["; color: var(--accent); margin-right: 10px; font-weight: 400; }
+.profile-panel, .link-card, .project-card, .contact-panel { position: relative; }
+.link-card, .project-card, .contact-panel {
+  background-image: linear-gradient(135deg, #facc1506, transparent 45%);
+  box-shadow: inset 0 0 30px #0002;
+}
+.link-card::after, .project-card::after, .contact-panel::after {
+  content: "";
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  width: 12px;
+  height: 12px;
+  border-top: 1px solid var(--accent);
+  border-right: 1px solid var(--accent);
+  pointer-events: none;
+}
+.profile-panel .monogram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 1;
+  padding: 0;
+  border: 0;
+  font-size: clamp(64px, 8vw, 100px);
+  background: url("../images/hud-ring.svg") center / contain no-repeat;
+}
+.profile-panel { background-color: #0c1118; }
+.page-heading { padding-right: 240px; min-height: 300px; isolation: isolate; }
+.page-heading::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  top: 35px;
+  width: 225px;
+  height: 225px;
+  background: url("../images/hud-ring.svg") center / contain no-repeat;
+  opacity: .65;
+  pointer-events: none;
+}
+.section-heading { border-bottom: 1px solid var(--line); padding-bottom: 15px; }
+.section-heading h2 { margin-bottom: 0; }
+.education > div, .skill-list article { border-left: 2px solid var(--line); padding-left: 22px; }
+.education > div:hover, .skill-list article:hover { border-left-color: var(--accent); }
+.tags li { border-left: 2px solid #facc1566; }
+.button { border-radius: 0; box-shadow: 4px 4px 0 #facc1520; }
+.project-placeholder { position: relative; }
+.project-placeholder::after {
+  content: "";
+  position: absolute;
+  right: 15px;
+  top: 20px;
+  width: 110px;
+  height: 110px;
+  background: url("../images/hud-ring.svg") center / contain no-repeat;
+  opacity: .4;
+  pointer-events: none;
+}
+@media (max-width: 1050px) {
+  .site-header { flex-direction: column; align-items: flex-start; gap: 15px; }
+}
+@media (max-width: 850px) {
+  .hero { grid-template-columns: 1.2fr 1fr; }
+  .profile-panel { padding: 22px; }
+  .page-heading { padding-right: 150px; }
+  .page-heading::before { width: 140px; height: 140px; top: 60px; opacity: .4; }
+}
+@media (max-width: 580px) {
+  nav { gap: 7px 16px; }
+  nav a { gap: 5px; }
+  .interface-bar { font-size: 9px; letter-spacing: .05em; gap: 10px; }
+  .interface-mark { display: none; }
+  .hero { grid-template-columns: 1fr; }
+  .profile-panel .monogram { max-width: 280px; margin-inline: auto; font-size: 80px; }
+  .page-heading { padding-right: 0; min-height: 0; }
+  .page-heading::before { display: none; }
+}
 @media (prefers-reduced-motion: reduce) {
   a { transition: none; }
 }
