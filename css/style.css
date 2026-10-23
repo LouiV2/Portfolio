@@ -298,6 +298,73 @@ nav a[aria-current]::before { color: var(--accent); }
   .code-preview > div { gap: 10px; }
   .code-preview code { font-size: 11px; }
 }
+/* Static HUD framing stays in the gutters, away from text and controls. */
+main { position: relative; }
+main::before, main::after {
+  content: "";
+  position: absolute;
+  top: 72px;
+  bottom: 36px;
+  width: 24px;
+  background: url("../images/hud-rail.svg") top center / 24px 480px repeat-y;
+  pointer-events: none;
+}
+main::before { right: calc(100% + 18px); }
+main::after { left: calc(100% + 18px); transform: scaleX(-1); }
+.interface-bar {
+  border-top: 1px solid var(--line);
+  margin-top: 14px;
+  padding-inline: 16px;
+  background: linear-gradient(90deg, #facc150b, transparent 50%, #94a3b80a);
+  box-shadow: -3px 0 var(--accent), 3px 0 var(--line);
+}
+.profile-panel, .link-card, .contact-panel, .code-project {
+  border-radius: 0;
+  border-bottom-color: #64748b;
+}
+.link-card::after, .project-card::after, .contact-panel::after {
+  width: 22px;
+  height: 16px;
+  border-top-width: 2px;
+}
+.link-card::before, .contact-panel::before, .code-project::before {
+  content: "";
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  width: 16px;
+  height: 16px;
+  border-left: 1px solid #facc1580;
+  border-bottom: 1px solid #facc1580;
+  pointer-events: none;
+}
+.code-project { position: relative; }
+.section-heading { position: relative; padding-left: 20px; }
+.section-heading::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 5px;
+  height: 20px;
+  border-block: 3px solid var(--accent);
+  border-left: 1px solid #facc1580;
+}
+.page-heading::after { width: 110px; box-shadow: 118px 0 #facc1566, 136px 0 #facc1526; }
+.editor-bar { background-image: linear-gradient(110deg, #facc150a, transparent 60%); }
+footer {
+  border-top: 1px solid #64748b;
+  background-image: linear-gradient(90deg, var(--accent) 48px, transparent 48px);
+  background-size: 100% 2px;
+  background-repeat: no-repeat;
+}
+@media (max-width: 1050px) {
+  main::before, main::after { display: none; }
+}
+@media (max-width: 580px) {
+  .interface-bar { padding-inline: 10px; }
+  .page-heading::after { width: 60px; box-shadow: 68px 0 #facc1566, 86px 0 #facc1526; }
+}
 /* Center each skill group within its content column. */
 .skill-list article > div {
   min-width: 0;
