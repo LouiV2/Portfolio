@@ -366,17 +366,21 @@ footer {
   .page-heading::after { width: 60px; box-shadow: 68px 0 #facc1566, 86px 0 #facc1526; }
 }
 /* Center each skill group within its content column. */
+.skill-list article {
+  align-items: center;
+}
 .skill-list article > div {
   min-width: 0;
   text-align: center;
 }
 .skill-list article > div .tags {
   justify-content: center;
+  margin-bottom: 0;
 }
 /* Translucent category plaques keep skill labels prominent and easy to read. */
 .skill-list article > .eyebrow {
   position: relative;
-  align-self: start;
+  align-self: center;
   display: block;
   margin: 0;
   padding: 22px 24px;
@@ -385,6 +389,7 @@ footer {
   line-height: 1.6;
   letter-spacing: .045em;
   text-transform: none;
+  text-align: center;
   overflow-wrap: anywhere;
   background: linear-gradient(120deg, #facc1510, #1e2936cc 75%);
   border: 1px solid #facc154d;
