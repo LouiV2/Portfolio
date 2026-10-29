@@ -368,7 +368,13 @@ nav a[aria-current]::before { color: var(--accent); }
   a { transition: none; }
 }
 /* A quieter reading rhythm: one chapter at a time, with HUD detail at the opening. */
-body { background-image: radial-gradient(ellipse at 85% 0%, #33415555, transparent 55%); }
+body {
+  /* Grid strokes use 6% opacity so the reading surface stays quiet. */
+  background-image: radial-gradient(ellipse at 85% 0%, #33415555, transparent 55%),
+    linear-gradient(#94a3b80f 1px, transparent 1px),
+    linear-gradient(90deg, #94a3b80f 1px, transparent 1px);
+  background-size: auto, 48px 48px, 48px 48px;
+}
 .site-header, main, footer { width: min(1080px, 88%); }
 .site-header { padding-block: 24px; }
 nav a::before, .brand::before { content: none; }
