@@ -470,14 +470,22 @@ footer { padding-block: 30px; }
 .motion-toggle:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
 @keyframes hud-orbit { to { transform: rotate(360deg); } }
 @keyframes hud-glow { from { opacity: .55; } to { opacity: 1; } }
+@keyframes hud-rail-drift { to { background-position: center 440px; } }
+@keyframes hud-rail-glow { from { opacity: .45; } to { opacity: .75; } }
 @media (prefers-reduced-motion: no-preference) {
   .page-heading::before { animation: hud-orbit 80s linear infinite; }
   .profile-panel .monogram::before { animation: hud-orbit 100s linear infinite reverse; }
   .hud-picture::before, .hud-picture::after { animation: hud-glow 5s ease-in-out infinite alternate; }
+  main::before, main::after {
+    animation: hud-rail-drift 32s linear infinite, hud-rail-glow 8s ease-in-out infinite alternate;
+  }
+  main::after { animation-direction: reverse, alternate-reverse; }
   html[data-hud-paused] .page-heading::before,
   html[data-hud-paused] .profile-panel .monogram::before,
   html[data-hud-paused] .hud-picture::before,
-  html[data-hud-paused] .hud-picture::after { animation-play-state: paused; }
+  html[data-hud-paused] .hud-picture::after,
+  html[data-hud-paused] main::before,
+  html[data-hud-paused] main::after { animation-play-state: paused; }
 }
 .skill-list article { grid-template-columns: 1fr 1.2fr; gap: 64px; }
 .skill-list article > .skill-visual { text-align: left; }
