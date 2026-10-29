@@ -20,8 +20,25 @@ a:focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; }
 .brand { font-size: clamp(26px, 2.5vw, 34px); font-weight: 800; text-decoration: none; letter-spacing: -.6px; line-height: 1.2; }
 .brand span, h1 span { color: var(--accent); }
 nav { display: flex; gap: 25px; flex-wrap: wrap; }
-nav a { font-size: 14px; text-decoration: none; padding: 5px 0; }
-nav a[aria-current] { color: var(--accent); box-shadow: 0 2px var(--accent); }
+nav a {
+  font-size: 14px;
+  text-decoration: none;
+  padding: 7px 10px;
+  border: 1px solid transparent;
+}
+nav a:hover, nav a:focus-visible {
+  color: var(--accent);
+  background-color: #facc150d;
+  border-color: #facc154d;
+  text-shadow: 0 0 12px #facc1570;
+}
+nav a[aria-current="page"] {
+  color: var(--accent);
+  background-color: #facc1514;
+  border-color: #facc1570;
+  box-shadow: inset 0 -2px var(--accent), 0 0 16px #facc1526;
+  text-shadow: 0 0 10px #facc1580;
+}
 nav a { min-height: 44px; display: inline-flex; align-items: center; }
 nav a[aria-current] { font-weight: 700; }
 .skip-link { position: absolute; top: -100px; left: 12px; padding: 12px; background: var(--panel); z-index: 2; }
