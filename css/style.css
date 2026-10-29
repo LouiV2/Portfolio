@@ -24,7 +24,7 @@ a:focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; }
 .site-header, main, footer { width: min(1180px, 90%); margin-inline: auto; }
 .site-header { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 28px 0; border-bottom: 1px solid var(--line); }
 .site-header { border-top: 3px solid var(--accent); }
-.brand { font-family: "Special Elite", "Courier New", monospace; font-size: clamp(26px, 2.5vw, 34px); font-weight: 400; text-decoration: none; letter-spacing: 0; line-height: 1.2; }
+.brand { font-family: "Special Elite", "Courier New", monospace; font-size: clamp(26px, 2.5vw, 34px); font-weight: 700; text-decoration: none; letter-spacing: 0; line-height: 1.2; }
 .brand span, h1 span { color: var(--accent); }
 nav { display: flex; gap: 25px; flex-wrap: wrap; }
 nav a {
@@ -51,7 +51,7 @@ nav a[aria-current] { font-weight: 700; }
 .skip-link { position: absolute; top: -100px; left: 12px; padding: 12px; background: var(--panel); z-index: 2; }
 .skip-link:focus { top: 10px; }
 h1, h2, h3, p { margin-top: 0; }
-h1, h2, h3 { font-family: "Special Elite", "Courier New", monospace; font-weight: 400; }
+h1, h2, h3 { font-family: "Special Elite", "Courier New", monospace; font-weight: 700; }
 h1 { font-size: clamp(36px, 5.6vw, 72px); line-height: 1.2; letter-spacing: -.015em; margin-bottom: 28px; }
 h2 { font-size: clamp(25px, 3vw, 36px); line-height: 1.25; letter-spacing: 0; }
 h3 { font-size: 21px; line-height: 1.3; }
