@@ -439,6 +439,42 @@ footer { padding-block: 30px; }
   footer { flex-direction: column; gap: 12px; }
 }
 /* HUD accents frame the story without interrupting the reading column. */
+.skill-list article { grid-template-columns: 1fr 1.2fr; gap: 64px; }
+.skill-list article > .skill-visual { text-align: left; }
+.skill-visual > .eyebrow { margin-bottom: 20px; font-size: 17px; }
+.hud-picture {
+  position: relative;
+  margin: 0;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-top: 2px solid #facc1590;
+  background: var(--panel);
+  box-shadow: 8px 8px 0 #0002;
+}
+.hud-picture::before, .hud-picture::after {
+  content: "";
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  pointer-events: none;
+}
+.hud-picture::before { top: -2px; left: -1px; border-top: 2px solid var(--accent); border-left: 2px solid var(--accent); }
+.hud-picture::after { bottom: -1px; right: -1px; border-bottom: 2px solid var(--accent); border-right: 2px solid var(--accent); }
+.hud-picture img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; }
+.hud-picture figcaption { padding-top: 12px; color: var(--muted); font: 11px/1.6 Consolas, "Courier New", monospace; }
+.picture-heading { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: center; padding-right: 0; }
+.picture-heading::before { content: none; }
+.skill-list article:nth-child(2) { background: linear-gradient(90deg, transparent, #facc1505); }
+@media (max-width: 850px) {
+  .skill-list article, .picture-heading { gap: 32px; }
+}
+@media (max-width: 580px) {
+  .skill-list article, .picture-heading { grid-template-columns: 1fr; }
+  .skill-list article > .skill-visual { text-align: center; }
+  .skill-visual > .eyebrow { font-size: 16px; }
+  .picture-heading { padding-top: 60px; }
+  .hud-picture { max-width: 400px; width: 100%; margin-inline: auto; }
+}
 main { position: relative; }
 main::before, main::after {
   content: "";
