@@ -369,11 +369,12 @@ nav a[aria-current]::before { color: var(--accent); }
 }
 /* A quieter reading rhythm: one chapter at a time, with HUD detail at the opening. */
 body {
-  /* Grid strokes use 6% opacity so the reading surface stays quiet. */
+  /* A page-color layer fades the faint grid away toward the right. */
   background-image: radial-gradient(ellipse at 85% 0%, #33415555, transparent 55%),
+    linear-gradient(90deg, transparent 10%, var(--paper) 92%),
     linear-gradient(#94a3b80f 1px, transparent 1px),
     linear-gradient(90deg, #94a3b80f 1px, transparent 1px);
-  background-size: auto, 48px 48px, 48px 48px;
+  background-size: auto, auto, 48px 48px, 48px 48px;
 }
 .site-header, main, footer { width: min(1080px, 88%); }
 .site-header { padding-block: 24px; }
