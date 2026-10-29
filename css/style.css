@@ -439,6 +439,39 @@ footer { padding-block: 30px; }
   footer { flex-direction: column; gap: 12px; }
 }
 /* HUD accents frame the story without interrupting the reading column. */
+.profile-panel .monogram { position: relative; isolation: isolate; background: none; }
+.profile-panel .monogram::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: url("../images/hud-ring.svg") center / contain no-repeat;
+  pointer-events: none;
+}
+.page-heading.picture-heading::before { content: ""; width: 56px; height: 56px; top: 16px; opacity: .6; }
+.motion-toggle {
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+}
+.motion-toggle[hidden] { display: none; }
+.motion-toggle:hover { border-color: var(--accent); }
+.motion-toggle:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+@keyframes hud-orbit { to { transform: rotate(360deg); } }
+@keyframes hud-glow { from { opacity: .55; } to { opacity: 1; } }
+@media (prefers-reduced-motion: no-preference) {
+  .page-heading::before { animation: hud-orbit 80s linear infinite; }
+  .profile-panel .monogram::before { animation: hud-orbit 100s linear infinite reverse; }
+  .hud-picture::before, .hud-picture::after { animation: hud-glow 5s ease-in-out infinite alternate; }
+  html[data-hud-paused] .page-heading::before,
+  html[data-hud-paused] .profile-panel .monogram::before,
+  html[data-hud-paused] .hud-picture::before,
+  html[data-hud-paused] .hud-picture::after { animation-play-state: paused; }
+}
 .skill-list article { grid-template-columns: 1fr 1.2fr; gap: 64px; }
 .skill-list article > .skill-visual { text-align: left; }
 .skill-visual > .eyebrow { margin-bottom: 20px; font-size: 17px; }
