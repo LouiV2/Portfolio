@@ -298,73 +298,6 @@ nav a[aria-current]::before { color: var(--accent); }
   .code-preview > div { gap: 10px; }
   .code-preview code { font-size: 11px; }
 }
-/* Static HUD framing stays in the gutters, away from text and controls. */
-main { position: relative; }
-main::before, main::after {
-  content: "";
-  position: absolute;
-  top: 72px;
-  bottom: 36px;
-  width: 24px;
-  background: url("../images/hud-rail.svg") top center / 24px 480px repeat-y;
-  pointer-events: none;
-}
-main::before { right: calc(100% + 18px); }
-main::after { left: calc(100% + 18px); transform: scaleX(-1); }
-.interface-bar {
-  border-top: 1px solid var(--line);
-  margin-top: 14px;
-  padding-inline: 16px;
-  background: linear-gradient(90deg, #facc150b, transparent 50%, #94a3b80a);
-  box-shadow: -3px 0 var(--accent), 3px 0 var(--line);
-}
-.profile-panel, .link-card, .contact-panel, .code-project {
-  border-radius: 0;
-  border-bottom-color: #64748b;
-}
-.link-card::after, .project-card::after, .contact-panel::after {
-  width: 22px;
-  height: 16px;
-  border-top-width: 2px;
-}
-.link-card::before, .contact-panel::before, .code-project::before {
-  content: "";
-  position: absolute;
-  bottom: 8px;
-  left: 8px;
-  width: 16px;
-  height: 16px;
-  border-left: 1px solid #facc1580;
-  border-bottom: 1px solid #facc1580;
-  pointer-events: none;
-}
-.code-project { position: relative; }
-.section-heading { position: relative; padding-left: 20px; }
-.section-heading::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 6px;
-  width: 5px;
-  height: 20px;
-  border-block: 3px solid var(--accent);
-  border-left: 1px solid #facc1580;
-}
-.page-heading::after { width: 110px; box-shadow: 118px 0 #facc1566, 136px 0 #facc1526; }
-.editor-bar { background-image: linear-gradient(110deg, #facc150a, transparent 60%); }
-footer {
-  border-top: 1px solid #64748b;
-  background-image: linear-gradient(90deg, var(--accent) 48px, transparent 48px);
-  background-size: 100% 2px;
-  background-repeat: no-repeat;
-}
-@media (max-width: 1050px) {
-  main::before, main::after { display: none; }
-}
-@media (max-width: 580px) {
-  .interface-bar { padding-inline: 10px; }
-  .page-heading::after { width: 60px; box-shadow: 68px 0 #facc1566, 86px 0 #facc1526; }
-}
 /* Center each skill group within its content column. */
 .skill-list article {
   align-items: center;
@@ -416,4 +349,75 @@ footer {
 }
 @media (prefers-reduced-motion: reduce) {
   a { transition: none; }
+}
+/* A quieter reading rhythm: one chapter at a time, with HUD detail at the opening. */
+body { background-image: radial-gradient(ellipse at 85% 0%, #33415555, transparent 55%); }
+.site-header, main, footer { width: min(1080px, 88%); }
+.site-header { padding-block: 24px; }
+nav a::before, .brand::before { content: none; }
+.hero { min-height: 72vh; padding-block: 90px; gap: 64px; }
+.hero .text-link { display: inline-block; margin-top: 20px; }
+.profile-panel {
+  border: 0;
+  background: none;
+  box-shadow: none;
+  padding: 0;
+}
+.profile-panel p:not(.eyebrow) { max-width: none; text-align: center; font-size: 13px; }
+.profile-panel::after, .link-card::after, .project-card::after,
+.contact-panel::after, .project-placeholder::after, .section-heading::before { content: none; }
+.section { padding-block: 90px; }
+.story-chapter { max-width: 780px; border-top: 1px solid var(--line); }
+.story-chapter h2 { max-width: 650px; font-size: clamp(30px, 4vw, 46px); }
+.story-chapter .lead { margin-bottom: 28px; }
+.page-heading { padding-block: 90px 70px; min-height: 0; }
+.page-heading::before { opacity: .2; }
+.page-heading::after { width: 60px; box-shadow: none; }
+.section-heading { border: 0; padding: 0; margin-bottom: 36px; }
+.split { gap: 70px; }
+.education > div { border-left: 0; padding: 28px 0; }
+.skill-list { padding-block: 20px 0; }
+.skill-list article { padding: 70px 0; border-left: 0; gap: 44px; }
+.skill-list article > .eyebrow {
+  padding: 0;
+  background: none;
+  border: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  font-size: 12px;
+  text-align: left;
+}
+.skill-list article > .eyebrow::after { content: none; }
+.skill-list h2 { margin-bottom: 18px; }
+.skill-context { color: var(--muted); margin-bottom: 24px; }
+.tags { gap: 10px 22px; }
+.tags li { border: 0; border-bottom: 1px solid var(--line); background: none; padding: 8px 0; }
+.code-projects { gap: 0; }
+.code-project { background: none; box-shadow: none; border: 0; border-bottom: 1px solid var(--line); padding-block: 55px; }
+.code-project-body { gap: 48px; align-items: center; }
+.project-brief { padding: 0; }
+.project-visual { border: 0; padding: 0; background: none; }
+.screenshot-slot { min-height: 180px; background-image: none; border-color: var(--line); }
+.contact-panel { margin-block: 70px 90px; padding: 0 0 0 28px; border: 0; border-left: 2px solid var(--accent); background: none; box-shadow: none; }
+.story-next { border-top: 1px solid var(--line); padding-block: 60px 85px; margin-top: 35px; }
+.story-next h2 { max-width: 650px; margin-bottom: 24px; }
+footer { padding-block: 30px; }
+@media (max-width: 850px) {
+  .hero { gap: 32px; }
+  .split { gap: 30px; }
+}
+@media (max-width: 580px) {
+  .hero { min-height: 0; padding-block: 64px; }
+  .hero .profile-panel { display: none; }
+  .section { padding-block: 58px; }
+  .page-heading { padding-block: 60px 42px; }
+  .skill-list { padding-block: 0; }
+  .skill-list article { padding-block: 44px; gap: 24px; }
+  .skill-list article > .eyebrow { margin-bottom: 0; text-align: center; }
+  .code-project { padding-block: 40px; }
+  .code-project-body { gap: 24px; }
+  .project-brief, .project-visual { padding: 0; }
+  .contact-panel { margin-block: 50px; padding-left: 18px; }
+  .story-next { padding-block: 44px 60px; }
+  footer { flex-direction: column; gap: 12px; }
 }
