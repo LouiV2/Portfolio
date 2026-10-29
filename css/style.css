@@ -274,8 +274,8 @@ nav a[aria-current]::before { color: var(--accent); }
 .code-project-body { display: grid; grid-template-columns: 1.2fr 1fr; }
 .project-brief { padding: 30px; min-width: 0; }
 .project-brief .eyebrow { margin-bottom: 12px; }
-.project-brief h2 { font-size: clamp(23px, 3vw, 30px); }
-.project-brief h2 > span { color: var(--accent); margin-left: 4px; }
+.project-brief h3 { font-size: clamp(23px, 3vw, 30px); }
+.project-brief h3 > span { color: var(--accent); margin-left: 4px; }
 .project-brief > p:not(.eyebrow) { color: var(--muted); font-size: 14px; }
 .code-preview { background: var(--paper); border: 1px solid #33415599; border-left: 2px solid #facc1580; padding: 18px 14px; margin: 24px 0 18px; overflow-x: auto; }
 .code-preview > div { display: flex; gap: 18px; line-height: 1.9; }
