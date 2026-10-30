@@ -120,6 +120,7 @@
   window.portfolioTranslate = translate;
 
   Object.assign(spanish, {
+    'Portrait of Louis Valderrama against a starry background.': 'Retrato de Louis Valderrama con un fondo estrellado.',
     'Skill chapters': 'Capítulos de habilidades',
     'Creative tools': 'Herramientas creativas',
     'Select a skill to explore its role.': 'Selecciona una habilidad para explorar su función.',

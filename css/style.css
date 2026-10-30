@@ -425,6 +425,15 @@ nav a::before, .brand::before { content: none; }
 .story-chapter { max-width: 780px; border-top: 1px solid var(--line); }
 .story-chapter h2 { max-width: 650px; font-size: clamp(30px, 4vw, 46px); }
 .story-chapter .lead { margin-bottom: 28px; }
+.perspective-chapter { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); max-width: none; gap: 56px; align-items: center; }
+.perspective-chapter .portrait-frame { width: 100%; max-width: none; margin: 0; box-shadow: 8px 8px 0 #0002, 0 0 28px #facc1509; }
+.perspective-chapter .portrait-frame img { aspect-ratio: 3 / 2; object-fit: contain; }
+.portrait-mark { display: flex; justify-content: space-between; gap: 16px; padding: 2px 4px 12px; color: var(--accent); font: 12px/1.5 Consolas, "Courier New", monospace; letter-spacing: .08em; }
+.portrait-frame figcaption { border-top: 1px solid var(--line); margin-top: 12px; }
+@media (max-width: 850px) {
+  .perspective-chapter { grid-template-columns: minmax(0, 1fr); gap: 36px; }
+  .perspective-chapter .portrait-frame { max-width: 560px; }
+}
 .page-heading { padding-block: 90px 70px; min-height: 0; }
 .page-heading::before { opacity: .2; }
 .page-heading::after { width: 60px; box-shadow: none; }
