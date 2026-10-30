@@ -120,6 +120,8 @@
   window.portfolioTranslate = translate;
 
   Object.assign(spanish, {
+    'Louis Valderrama / Public service': 'Louis Valderrama / Servicio público',
+    'Louis Valderrama in a black button-down shirt standing beside an Office of Veteran Affairs presentation.': 'Louis Valderrama con camisa negra junto a una presentación de la Oficina de Asuntos de Veteranos.',
     'Portrait of Louis Valderrama against a starry background.': 'Retrato de Louis Valderrama con un fondo estrellado.',
     'Skill chapters': 'Capítulos de habilidades',
     'Creative tools': 'Herramientas creativas',
