@@ -119,6 +119,17 @@
   }
   window.portfolioTranslate = translate;
 
+  Object.assign(spanish, {
+    '01 / Unity & C#': '01 / Unity y C#',
+    'Explore my Unity game below. Two more project entries are reserved for future work.': 'Explora mi juego de Unity a continuación. Otras dos entradas están reservadas para futuros proyectos.',
+    'A Unity game project. These screenshots show the forest game scene and the C# PlayerController script behind it.': 'Un proyecto de juego en Unity. Estas capturas muestran la escena del bosque y el script PlayerController en C#.',
+    'More project details and links are coming soon. Select either screenshot to view it at full size.': 'Próximamente se añadirán más detalles y enlaces. Selecciona una captura para verla a tamaño completo.',
+    'Game scene / Unity editor': 'Escena del juego / Editor de Unity',
+    'Behind the scene / C# PlayerController': 'Detrás de la escena / PlayerController en C#',
+    'Projects 2 and 3 are placeholders. More details and available links will be added as the portfolio grows.': 'Los proyectos 2 y 3 son provisionales. Se añadirán más detalles y enlaces a medida que crezca el portafolio.',
+    'Unity editor showing a nighttime forest game scene with a UFO, characters, pickup count, and timer.': 'Editor de Unity con una escena nocturna de bosque, un ovni, personajes, contador de objetos y temporizador.',
+    'Visual Studio Code showing the C# PlayerController script, including startup, movement input, and pickup-count logic.': 'Visual Studio Code con el script PlayerController en C#, incluyendo inicio, entrada de movimiento y conteo de objetos.'
+  });
   // Retain original text nodes so switching languages preserves markup and inputs.
   const records = [];
   const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);

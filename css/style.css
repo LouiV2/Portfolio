@@ -451,7 +451,11 @@ nav a::before, .brand::before { content: none; }
 .code-project { background: none; box-shadow: none; border: 0; border-bottom: 1px solid var(--line); padding-block: 55px; }
 .code-project-body { gap: 48px; align-items: center; }
 .project-brief { padding: 0; }
-.project-visual { border: 0; padding: 0; background: none; }
+.project-visual { border: 0; padding: 0; background: none; gap: 24px; }
+.project-screenshot { margin: 0; padding: 10px; border: 1px solid var(--line); border-top: 2px solid var(--accent); background: var(--panel); }
+.project-screenshot a { display: block; }
+.project-screenshot img { display: block; width: 100%; height: auto; }
+.project-screenshot figcaption { margin-top: 12px; color: var(--muted); font: 13px/1.6 Consolas, "Courier New", monospace; }
 .screenshot-slot { min-height: 180px; background-image: none; border-color: var(--line); }
 .contact-panel { margin-block: 70px 90px; padding: 0 0 0 28px; border: 0; border-left: 2px solid var(--accent); background: none; box-shadow: none; }
 .story-next { border-top: 1px solid var(--line); padding-block: 60px 85px; margin-top: 35px; }
