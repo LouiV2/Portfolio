@@ -645,3 +645,48 @@ main::after { left: calc(100% + 24px); transform: scaleX(-1); }
   .monogram-letters { animation: monogram-depth 4.5s ease-in-out infinite; }
   html[data-hud-paused] .monogram-letters { animation-play-state: paused; }
 }
+
+/* Shared theme colors; keep the original dark palette as the default. */
+html[data-theme="light"] {
+  color-scheme: light;
+  --paper: #f4f6f8;
+  --ink: #17202d;
+  --accent: #855700;
+  --line: #8c9bad;
+  --muted: #475569;
+  --panel: #e4eaf0;
+}
+.theme-toggle {
+  flex-shrink: 0;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+}
+.theme-toggle[hidden] { display: none; }
+.theme-toggle:hover { border-color: var(--accent); }
+.theme-toggle:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+html[data-theme="light"] nav a:hover,
+html[data-theme="light"] nav a:focus-visible,
+html[data-theme="light"] nav a[aria-current="page"] {
+  border-color: var(--accent);
+  background: #8557000d;
+  text-shadow: none;
+  box-shadow: inset 0 -2px var(--accent);
+}
+html[data-theme="light"] .site-header { border-bottom-color: var(--line); }
+html[data-theme="light"] .link-card:hover { background: var(--panel); }
+html[data-theme="light"] .project-placeholder,
+html[data-theme="light"] .editor-bar { background-color: var(--panel); }
+html[data-theme="light"] .code-value { color: #715400; }
+html[data-theme="light"] .code-key { color: var(--accent); }
+html[data-theme="light"] .profile-panel .monogram::before,
+html[data-theme="light"] .page-heading::before,
+html[data-theme="light"] main::before,
+html[data-theme="light"] main::after { filter: brightness(.55); }
+@media (min-width: 1051px) {
+  .site-header { flex-wrap: wrap; }
+}
