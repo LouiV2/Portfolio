@@ -120,6 +120,7 @@
   window.portfolioTranslate = translate;
 
   Object.assign(spanish, {
+    'Graphic designer working on a page layout at a desktop computer.': 'Diseñador gráfico trabajando en una composición de páginas en una computadora de escritorio.',
     'Designer arranging colored paper swatches at a desk.': 'Diseñadora organizando muestras de papel de colores en un escritorio.',
     'Overhead view of a planner, laptop, smartphone, and stationery on a glass desk.': 'Vista desde arriba de una agenda, un portátil, un teléfono y artículos de papelería en un escritorio de vidrio.',
     'Homepage chapters': 'Capítulos de la página de inicio',
