@@ -705,18 +705,52 @@ html[data-theme="light"] main::after { filter: brightness(.55); }
 .language-toggle:hover { border-color: var(--accent); }
 .language-toggle:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
 
-/* Center the homepage identity above its navigation at every screen size. */
+/* Keep the identity centered independently of the controls on the right. */
 .site-header.home-header {
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
-  gap: 16px;
+  gap: 24px 16px;
   text-align: center;
 }
+.header-identity { position: relative; grid-column: 2; grid-row: 1; isolation: isolate; padding-block: 16px; }
 .home-header .brand { max-width: 100%; }
-.home-header nav { justify-content: center; }
+.home-header nav { grid-column: 1 / -1; grid-row: 2; justify-content: center; }
 .home-header .header-controls {
+  grid-column: 3;
+  grid-row: 1;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
+  justify-content: flex-end;
+  gap: 8px;
+}
+.header-code {
+  position: absolute;
+  z-index: -1;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  width: max-content;
+  max-width: 100%;
+  margin: 0;
+  overflow: hidden;
+  color: var(--ink);
+  opacity: .12;
+  font: 11px/1.6 Consolas, "Courier New", monospace;
+  text-align: left;
+  pointer-events: none;
+  user-select: none;
+}
+@keyframes header-code-write {
+  0%, 10% { clip-path: inset(0 100% 0 0); }
+  65%, 100% { clip-path: inset(0 0 0 0); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .header-code { animation: header-code-write 14s steps(48, end) infinite; }
+  html[data-hud-paused] .header-code { animation-play-state: paused; }
+}
+@media (max-width: 1050px) {
+  .site-header.home-header { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .home-header .header-controls { grid-column: 1; grid-row: 1; }
+  .header-identity { grid-column: 1; grid-row: 2; justify-self: center; max-width: 100%; }
+  .home-header nav { grid-column: 1; grid-row: 3; }
 }
