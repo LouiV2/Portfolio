@@ -136,6 +136,29 @@ dd span:not(:last-child) { margin-bottom: 18px; }
 .contact-panel { margin-block: 40px 60px; padding: 40px; background: var(--panel); border: 1px solid var(--line); border-left: 3px solid var(--accent); }
 .email { display: inline-block; font-size: clamp(23px, 4.5vw, 55px); letter-spacing: -.04em; font-weight: 700; margin-bottom: 20px; overflow-wrap: anywhere; }
 .contact-panel > p:not(.eyebrow) { color: var(--muted); }
+.contact-form { max-width: 650px; margin-block: 32px; }
+.contact-form[hidden], .contact-form [hidden] { display: none; }
+.form-field { margin-bottom: 24px; }
+.form-field label { display: block; margin-bottom: 8px; }
+.form-field input, .form-field textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--panel);
+  color: var(--ink);
+  font: 16px/1.5 Arial, Helvetica, sans-serif;
+}
+.form-field textarea { resize: vertical; }
+.form-field [aria-invalid="true"] { border: 2px solid var(--accent); }
+.field-error { color: var(--accent); margin-block: 8px 0; }
+.form-field .muted { margin-block: 8px 0; }
+.contact-form button { font: inherit; cursor: pointer; min-height: 44px; }
+.form-field input:focus-visible, .form-field textarea:focus-visible,
+.contact-form button:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+#contact-status { margin-block: 20px 12px; }
 footer { border-top: 1px solid var(--line); padding: 26px 0; display: flex; justify-content: space-between; gap: 20px; color: var(--muted); font-size: 12px; }
 footer p { margin: 0; }
 @media (max-width: 850px) {
