@@ -6,16 +6,22 @@
     <meta name="description" content="Louis Valderrama’s personal portfolio. NJIT Software and Data Engineering student with a background in art, public administration, and technology.">
     <title>Home | Louis Valderrama</title>
     <script src="js/theme.js"></script>
-    <link rel="stylesheet" href="css/style.css?v=home-story-1">
+    <link rel="stylesheet" href="css/style.css?v=header-code-2">
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header home-header">
       <div class="header-identity">
-        <pre class="header-code" aria-hidden="true">const portfolio = {
-  name: "Louis Valderrama",
-  interests: ["art", "service", "software"]
-};</pre>
+        <pre class="header-code" aria-hidden="true"><span class="header-code-key">const</span> portfolio = {
+  name: <span class="header-code-string">"Louis Valderrama"</span>,
+  focus: [<span class="header-code-string">"art", "service", "software"</span>],
+  education: <span class="header-code-string">"NJIT"</span>
+};
+<span class="header-code-key">function</span> explore() {
+  <span class="header-code-key">return</span> portfolio.focus.map(story =&gt; {
+    <span class="header-code-key">return</span> { story, medium: <span class="header-code-string">"code"</span> };
+  });
+}</pre>
         <a class="brand" href="index.html" aria-label="Louis Valderrama home">Louis Valderrama<span>.</span>
         </a>
       </div>
