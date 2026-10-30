@@ -18,7 +18,7 @@
     'Explore my background →': 'Conoce mi trayectoria →',
     '02 / The people': '02 / Las personas',
     'Public service is part of my story.': 'El servicio público es parte de mi historia.',
-    'I work as the Program Coordinator for the Office of Veteran Affairs at Rutgers–Newark University.': 'Trabajo como coordinador de programas de la Oficina de Asuntos de Veteranos en la Universidad Rutgers–Newark.',
+    'I serve as the Program Coordinator for the Office of Veteran Affairs at Rutgers–Newark University.': 'Me desempeño como coordinador de programas de la Oficina de Asuntos de Veteranos en la Universidad Rutgers–Newark.',
     'See my creative and technical toolkit →': 'Conoce mis herramientas creativas y técnicas →',
     '03 / The work ahead': '03 / El trabajo por venir',
     'A place for what I build.': 'Un espacio para mis creaciones.',
