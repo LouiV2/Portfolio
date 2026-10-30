@@ -600,3 +600,25 @@ main::after { left: calc(100% + 24px); transform: scaleX(-1); }
   }
   .story-next { padding-right: 12px; }
 }
+
+/* Move the initials independently of the surrounding HUD ring. */
+.profile-panel .monogram { perspective: 650px; }
+.monogram-letters {
+  display: inline-block;
+  font-weight: inherit;
+  transform-origin: center;
+}
+@keyframes monogram-depth {
+  0%, 100% {
+    transform: translateZ(0) rotateX(0);
+    text-shadow: 0 2px 4px #0006;
+  }
+  50% {
+    transform: translateZ(75px) rotateX(-6deg);
+    text-shadow: 0 14px 16px #0009, 0 0 22px #facc1530;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .monogram-letters { animation: monogram-depth 4.5s ease-in-out infinite; }
+  html[data-hud-paused] .monogram-letters { animation-play-state: paused; }
+}
