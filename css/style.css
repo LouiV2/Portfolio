@@ -110,6 +110,13 @@ h3 { font-size: 21px; line-height: 1.3; }
 .split { display: grid; grid-template-columns: 1fr 1.4fr; gap: 70px; border-bottom: 1px solid var(--line); }
 .split p { max-width: 650px; }
 .education { margin: 0; }
+/* Editor-inspired syntax colors distinguish labels, disciplines, and schools. */
+.education dt { color: #c586c0; }
+.education dd { color: #9cdcfe; }
+.education dd span { color: #ce9178; }
+html[data-theme="light"] .education dt { color: #7a3e91; }
+html[data-theme="light"] .education dd { color: #005a8c; }
+html[data-theme="light"] .education dd span { color: #8d421c; }
 .education > div { display: grid; grid-template-columns: 1fr 2fr; gap: 25px; padding: 25px 0; border-bottom: 1px solid var(--line); }
 dt { color: var(--muted); }
 dd { margin: 0; font-size: 19px; }
