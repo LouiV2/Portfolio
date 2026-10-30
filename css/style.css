@@ -452,10 +452,43 @@ nav a::before, .brand::before { content: none; }
 .code-project-body { gap: 48px; align-items: center; }
 .project-brief { padding: 0; }
 .project-visual { border: 0; padding: 0; background: none; gap: 24px; }
-.project-screenshot { margin: 0; padding: 10px; border: 1px solid var(--line); border-top: 2px solid var(--accent); background: var(--panel); }
-.project-screenshot a { display: block; }
+.project-screenshot {
+  position: relative;
+  margin: 0;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--accent);
+  background: linear-gradient(135deg, #facc1509, transparent 60%), var(--panel);
+  box-shadow: 5px 5px 0 #0002;
+}
+.project-screenshot::before, .project-screenshot::after {
+  content: "";
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border-color: var(--accent);
+  border-style: solid;
+  pointer-events: none;
+}
+.project-screenshot::before { top: 5px; left: 5px; border-width: 2px 0 0 2px; }
+.project-screenshot::after { bottom: 5px; right: 5px; border-width: 0 2px 2px 0; }
+.project-screenshot a { display: block; position: relative; z-index: 1; transform-origin: center; }
 .project-screenshot img { display: block; width: 100%; height: auto; }
-.project-screenshot figcaption { margin-top: 12px; color: var(--muted); font: 13px/1.6 Consolas, "Courier New", monospace; }
+.project-screenshot figcaption {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font: 13px/1.6 Consolas, "Courier New", monospace;
+}
+.project-screenshot:focus-within { border-color: var(--accent); }
+@media (prefers-reduced-motion: no-preference) {
+  .project-screenshot a { transition: transform 180ms ease, box-shadow 180ms ease; }
+  .project-screenshot a:focus-visible { transform: scale(1.035); box-shadow: 0 0 20px #facc1526; }
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .project-screenshot a:hover { transform: scale(1.035); box-shadow: 0 0 20px #facc1526; }
+}
 .screenshot-slot { min-height: 180px; background-image: none; border-color: var(--line); }
 .contact-panel { margin-block: 70px 90px; padding: 0 0 0 28px; border: 0; border-left: 2px solid var(--accent); background: none; box-shadow: none; }
 .story-next { border-top: 1px solid var(--line); padding-block: 60px 85px; margin-top: 35px; }
