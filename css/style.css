@@ -883,6 +883,39 @@ html[data-theme="light"] main::after { filter: brightness(.55); }
 .language-toggle[hidden] { display: none; }
 .language-toggle:hover { border-color: var(--accent); }
 .language-toggle:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+.language-toggle, .theme-toggle {
+  position: relative;
+  padding-right: 62px;
+  white-space: nowrap;
+}
+.language-toggle::before, .theme-toggle::before {
+  content: "";
+  position: absolute;
+  right: 12px;
+  top: calc(50% - 10px);
+  width: 36px;
+  height: 20px;
+  border: 1px solid var(--muted);
+  border-radius: 12px;
+  background: var(--paper);
+  pointer-events: none;
+}
+.language-toggle::after, .theme-toggle::after {
+  content: "";
+  position: absolute;
+  right: 34px;
+  top: calc(50% - 6px);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--muted);
+  pointer-events: none;
+}
+.language-toggle[aria-checked="true"]::before, .theme-toggle[aria-checked="true"]::before { border-color: var(--accent); }
+.language-toggle[aria-checked="true"]::after, .theme-toggle[aria-checked="true"]::after { transform: translateX(16px); background: var(--accent); }
+@media (prefers-reduced-motion: no-preference) {
+  .language-toggle::after, .theme-toggle::after { transition: transform 160ms ease, background-color 160ms ease; }
+}
 
 /* Keep the identity centered independently of the controls on the right. */
 .site-header.home-header {

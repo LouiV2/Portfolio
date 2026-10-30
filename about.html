@@ -6,7 +6,7 @@
     <meta name="description" content="About Me — Louis Valderrama’s personal portfolio.">
     <title>About Me | Louis Valderrama</title>
     <script src="js/theme.js"></script>
-    <link rel="stylesheet" href="css/style.css?v=about-clean-1">
+    <link rel="stylesheet" href="css/style.css?v=header-switches-1">
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -20,8 +20,8 @@
         <a href="skills.html">Skills</a>
         <a href="contact.html">Contact</a>
       </nav>
-      <button class="language-toggle" type="button" lang="es" hidden>Español</button>
-      <button class="theme-toggle" type="button" aria-pressed="false" hidden>Light mode: off</button>
+      <button class="language-toggle" type="button" role="switch" aria-checked="false" aria-label="Spanish language" hidden><span lang="en">English</span> / <span lang="es">Español</span></button>
+      <button class="theme-toggle" type="button" role="switch" aria-checked="false" hidden>Light mode</button>
     </header>
     <main id="main">
       <section class="page-heading">

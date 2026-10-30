@@ -16,8 +16,8 @@
 
     function updateToggle() {
       const light = root.dataset.theme === 'light';
-      toggle.setAttribute('aria-pressed', String(light));
-      toggle.textContent = (window.portfolioTranslate || ((text) => text))(light ? 'Light mode: on' : 'Light mode: off');
+      toggle.setAttribute('aria-checked', String(light));
+      toggle.textContent = (window.portfolioTranslate || ((text) => text))('Light mode');
     }
 
     toggle.addEventListener('click', () => {

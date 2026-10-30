@@ -120,6 +120,8 @@
   window.portfolioTranslate = translate;
 
   Object.assign(spanish, {
+    'Light mode': 'Modo claro',
+    'Spanish language': 'Idioma español',
     'Graphic designer working on a page layout at a desktop computer.': 'Diseñador gráfico trabajando en una composición de páginas en una computadora de escritorio.',
     'Designer arranging colored paper swatches at a desk.': 'Diseñadora organizando muestras de papel de colores en un escritorio.',
     'Overhead view of a planner, laptop, smartphone, and stationery on a glass desk.': 'Vista desde arriba de una agenda, un portátil, un teléfono y artículos de papelería en un escritorio de vidrio.',
@@ -223,8 +225,9 @@
     if (description) description.content = root.lang === 'es'
       ? `${translate(originalTitle.split(' | ')[0])} — Portafolio personal de Louis Valderrama. Estudiante de Ingeniería de Software y Datos en NJIT.`
       : originalDescription;
-    toggle.textContent = root.lang === 'es' ? 'English' : 'Español';
-    toggle.lang = root.lang === 'es' ? 'en' : 'es';
+    toggle.setAttribute('aria-checked', String(root.lang === 'es'));
+    toggle.setAttribute('aria-label', translate('Spanish language'));
+    toggle.lang = root.lang;
     document.dispatchEvent(new Event('languagechange'));
   }
   toggle.addEventListener('click', () => {
