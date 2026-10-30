@@ -435,12 +435,12 @@ nav a::before, .brand::before { content: none; }
 .service-photo-crop { position: relative; aspect-ratio: 4 / 5; overflow: hidden; }
 .service-chapter .service-photo-crop img {
   position: absolute;
-  width: 472.5%;
+  width: 315%;
   max-width: none;
   height: auto;
   aspect-ratio: auto;
-  left: -132.8125%;
-  top: -147.5%;
+  left: -68.75%;
+  top: -91.6667%;
 }
 @media (max-width: 850px) {
   .perspective-chapter { grid-template-columns: minmax(0, 1fr); gap: 36px; }
