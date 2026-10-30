@@ -1,10 +1,10 @@
 (() => {
   const root = document.documentElement;
-  const page = document.querySelector('.projects-page');
+  const page = document.querySelector('.projects-page, .skills-page');
   if (!page || !('IntersectionObserver' in window)) return;
 
   const preference = matchMedia('(prefers-reduced-motion: reduce)');
-  const chapters = [...page.querySelectorAll('.code-project')];
+  const chapters = [...page.querySelectorAll('.code-project, .skill-list article')];
   const links = [...page.querySelectorAll('.chapter-nav a')];
   const reveals = [...page.querySelectorAll('[data-reveal]')];
   let frame = 0;

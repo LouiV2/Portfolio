@@ -6,7 +6,7 @@
     <meta name="description" content="Skills — Louis Valderrama’s personal portfolio.">
     <title>Skills | Louis Valderrama</title>
     <script src="js/theme.js"></script>
-    <link rel="stylesheet" href="css/style.css?v=language-8">
+    <link rel="stylesheet" href="css/style.css?v=skills-story-1">
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -23,7 +23,7 @@
       <button class="language-toggle" type="button" lang="es" hidden>Español</button>
       <button class="theme-toggle" type="button" aria-pressed="false" hidden>Light mode: off</button>
     </header>
-    <main id="main">
+    <main id="main" class="skills-page">
       <section class="page-heading">
         <p class="eyebrow">03 / Skills</p>
         <h1>A creative &amp;<br>
@@ -31,56 +31,68 @@
         </h1>
         <p class="lead">The programming languages and software tools in my skill set.</p>
       </section>
+      <nav class="chapter-nav" aria-label="Skill chapters">
+        <a href="#skill-chapter-1"><span>01</span> Languages</a>
+        <a href="#skill-chapter-2"><span>02</span> Creative tools</a>
+        <a href="#skill-chapter-3"><span>03</span> Everyday tools</a>
+        <div class="chapter-progress" aria-hidden="true"><span></span></div>
+      </nav>
       <section class="section skill-list" aria-label="Technical skills">
-        <article>
+        <article id="skill-chapter-1">
           <div class="skill-visual">
             <p class="eyebrow">01 / Write the logic</p>
-            <figure class="hud-picture">
+            <figure class="hud-picture" data-reveal>
               <img src="images/skills-programming-photo.jpg" alt="Laptop screen showing code above a silver keyboard." width="1000" height="667" decoding="async">
               <figcaption><a href="https://www.pexels.com/de-de/foto/bildschirm-computer-daten-display-160107/">Photo: Negative Space / Pexels</a></figcaption>
             </figure>
           </div>
-          <div>
-            <h2>Languages</h2>
-            <p class="skill-context">Start with the logic: the programming languages in my toolkit.</p>
-            <ul class="tags">
-              <li>Java</li>
-              <li>C++</li>
-              <li>C#</li>
-              <li>Python</li>
+          <div class="skill-copy">
+            <div class="chapter-instrument" aria-hidden="true"></div>
+            <h2 data-reveal>Languages</h2>
+            <p class="skill-context" data-reveal>Start with the logic: the programming languages in my toolkit.</p>
+            <p class="skill-hint">Select a skill to explore its role.</p>
+            <ul class="skill-explorer">
+              <li><details><summary>Java</summary><p>A general-purpose language for building applications with classes and objects.</p></details></li>
+              <li><details><summary>C++</summary><p>Control flow, arrays, and algorithms. Explore insertion, selection, and bubble sort in my sorting project.</p><a href="projects.html#chapter-2"><span>See Sorting Algorithms</span> &rarr;</a></details></li>
+              <li><details><summary>C#</summary><p>The scripting language behind the PlayerController shown in Alien Escape.</p><a href="projects.html#chapter-1"><span>See Alien Escape</span> &rarr;</a></details></li>
+              <li><details><summary>Python</summary><p>Connect an API to a database: my News Aggregator uses requests and SQLite to retrieve and store articles.</p><a href="projects.html#chapter-3"><span>See News Aggregator</span> &rarr;</a></details></li>
             </ul>
           </div>
         </article>
-        <article>
+        <article id="skill-chapter-2">
           <div class="skill-visual">
             <p class="eyebrow">02 / Shape the experience</p>
-            <figure class="hud-picture">
+            <figure class="hud-picture" data-reveal>
               <img src="images/skills-creative-photo.jpg" alt="Black drawing tablet and stylus on a white surface." width="1000" height="1500" decoding="async">
               <figcaption><a href="https://www.pexels.com/photo/pen-on-tablet-5594347/">Photo: Mike Murray / Pexels</a></figcaption>
             </figure>
           </div>
-          <div>
-            <h2>Design &amp; development</h2>
-            <p class="skill-context">Give an idea its visual form with tools for design and interactive development.</p>
-            <ul class="tags">
-              <li>Adobe Creative Suite</li>
-              <li>Unity</li>
+          <div class="skill-copy">
+            <div class="chapter-instrument" aria-hidden="true"></div>
+            <h2 data-reveal>Design &amp; development</h2>
+            <p class="skill-context" data-reveal>Give an idea its visual form with tools for design and interactive development.</p>
+            <p class="skill-hint">Select a skill to explore its role.</p>
+            <ul class="skill-explorer">
+              <li><details><summary>Adobe Creative Suite</summary><p>Creative tools for working with images, illustration, and visual design.</p></details></li>
+              <li><details><summary>Unity</summary><p>A game engine for building scenes and interactive experiences. See the forest scene in Alien Escape.</p><a href="projects.html#chapter-1"><span>See Alien Escape</span> &rarr;</a></details></li>
             </ul>
           </div>
         </article>
-        <article>
+        <article id="skill-chapter-3">
           <div class="skill-visual">
             <p class="eyebrow">03 / Bring it together</p>
-            <figure class="hud-picture">
+            <figure class="hud-picture" data-reveal>
               <img src="images/skills-productivity-photo.jpg" alt="Planner, laptop, phone, and pen arranged on a table." width="1000" height="1500" decoding="async">
               <figcaption><a href="https://www.pexels.com/photo/notebooks-and-laptop-on-a-table-5546810/">Photo: Polina / Pexels</a></figcaption>
             </figure>
           </div>
-          <div>
-            <h2>Everyday tools</h2>
-            <p class="skill-context">Bring the pieces together with documents, presentations, and everyday organization.</p>
-            <ul class="tags">
-              <li>Microsoft 365</li>
+          <div class="skill-copy">
+            <div class="chapter-instrument" aria-hidden="true"></div>
+            <h2 data-reveal>Everyday tools</h2>
+            <p class="skill-context" data-reveal>Bring the pieces together with documents, presentations, and everyday organization.</p>
+            <p class="skill-hint">Select a skill to explore its role.</p>
+            <ul class="skill-explorer">
+              <li><details><summary>Microsoft 365</summary><p>Tools for documents, spreadsheets, and presentations: the everyday side of bringing work together.</p></details></li>
             </ul>
           </div>
         </article>
@@ -99,5 +111,6 @@
     </footer>
     <script src="js/language.js" defer></script>
     <script src="js/hud-motion.js" defer></script>
+    <script src="js/projects-story.js" defer></script>
   </body>
 </html>

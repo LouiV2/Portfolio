@@ -515,7 +515,7 @@ footer { padding-block: 30px; }
   footer { flex-direction: column; gap: 12px; }
 }
 /* Projects unfold as three chapters; screenshots stay usable without JavaScript. */
-.projects-page .chapter-nav {
+.chapter-nav {
   position: sticky;
   top: 12px;
   z-index: 3;
@@ -566,12 +566,43 @@ footer { padding-block: 30px; }
   .projects-page .project-brief { position: relative; top: auto; }
 }
 @media (max-width: 580px) {
-  .projects-page .chapter-nav { top: 0; gap: 4px; padding: 6px; }
+  .chapter-nav { top: 0; gap: 4px; padding: 6px; }
   .chapter-nav a { flex-direction: column; gap: 2px; }
   .projects-page .project-brief > p:not(.eyebrow) { font-size: 16px; }
   .chapter-instrument { width: 100px; height: 100px; }
   .chapter-instrument::after { left: 105px; width: 60px; }
 }
+/* Interactive skill chapters share the project reading-progress behavior. */
+.skills-page .skill-list article { padding-block: 100px; scroll-margin-top: 120px; align-items: start; gap: 64px; }
+.skills-page .skill-copy { padding-block: 24px; }
+.skills-page .skill-copy h2 { font-size: clamp(32px, 4vw, 48px); }
+.skills-page .skill-copy .chapter-instrument { margin-inline: auto; }
+.skills-page .skill-visual { position: sticky; top: 115px; }
+.skill-hint { color: var(--muted); font-size: 14px; }
+.skill-explorer { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; list-style: none; padding: 0; margin: 28px 0 0; text-align: left; }
+.skill-explorer li { min-width: 0; }
+.skill-explorer details { border: 1px solid var(--line); border-top: 2px solid var(--accent); background: var(--panel); }
+.skill-explorer summary { padding: 16px; cursor: pointer; font-size: 18px; font-weight: 700; overflow-wrap: anywhere; }
+.skill-explorer summary::marker { color: var(--accent); }
+.skill-explorer summary:hover { color: var(--accent); }
+.skill-explorer summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+.skill-explorer details[open] { border-color: var(--accent); box-shadow: 4px 4px 0 #facc1514; }
+.skill-explorer details p { padding-inline: 16px; margin-bottom: 18px; color: var(--muted); font-size: 15px; }
+.skill-explorer details a { display: inline-block; margin: 0 16px 18px; font-weight: 700; font-size: 14px; }
+@media (prefers-reduced-motion: no-preference) {
+  .skills-page.story-motion [data-reveal] { opacity: .45; transform: translateY(24px); transition: opacity 650ms ease, transform 650ms ease; }
+  .skills-page.story-motion .is-revealed { opacity: 1; transform: none; }
+  .skills-page.story-motion .hud-picture { transform: translateY(calc((var(--chapter-progress, .5) - .5) * -48px)) rotate(calc((var(--chapter-progress, .5) - .5) * 1.4deg)); }
+  .skills-page.story-motion article:nth-child(even) .hud-picture { transform: translateY(calc((var(--chapter-progress, .5) - .5) * 48px)) rotate(calc((var(--chapter-progress, .5) - .5) * -1.4deg)); }
+  .skills-page.story-motion .chapter-instrument { animation: hud-orbit 90s linear infinite reverse; }
+}
+@media (max-width: 850px) {
+  .skills-page .skill-list article { grid-template-columns: minmax(0, 1fr); padding-block: 60px; gap: 32px; }
+  .skills-page .skill-visual { position: relative; top: auto; }
+  .skills-page .hud-picture { max-width: 460px; margin-inline: auto; }
+}
+@media (max-height: 760px) { .skills-page .skill-visual { position: relative; top: auto; } }
+@media (max-width: 580px) { .skill-explorer { grid-template-columns: minmax(0, 1fr); } }
 /* HUD accents frame the story without interrupting the reading column. */
 .profile-panel .monogram { position: relative; isolation: isolate; background: none; }
 .profile-panel .monogram::before {

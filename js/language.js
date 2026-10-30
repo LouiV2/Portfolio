@@ -120,6 +120,19 @@
   window.portfolioTranslate = translate;
 
   Object.assign(spanish, {
+    'Skill chapters': 'Capítulos de habilidades',
+    'Creative tools': 'Herramientas creativas',
+    'Select a skill to explore its role.': 'Selecciona una habilidad para explorar su función.',
+    'A general-purpose language for building applications with classes and objects.': 'Un lenguaje de propósito general para crear aplicaciones con clases y objetos.',
+    'Control flow, arrays, and algorithms. Explore insertion, selection, and bubble sort in my sorting project.': 'Flujo de control, arreglos y algoritmos. Explora los métodos de inserción, selección y burbuja en mi proyecto de ordenamiento.',
+    'The scripting language behind the PlayerController shown in Alien Escape.': 'El lenguaje del script PlayerController que se muestra en Alien Escape.',
+    'Connect an API to a database: my News Aggregator uses requests and SQLite to retrieve and store articles.': 'Conectar una API a una base de datos: mi agregador de noticias usa requests y SQLite para obtener y guardar artículos.',
+    'Creative tools for working with images, illustration, and visual design.': 'Herramientas creativas para trabajar con imágenes, ilustración y diseño visual.',
+    'A game engine for building scenes and interactive experiences. See the forest scene in Alien Escape.': 'Un motor de juegos para crear escenas y experiencias interactivas. Explora la escena del bosque de Alien Escape.',
+    'Tools for documents, spreadsheets, and presentations: the everyday side of bringing work together.': 'Herramientas para documentos, hojas de cálculo y presentaciones: el lado cotidiano de organizar el trabajo.',
+    'See Sorting Algorithms': 'Ver algoritmos de ordenamiento',
+    'See Alien Escape': 'Ver Alien Escape',
+    'See News Aggregator': 'Ver agregador de noticias',
     'Project chapters': 'Capítulos de proyectos',
     'Project sequence': 'Secuencia del proyecto',
     'First, build a world.': 'Primero, crear un mundo.',
