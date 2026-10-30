@@ -6,7 +6,7 @@
     <meta name="description" content="Projects — Louis Valderrama’s personal portfolio.">
     <title>Projects | Louis Valderrama</title>
     <script src="js/theme.js"></script>
-    <link rel="stylesheet" href="css/style.css?v=sorting-project-1">
+    <link rel="stylesheet" href="css/style.css?v=project-story-1">
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -36,23 +36,36 @@
           <h2 id="workspace-heading">Three projects. Different approaches.</h2>
         </div>
         <p class="lead">From a Unity game to C++ algorithms and a Python news aggregator, these projects bring together different parts of my toolkit.</p>
+        <nav class="chapter-nav" aria-label="Project chapters">
+          <a href="#chapter-1"><span>01</span> Alien Escape</a>
+          <a href="#chapter-2"><span>02</span> Sorting Algorithms</a>
+          <a href="#chapter-3"><span>03</span> News Aggregator</a>
+          <div class="chapter-progress" aria-hidden="true"><span></span></div>
+        </nav>
         <div class="code-projects">
-          <article class="code-project" aria-labelledby="project-1">
+          <article class="code-project" id="chapter-1" aria-labelledby="project-1">
             <div class="code-project-body">
               <div class="project-brief">
+                <div class="chapter-instrument" aria-hidden="true"></div>
+                <p class="chapter-hook" data-reveal>First, build a world.</p>
                 <p class="eyebrow">01 / Unity &amp; C#</p>
-                <h3 id="project-1">Alien Escape</h3>
-                <p>A Unity game project. These screenshots show the forest game scene and the C# PlayerController script behind it.</p>
-                <p>More project details and links are coming soon. Select either screenshot to view it at full size.</p>
+                <h3 data-reveal id="project-1">Alien Escape</h3>
+                <p data-reveal>A Unity game project. These screenshots show the forest game scene and the C# PlayerController script behind it.</p>
+                <p data-reveal>More project details and links are coming soon. Select either screenshot to view it at full size.</p>
+                <ol class="project-flow" aria-label="Project sequence" data-reveal>
+                  <li>Explore the scene</li>
+                  <li>Read the controller</li>
+                  <li>Follow the game logic</li>
+                </ol>
               </div>
               <div class="project-visual">
-                <figure class="project-screenshot">
+                <figure class="project-screenshot" data-reveal>
                   <a href="images/project-1-unity-game.png">
                     <img src="images/project-1-unity-game.png" alt="Unity editor showing a nighttime forest game scene with a UFO, characters, pickup count, and timer." width="2507" height="943">
                   </a>
                   <figcaption>Game scene / Unity editor</figcaption>
                 </figure>
-                <figure class="project-screenshot">
+                <figure class="project-screenshot" data-reveal>
                   <a href="images/project-1-player-controller.png">
                     <img src="images/project-1-player-controller.png" alt="Visual Studio Code showing the C# PlayerController script, including startup, movement input, and pickup-count logic." width="2559" height="1377">
                   </a>
@@ -61,28 +74,35 @@
               </div>
             </div>
           </article>
-          <article class="code-project" aria-labelledby="project-2">
+          <article class="code-project" id="chapter-2" aria-labelledby="project-2">
             <div class="code-project-body">
               <div class="project-brief">
+                <div class="chapter-instrument" aria-hidden="true"></div>
+                <p class="chapter-hook" data-reveal>Then, bring order to the logic.</p>
                 <p class="eyebrow">02 / C++</p>
-                <h3 id="project-2">Sorting Algorithms</h3>
-                <p>A C++ console program that accepts 5 to 10 integers and lets the user choose insertion sort, selection sort, or bubble sort. It displays the array before and after sorting.</p>
-                <p>The screenshots follow the code from the sorting functions to the input menu and final output logic. Select any image to read it at full size.</p>
+                <h3 data-reveal id="project-2">Sorting Algorithms</h3>
+                <p data-reveal>A C++ console program that accepts 5 to 10 integers and lets the user choose insertion sort, selection sort, or bubble sort. It displays the array before and after sorting.</p>
+                <p data-reveal>The screenshots follow the code from the sorting functions to the input menu and final output logic. Select any image to read it at full size.</p>
+                <ol class="project-flow" aria-label="Project sequence" data-reveal>
+                  <li>Enter integers</li>
+                  <li>Choose a sort</li>
+                  <li>Print the result</li>
+                </ol>
               </div>
               <div class="project-visual">
-                <figure class="project-screenshot sorting-screenshot">
+                <figure class="project-screenshot sorting-screenshot" data-reveal>
                   <a href="images/project-2-sorting-1.png">
                     <img src="images/project-2-sorting-1.png" alt="C++ implementations of insertion sort, selection sort, and bubble sort." width="746" height="1315">
                   </a>
                   <figcaption>01 / Sorting functions</figcaption>
                 </figure>
-                <figure class="project-screenshot sorting-screenshot">
+                <figure class="project-screenshot sorting-screenshot" data-reveal>
                   <a href="images/project-2-sorting-2.png">
                     <img src="images/project-2-sorting-2.png" alt="C++ array-printing function, integer input, range checks, and sorting algorithm menu." width="805" height="1162">
                   </a>
                   <figcaption>02 / Input and algorithm selection</figcaption>
                 </figure>
-                <figure class="project-screenshot sorting-screenshot">
+                <figure class="project-screenshot sorting-screenshot" data-reveal>
                   <a href="images/project-2-sorting-3.png">
                     <img src="images/project-2-sorting-3.png" alt="C++ switch statement calling the selected sorting function and printing the sorted array." width="408" height="399">
                   </a>
@@ -91,22 +111,29 @@
               </div>
             </div>
           </article>
-          <article class="code-project" aria-labelledby="project-3">
+          <article class="code-project" id="chapter-3" aria-labelledby="project-3">
             <div class="code-project-body">
               <div class="project-brief">
+                <div class="chapter-instrument" aria-hidden="true"></div>
+                <p class="chapter-hook" data-reveal>Finally, connect information.</p>
                 <p class="eyebrow">03 / Python &amp; SQLite</p>
-                <h3 id="project-3">News Aggregator</h3>
-                <p>A Python notebook that prompts for a news topic, retrieves five recent articles through NewsAPI using requests, and stores their headlines, descriptions, and publication dates in SQLite.</p>
-                <p>The code uses unique headlines to avoid duplicate database entries and displays the stored article details in a numbered list. Select either screenshot to read the code at full size.</p>
+                <h3 data-reveal id="project-3">News Aggregator</h3>
+                <p data-reveal>A Python notebook that prompts for a news topic, retrieves five recent articles through NewsAPI using requests, and stores their headlines, descriptions, and publication dates in SQLite.</p>
+                <p data-reveal>The code uses unique headlines to avoid duplicate database entries and displays the stored article details in a numbered list. Select either screenshot to read the code at full size.</p>
+                <ol class="project-flow" aria-label="Project sequence" data-reveal>
+                  <li>Choose a topic</li>
+                  <li>Fetch five articles</li>
+                  <li>Store and display</li>
+                </ol>
               </div>
               <div class="project-visual">
-                <figure class="project-screenshot">
+                <figure class="project-screenshot" data-reveal>
                   <a href="images/project-3-news-01.png">
                     <img src="images/project-3-news-01.png" alt="Python notebook showing topic input, NewsAPI requests, and SQLite news-table creation." width="934" height="882">
                   </a>
                   <figcaption>01 / Fetch articles and create the database</figcaption>
                 </figure>
-                <figure class="project-screenshot">
+                <figure class="project-screenshot" data-reveal>
                   <a href="images/project-3-news-02.png">
                     <img src="images/project-3-news-02.png" alt="Python functions inserting articles into SQLite without duplicate headlines and displaying numbered article details." width="1105" height="844">
                   </a>
@@ -132,5 +159,6 @@
     </footer>
     <script src="js/language.js" defer></script>
     <script src="js/hud-motion.js" defer></script>
+    <script src="js/projects-story.js" defer></script>
   </body>
 </html>

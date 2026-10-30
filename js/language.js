@@ -120,6 +120,20 @@
   window.portfolioTranslate = translate;
 
   Object.assign(spanish, {
+    'Project chapters': 'Capítulos de proyectos',
+    'Project sequence': 'Secuencia del proyecto',
+    'First, build a world.': 'Primero, crear un mundo.',
+    'Then, bring order to the logic.': 'Después, poner orden en la lógica.',
+    'Finally, connect information.': 'Finalmente, conectar la información.',
+    'Explore the scene': 'Explorar la escena',
+    'Read the controller': 'Leer el controlador',
+    'Follow the game logic': 'Seguir la lógica del juego',
+    'Enter integers': 'Introducir enteros',
+    'Choose a sort': 'Elegir un algoritmo',
+    'Print the result': 'Imprimir el resultado',
+    'Choose a topic': 'Elegir un tema',
+    'Fetch five articles': 'Obtener cinco artículos',
+    'Store and display': 'Guardar y mostrar',
     'News Aggregator': 'Agregador de noticias',
     'Three projects. Different approaches.': 'Tres proyectos. Diferentes enfoques.',
     '03 / Python & SQLite': '03 / Python y SQLite',
