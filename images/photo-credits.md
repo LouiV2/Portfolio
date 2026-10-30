@@ -7,8 +7,8 @@ the layout displays them in square crops using CSS.
 | Local asset | Photographer | Source |
 | --- | --- | --- |
 | `skills-programming-photo.jpg` | Negative Space | [Pexels photo 160107](https://www.pexels.com/de-de/foto/bildschirm-computer-daten-display-160107/) |
-| `skills-creative-photo.jpg` | Mike Murray | [Pen on Tablet](https://www.pexels.com/photo/pen-on-tablet-5594347/) |
-| `skills-productivity-photo.jpg` | Polina | [Notebooks and Laptop on a Table](https://www.pexels.com/photo/notebooks-and-laptop-on-a-table-5546810/) |
+| `skills-design-swatches.jpg` | Kaboompics | [Woman Holding Paper Swatches of Paint](https://www.pexels.com/photo/woman-holding-paper-swatches-of-paint-8545725/) |
+| `skills-planning-desk.jpg` | Arina Krasnikova | [Organizer and Wireless Gadgets](https://www.pexels.com/photo/an-organizer-and-pen-beside-a-notebook-on-a-glass-desk-with-wireless-gadgets-5712118/) |
 | `contact-connection-photo.jpg` | Letícia Alvares | [Minimalist Workspace with Smartphone and Notebooks](https://www.pexels.com/photo/minimalist-workspace-with-smartphone-and-notebooks-31145643/) |
 
 Downloaded from Pexels at 1000px width with CDN compression. Reuse terms:
