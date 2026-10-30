@@ -120,6 +120,18 @@
   window.portfolioTranslate = translate;
 
   Object.assign(spanish, {
+    'News Aggregator': 'Agregador de noticias',
+    'Three projects. Different approaches.': 'Tres proyectos. Diferentes enfoques.',
+    '03 / Python & SQLite': '03 / Python y SQLite',
+    'Three projects spanning game development, sorting algorithms, and news aggregation. Explore the screenshots and the code behind each one.': 'Tres proyectos de desarrollo de juegos, algoritmos de ordenamiento y agregación de noticias. Explora las capturas y el código de cada uno.',
+    'From a Unity game to C++ algorithms and a Python news aggregator, these projects bring together different parts of my toolkit.': 'Desde un juego en Unity hasta algoritmos en C++ y un agregador de noticias en Python, estos proyectos reúnen distintas partes de mis herramientas.',
+    'A Python notebook that prompts for a news topic, retrieves five recent articles through NewsAPI using requests, and stores their headlines, descriptions, and publication dates in SQLite.': 'Un cuaderno de Python que solicita un tema, obtiene cinco artículos recientes mediante NewsAPI con requests y guarda sus titulares, descripciones y fechas en SQLite.',
+    'The code uses unique headlines to avoid duplicate database entries and displays the stored article details in a numbered list. Select either screenshot to read the code at full size.': 'El código utiliza titulares únicos para evitar duplicados en la base de datos y muestra los detalles de los artículos en una lista numerada. Selecciona una captura para leer el código a tamaño completo.',
+    '01 / Fetch articles and create the database': '01 / Obtener artículos y crear la base de datos',
+    '02 / Store and display the headlines': '02 / Guardar y mostrar los titulares',
+    'Python notebook showing topic input, NewsAPI requests, and SQLite news-table creation.': 'Cuaderno de Python con entrada de tema, solicitudes a NewsAPI y creación de la tabla de noticias en SQLite.',
+    'Python functions inserting articles into SQLite without duplicate headlines and displaying numbered article details.': 'Funciones de Python que insertan artículos en SQLite sin titulares duplicados y muestran sus detalles numerados.',
+    'Screenshots show my project code and development work. Repository and demo links will be added when available.': 'Las capturas muestran el código y el desarrollo de mis proyectos. Se añadirán enlaces a repositorios y demostraciones cuando estén disponibles.',
     'Sorting Algorithms': 'Algoritmos de ordenamiento',
     'Explore my Unity game and C++ sorting program below. A third entry is reserved for future work.': 'Explora mi juego de Unity y mi programa de ordenamiento en C++. Una tercera entrada está reservada para un futuro proyecto.',
     'A C++ console program that accepts 5 to 10 integers and lets the user choose insertion sort, selection sort, or bubble sort. It displays the array before and after sorting.': 'Un programa de consola en C++ que acepta de 5 a 10 enteros y permite elegir ordenamiento por inserción, selección o burbuja. Muestra el arreglo antes y después de ordenarlo.',
