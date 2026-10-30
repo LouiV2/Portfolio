@@ -430,6 +430,14 @@ nav a::before, .brand::before { content: none; }
 .perspective-chapter .portrait-frame img { aspect-ratio: 3 / 2; object-fit: contain; }
 .portrait-mark { display: flex; justify-content: space-between; gap: 16px; padding: 2px 4px 12px; color: var(--accent); font: 12px/1.5 Consolas, "Courier New", monospace; letter-spacing: .08em; }
 .portrait-frame figcaption { border-top: 1px solid var(--line); margin-top: 12px; }
+.hud-picture.about-portrait { margin-top: 36px; padding-top: 42px; }
+.about-portrait a { display: block; }
+.hud-picture.about-portrait img { aspect-ratio: 3 / 2; object-fit: contain; }
+.about-portrait-orbit { position: absolute; top: -24px; right: 12px; width: 70px; height: 70px; background: url("../images/hud-ring.svg") center / contain no-repeat; pointer-events: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .about-portrait-orbit { animation: hud-orbit 60s linear infinite; }
+  html[data-hud-paused] .about-portrait-orbit { animation-play-state: paused; }
+}
 .work-chapter .portrait-frame img { aspect-ratio: auto; }
 .work-image-link { display: block; }
 .service-chapter .portrait-frame { max-width: 380px; justify-self: center; }

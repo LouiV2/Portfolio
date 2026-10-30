@@ -120,6 +120,8 @@
   window.portfolioTranslate = translate;
 
   Object.assign(spanish, {
+    'Visit People of Rutgers': 'Visitar People of Rutgers',
+    'People of Rutgers — Select photo to visit': 'People of Rutgers — Selecciona la foto para visitar',
     'Homepage chapters': 'Capítulos de la página de inicio',
     'The perspective': 'La perspectiva',
     'The people': 'Las personas',
