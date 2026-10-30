@@ -690,3 +690,17 @@ html[data-theme="light"] main::after { filter: brightness(.55); }
 @media (min-width: 1051px) {
   .site-header { flex-wrap: wrap; }
 }
+
+.language-toggle {
+  flex-shrink: 0;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+}
+.language-toggle[hidden] { display: none; }
+.language-toggle:hover { border-color: var(--accent); }
+.language-toggle:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }

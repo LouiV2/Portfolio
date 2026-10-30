@@ -17,7 +17,7 @@
     function updateToggle() {
       const light = root.dataset.theme === 'light';
       toggle.setAttribute('aria-pressed', String(light));
-      toggle.textContent = light ? 'Light mode: on' : 'Light mode: off';
+      toggle.textContent = (window.portfolioTranslate || ((text) => text))(light ? 'Light mode: on' : 'Light mode: off');
     }
 
     toggle.addEventListener('click', () => {
@@ -29,6 +29,7 @@
         // Keep the selected theme for this page even without storage.
       }
     });
+    document.addEventListener('languagechange', updateToggle);
     updateToggle();
     toggle.hidden = false;
   });

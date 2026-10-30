@@ -15,7 +15,7 @@ function validateContactField({ input, error }) {
   } else if (input.value.length > input.maxLength) {
     message = `Please use ${input.maxLength} characters or fewer.`;
   }
-  error.textContent = message;
+  error.textContent = window.portfolioTranslate(message);
   error.hidden = !message;
   input.setAttribute('aria-invalid', String(Boolean(message)));
   return !message;
@@ -41,15 +41,28 @@ contactForm.addEventListener('submit', (event) => {
   if (invalidFields.length) {
     emailDraft.hidden = true;
     emailDraft.removeAttribute('href');
-    contactStatus.textContent = 'Please correct the highlighted fields.';
+    contactStatus.textContent = window.portfolioTranslate('Please correct the highlighted fields.');
     invalidFields[0].input.focus();
     return;
   }
 
   const [name, email, message] = contactFields.map(({ input }) => input.value.trim());
-  const subject = 'Portfolio inquiry';
-  const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+  const subject = window.portfolioTranslate('Portfolio inquiry');
+  const body = `${window.portfolioTranslate('Name:')} ${name}\n${window.portfolioTranslate('Email:')} ${email}\n\n${message}`;
   emailDraft.href = `mailto:LV285@njit.edu?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   emailDraft.hidden = false;
-  contactStatus.textContent = 'Your draft is ready. Open it in your email app, review it, and send it there. No message has been sent.';
+  contactStatus.textContent = window.portfolioTranslate('Your draft is ready. Open it in your email app, review it, and send it there. No message has been sent.');
+});
+
+document.addEventListener('languagechange', () => {
+  const draftReady = !emailDraft.hidden;
+  if (draftReady) {
+    contactForm.requestSubmit();
+  } else {
+    const hadErrors = contactFields.some(({ input }) => input.getAttribute('aria-invalid') === 'true');
+    contactFields.forEach((field) => {
+      if (field.input.getAttribute('aria-invalid') === 'true') validateContactField(field);
+    });
+    if (hadErrors) contactStatus.textContent = window.portfolioTranslate('Please correct the highlighted fields.');
+  }
 });
