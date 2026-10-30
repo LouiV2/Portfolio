@@ -120,6 +120,17 @@
   window.portfolioTranslate = translate;
 
   Object.assign(spanish, {
+    'Sorting Algorithms': 'Algoritmos de ordenamiento',
+    'Explore my Unity game and C++ sorting program below. A third entry is reserved for future work.': 'Explora mi juego de Unity y mi programa de ordenamiento en C++. Una tercera entrada está reservada para un futuro proyecto.',
+    'A C++ console program that accepts 5 to 10 integers and lets the user choose insertion sort, selection sort, or bubble sort. It displays the array before and after sorting.': 'Un programa de consola en C++ que acepta de 5 a 10 enteros y permite elegir ordenamiento por inserción, selección o burbuja. Muestra el arreglo antes y después de ordenarlo.',
+    'The screenshots follow the code from the sorting functions to the input menu and final output logic. Select any image to read it at full size.': 'Las capturas muestran las funciones, el menú de entrada y la lógica del resultado final. Selecciona una imagen para leerla a tamaño completo.',
+    '01 / Sorting functions': '01 / Funciones de ordenamiento',
+    '02 / Input and algorithm selection': '02 / Entrada y selección del algoritmo',
+    '03 / Sort and print the result': '03 / Ordenar e imprimir el resultado',
+    'Project 3 is a placeholder. More details and available links will be added as the portfolio grows.': 'El proyecto 3 es provisional. Se añadirán más detalles y enlaces a medida que crezca el portafolio.',
+    'C++ implementations of insertion sort, selection sort, and bubble sort.': 'Implementaciones en C++ de ordenamiento por inserción, selección y burbuja.',
+    'C++ array-printing function, integer input, range checks, and sorting algorithm menu.': 'Función de impresión del arreglo, entrada de enteros, comprobaciones de rango y menú de algoritmos en C++.',
+    'C++ switch statement calling the selected sorting function and printing the sorted array.': 'Sentencia switch en C++ que llama a la función elegida e imprime el arreglo ordenado.',
     '01 / Unity & C#': '01 / Unity y C#',
     'Explore my Unity game below. Two more project entries are reserved for future work.': 'Explora mi juego de Unity a continuación. Otras dos entradas están reservadas para futuros proyectos.',
     'A Unity game project. These screenshots show the forest game scene and the C# PlayerController script behind it.': 'Un proyecto de juego en Unity. Estas capturas muestran la escena del bosque y el script PlayerController en C#.',

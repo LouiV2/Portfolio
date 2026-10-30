@@ -474,6 +474,7 @@ nav a::before, .brand::before { content: none; }
 .project-screenshot::after { bottom: 5px; right: 5px; border-width: 0 2px 2px 0; }
 .project-screenshot a { display: block; position: relative; z-index: 1; transform-origin: center; }
 .project-screenshot img { display: block; width: 100%; height: auto; }
+.sorting-screenshot img { max-height: 360px; object-fit: contain; background: #111111; }
 .project-screenshot figcaption {
   margin-top: 16px;
   padding-top: 12px;
