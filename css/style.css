@@ -595,6 +595,27 @@ footer { padding-block: 30px; }
   .chapter-instrument { width: 100px; height: 100px; }
   .chapter-instrument::after { left: 105px; width: 60px; }
 }
+/* The homepage moves from background, to service, to the work itself. */
+.home-page .story-chapter { padding-block: 100px; scroll-margin-top: 110px; align-items: start; }
+.home-page .story-chapter > div:first-child { position: sticky; top: 115px; padding-block: 18px; }
+.home-page .chapter-instrument { width: 100px; height: 100px; margin-block: 24px 32px; }
+.home-page .chapter-instrument::after { left: 105px; width: 75px; }
+.home-page .service-chapter > div:first-child { grid-column: 2; grid-row: 1; }
+.home-page .service-chapter > figure { grid-column: 1; grid-row: 1; }
+.home-page .portrait-frame { align-self: center; }
+@media (prefers-reduced-motion: no-preference) {
+  .home-page.story-motion [data-reveal] { opacity: .45; transform: translateY(28px); transition: opacity 700ms ease, transform 700ms ease; }
+  .home-page.story-motion .is-revealed { opacity: 1; transform: none; }
+  .home-page.story-motion .portrait-frame { transform: translateY(calc((var(--chapter-progress, .5) - .5) * -64px)) rotate(calc((var(--chapter-progress, .5) - .5) * 1.4deg)); }
+  .home-page.story-motion .service-chapter .portrait-frame { transform: translateY(calc((var(--chapter-progress, .5) - .5) * 64px)) rotate(calc((var(--chapter-progress, .5) - .5) * -1.4deg)); }
+  .home-page.story-motion .chapter-instrument { animation: hud-orbit 90s linear infinite; }
+}
+@media (max-width: 850px) {
+  .home-page .story-chapter { padding-block: 60px; }
+  .home-page .story-chapter > div:first-child { position: relative; top: auto; }
+  .home-page .service-chapter > div:first-child, .home-page .service-chapter > figure { grid-column: auto; grid-row: auto; }
+}
+@media (max-height: 760px) { .home-page .story-chapter > div:first-child { position: relative; top: auto; } }
 /* Interactive skill chapters share the project reading-progress behavior. */
 .skills-page .skill-list article { padding-block: 100px; scroll-margin-top: 120px; align-items: start; gap: 64px; }
 .skills-page .skill-copy { padding-block: 24px; }

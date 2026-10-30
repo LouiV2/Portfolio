@@ -120,6 +120,10 @@
   window.portfolioTranslate = translate;
 
   Object.assign(spanish, {
+    'Homepage chapters': 'Capítulos de la página de inicio',
+    'The perspective': 'La perspectiva',
+    'The people': 'Las personas',
+    'The work ahead': 'El trabajo por venir',
     'This portfolio brings together my projects and the code behind them. Here is a look at my Python notebook work with APIs and SQLite.': 'Este portafolio reúne mis proyectos y su código. Aquí puedes ver mi trabajo en un cuaderno de Python con APIs y SQLite.',
     'Python notebook showing an OpenWeatherMap request, weather-file output, and the start of a SQLite currency-rate table.': 'Cuaderno de Python con una solicitud a OpenWeatherMap, escritura de datos meteorológicos y el inicio de una tabla de tipos de cambio en SQLite.',
     'Python / APIs & SQLite — Select to view full size': 'Python / APIs y SQLite — Selecciona para ver a tamaño completo',
