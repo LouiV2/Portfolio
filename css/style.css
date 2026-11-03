@@ -937,6 +937,12 @@ html[data-theme="light"] main::after { filter: brightness(.55); }
 
 /* About page instruments sit beside content and remain still. */
 .about-page .hud-picture { transform-origin: center; }
+.about-page .interests-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; align-items: center; }
+.about-page .interests-layout > * { min-width: 0; }
+.about-page .interests-photo img { aspect-ratio: auto; object-fit: contain; }
+@media (max-width: 850px) {
+  .about-page .interests-layout { grid-template-columns: minmax(0, 1fr); }
+}
 @media (prefers-reduced-motion: no-preference) {
   .about-page.story-motion .hud-picture[data-reveal] {
     opacity: .5;

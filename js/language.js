@@ -123,6 +123,7 @@
     'Light mode': 'Modo claro',
     'Spanish language': 'Idioma español',
     'About page sections': 'Secciones de la página sobre mí',
+    'Two people practicing jiu-jitsu grips in a training gym.': 'Dos personas practicando agarres de jiu-jitsu en un gimnasio.',
     'Follow my path ↓': 'Sigue mi trayectoria ↓',
     'Public service': 'Servicio público',
     '03 / Public service': '03 / Servicio público',
