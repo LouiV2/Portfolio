@@ -944,7 +944,7 @@ html[data-theme="light"] main::after { filter: brightness(.55); }
   justify-self: center;
   align-self: start;
   margin-top: 12px;
-  transform: translateX(-24px);
+  transform: translateX(-40px);
 }
 .hero-character::before {
   content: "";
