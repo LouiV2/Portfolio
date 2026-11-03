@@ -885,16 +885,19 @@ html[data-theme="light"] main::after { filter: brightness(.55); }
 .language-toggle:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
 .language-toggle, .theme-toggle {
   position: relative;
-  padding-right: 62px;
+  min-height: 36px;
+  padding: 5px 44px 5px 8px;
+  font-size: 14px;
+  line-height: 1.4;
   white-space: nowrap;
 }
 .language-toggle::before, .theme-toggle::before {
   content: "";
   position: absolute;
-  right: 12px;
-  top: calc(50% - 10px);
-  width: 36px;
-  height: 20px;
+  right: 8px;
+  top: calc(50% - 8px);
+  width: 28px;
+  height: 16px;
   border: 1px solid var(--muted);
   border-radius: 12px;
   background: var(--paper);
@@ -903,16 +906,16 @@ html[data-theme="light"] main::after { filter: brightness(.55); }
 .language-toggle::after, .theme-toggle::after {
   content: "";
   position: absolute;
-  right: 34px;
-  top: calc(50% - 6px);
-  width: 12px;
-  height: 12px;
+  right: 23px;
+  top: calc(50% - 5px);
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background: var(--muted);
   pointer-events: none;
 }
 .language-toggle[aria-checked="true"]::before, .theme-toggle[aria-checked="true"]::before { border-color: var(--accent); }
-.language-toggle[aria-checked="true"]::after, .theme-toggle[aria-checked="true"]::after { transform: translateX(16px); background: var(--accent); }
+.language-toggle[aria-checked="true"]::after, .theme-toggle[aria-checked="true"]::after { transform: translateX(12px); background: var(--accent); }
 @media (prefers-reduced-motion: no-preference) {
   .language-toggle::after, .theme-toggle::after { transition: transform 160ms ease, background-color 160ms ease; }
 }
