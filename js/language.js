@@ -122,7 +122,7 @@
   Object.assign(spanish, {
     'Light mode': 'Modo claro',
     'Spanish language': 'Idioma español',
-    'Graphic designer working on a page layout at a desktop computer.': 'Diseñador gráfico trabajando en una composición de páginas en una computadora de escritorio.',
+    'Heroes for Mental Health illustration showing two men talking on a couch, with Fiserv and Rutgers Veteran logos.': 'Ilustración de Heroes for Mental Health que muestra a dos hombres conversando en un sofá, con los logotipos de Fiserv y Rutgers Veteran.',
     'Designer arranging colored paper swatches at a desk.': 'Diseñadora organizando muestras de papel de colores en un escritorio.',
     'Overhead view of a planner, laptop, smartphone, and stationery on a glass desk.': 'Vista desde arriba de una agenda, un portátil, un teléfono y artículos de papelería en un escritorio de vidrio.',
     'Homepage chapters': 'Capítulos de la página de inicio',
