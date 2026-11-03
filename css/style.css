@@ -950,7 +950,7 @@ html[data-theme="light"] main::after { filter: brightness(.55); }
   content: "";
   position: absolute;
   z-index: -1;
-  inset: 20% -35% -10%;
+  inset: 25% -25% -5%;
   background: radial-gradient(ellipse, #facc1538, #facc1514 42%, transparent 70%);
   pointer-events: none;
 }
