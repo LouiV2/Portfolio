@@ -935,6 +935,21 @@ html[data-theme="light"] main::after { filter: brightness(.55); }
   .language-toggle::after, .theme-toggle::after { transition: transform 160ms ease, background-color 160ms ease; }
 }
 
+.home-page .hero { grid-template-columns: minmax(0, 1.4fr) minmax(0, .65fr) minmax(0, 1fr); gap: 28px; }
+.hero-character { display: block; width: 100%; height: auto; max-height: 380px; object-fit: contain; justify-self: center; }
+@media (max-width: 850px) {
+  .home-page .hero { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .home-page .hero > div:first-child { grid-column: 1 / -1; }
+  .hero-character { max-height: 300px; }
+}
+@media (max-width: 580px) {
+  .home-page .hero { gap: 24px 16px; }
+  .home-page .hero .profile-panel { display: block; padding: 12px; }
+  .home-page .hero .monogram { font-size: 48px; }
+  .home-page .hero .profile-panel p { font-size: 12px; }
+  .hero-character { max-height: 240px; }
+}
+
 /* About page instruments sit beside content and remain still. */
 .about-page .hud-picture { transform-origin: center; }
 .about-page .interests-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; align-items: center; }

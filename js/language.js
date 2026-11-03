@@ -123,6 +123,7 @@
     'Light mode': 'Modo claro',
     'Spanish language': 'Idioma español',
     'About page sections': 'Secciones de la página sobre mí',
+    'Watercolor green character holding an orange balloon.': 'Personaje verde en acuarela sosteniendo un globo naranja.',
     'Two people practicing jiu-jitsu grips in a training gym.': 'Dos personas practicando agarres de jiu-jitsu en un gimnasio.',
     'Follow my path ↓': 'Sigue mi trayectoria ↓',
     'Public service': 'Servicio público',
