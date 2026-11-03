@@ -6,7 +6,7 @@
     <meta name="description" content="About Me — Louis Valderrama’s personal portfolio.">
     <title>About Me | Louis Valderrama</title>
     <script src="js/theme.js"></script>
-    <link rel="stylesheet" href="css/style.css?v=about-graduation-1">
+    <link rel="stylesheet" href="css/style.css?v=about-hud-1">
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -23,7 +23,7 @@
       <button class="language-toggle" type="button" role="switch" aria-checked="false" aria-label="Spanish language" hidden><span lang="en">English</span> / <span lang="es">Español</span></button>
       <button class="theme-toggle" type="button" role="switch" aria-checked="false" hidden>Light mode</button>
     </header>
-    <main id="main">
+    <main id="main" class="about-page">
       <section class="page-heading">
         <p class="eyebrow">01 / About me</p>
         <h1>A background across<br>
@@ -31,7 +31,12 @@
         </h1>
         <p class="lead">I’m Louis Valderrama, a student at NJIT majoring in Software and Data Engineering.</p>
       </section>
-      <section class="split section">
+      <nav class="about-sections" aria-label="About page sections">
+        <a href="#background"><span aria-hidden="true">01 /</span> <span>My background</span></a>
+        <a href="#education"><span aria-hidden="true">02 /</span> <span>Education</span></a>
+        <a href="#interests"><span aria-hidden="true">03 /</span> <span>Outside of work &amp; school</span></a>
+      </nav>
+      <section class="split section about-console" id="background">
         <div>
           <p class="eyebrow">01 / My background</p>
           <h2>Learning across disciplines.</h2>
@@ -40,12 +45,13 @@
             <figcaption>Louis Valderrama</figcaption>
           </figure>
         </div>
-        <div>
+        <div class="about-brief">
+          <div class="about-instrument" aria-hidden="true"></div>
           <p>I currently work at Rutgers–Newark University as the Program Coordinator for the Office of Veteran Affairs.</p>
           <p>I hold two associate degrees, two bachelor’s degrees, and a master’s degree. My education includes fine arts, computer science, animation and illustration, and public administration.</p>
         </div>
       </section>
-      <section class="section">
+      <section class="section about-console" id="education">
         <p class="eyebrow">02 / Education</p>
         <div class="section-heading">
           <h2>The education behind the perspective.</h2>
@@ -79,7 +85,7 @@
           </figure>
         </div>
       </section>
-      <section class="section">
+      <section class="section about-console" id="interests">
         <p class="eyebrow">03 / Outside of work &amp; school</p>
         <h2>What keeps me moving.</h2>
         <ul class="tags">

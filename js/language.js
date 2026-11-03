@@ -122,6 +122,10 @@
   Object.assign(spanish, {
     'Light mode': 'Modo claro',
     'Spanish language': 'Idioma español',
+    'About page sections': 'Secciones de la página sobre mí',
+    'My background': 'Mi trayectoria',
+    'Education': 'Educación',
+    'Outside of work & school': 'Fuera del trabajo y los estudios',
     'Louis Valderrama wearing graduation regalia in front of the Rutgers–Newark entrance.': 'Louis Valderrama con toga y birrete frente a la entrada de Rutgers–Newark.',
     'Louis Valderrama presenting to an audience in a classroom.': 'Louis Valderrama dando una presentación ante un público en un aula.',
     'My contact information is listed below.': 'Mi información de contacto se encuentra a continuación.',
