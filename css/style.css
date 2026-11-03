@@ -936,6 +936,17 @@ html[data-theme="light"] main::after { filter: brightness(.55); }
 }
 
 /* About page instruments sit beside content and remain still. */
+.about-page .story-chapter { max-width: none; scroll-margin-top: 130px; }
+.about-page .about-service { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px; align-items: center; }
+.about-page .education-layout { margin-bottom: 28px; }
+.about-page .chapter-nav { z-index: 3; }
+@media (prefers-reduced-motion: no-preference) {
+  .about-page.story-motion [data-reveal] { transition: opacity 600ms ease, transform 600ms ease; opacity: .5; transform: translateY(18px); }
+  .about-page.story-motion .is-revealed { opacity: 1; transform: none; }
+}
+@media (max-width: 850px) {
+  .about-page .about-service { grid-template-columns: minmax(0, 1fr); }
+}
 .about-sections {
   display: flex;
   flex-wrap: wrap;
@@ -963,7 +974,7 @@ html[data-theme="light"] main::after { filter: brightness(.55); }
   margin-bottom: 36px;
   border: 1px solid var(--line);
   background: linear-gradient(135deg, #facc1506, transparent 45%), var(--panel);
-  scroll-margin-top: 24px;
+  scroll-margin-top: 130px;
 }
 .about-console::before, .about-console::after {
   content: "";
@@ -999,7 +1010,8 @@ html[data-theme="light"] main::after { filter: brightness(.55); }
   font: 12px Consolas, "Courier New", monospace;
 }
 @media (max-width: 580px) {
-  .about-sections { flex-direction: column; }
+  .about-sections { gap: 4px; }
+  .about-sections a { flex-basis: 40%; padding: 8px; }
   .about-page .tags li { width: 100%; }
   .about-page .education > div { grid-template-columns: minmax(0, 1fr); }
   .about-instrument { width: 88px; height: 88px; }

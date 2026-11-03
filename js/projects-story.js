@@ -1,6 +1,6 @@
 (() => {
   const root = document.documentElement;
-  const page = document.querySelector('.projects-page, .skills-page, .home-page');
+  const page = document.querySelector('.projects-page, .skills-page, .home-page, .about-page');
   if (!page || !('IntersectionObserver' in window)) return;
 
   const preference = matchMedia('(prefers-reduced-motion: reduce)');
