@@ -995,11 +995,12 @@ html[data-theme="light"] main::after { filter: brightness(.55); }
 }
 .about-page .education > div { border-left: 2px solid var(--line); padding-left: 16px; }
 .about-page .education > div:first-child { border-left-color: var(--accent); }
-.about-page .tags { counter-reset: interest; gap: 12px; }
+.about-page .tags { counter-reset: interest; gap: 18px; }
 .about-page .tags li {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 18px;
+  padding: 18px 26px;
   counter-increment: interest;
   border-radius: 0;
   background: var(--paper);
