@@ -431,7 +431,7 @@ nav a::before, .brand::before { content: none; }
   box-shadow: none;
   padding: 0;
 }
-.profile-panel p:not(.eyebrow) { max-width: none; text-align: center; font-size: 13px; }
+.profile-panel p:not(.eyebrow) { max-width: none; text-align: center; font-size: 18px; }
 .profile-panel::after, .link-card::after, .project-card::after,
 .contact-panel::after, .project-placeholder::after, .section-heading::before { content: none; }
 .section { padding-block: 90px; }
@@ -998,7 +998,7 @@ html[data-theme="light"] main::after { filter: brightness(.55); }
   .home-page .hero { gap: 24px 16px; }
   .home-page .hero .profile-panel { display: block; padding: 12px; }
   .home-page .hero .monogram { font-size: 48px; }
-  .home-page .hero .profile-panel p { font-size: 12px; }
+  .home-page .hero .profile-panel p { font-size: 16px; }
   .hero-character { max-width: 194px; }
 }
 
