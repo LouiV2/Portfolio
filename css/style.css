@@ -936,6 +936,23 @@ html[data-theme="light"] main::after { filter: brightness(.55); }
 }
 
 /* About page instruments sit beside content and remain still. */
+.about-page .hud-picture { transform-origin: center; }
+@media (prefers-reduced-motion: no-preference) {
+  .about-page.story-motion .hud-picture[data-reveal] {
+    opacity: .5;
+    transform: translateY(24px) scale(.97);
+    transition: opacity 700ms ease, transform 700ms ease;
+  }
+  .about-page.story-motion .hud-picture.is-revealed {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@media (prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine) {
+  .about-page.story-motion .hud-picture.is-revealed:hover {
+    transform: translateY(-5px) scale(1.01);
+  }
+}
 .about-page .story-chapter { max-width: none; scroll-margin-top: 130px; }
 .about-page .about-service { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px; align-items: center; }
 .about-page .education-layout { margin-bottom: 28px; }
