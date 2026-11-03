@@ -122,6 +122,8 @@
   Object.assign(spanish, {
     'Light mode': 'Modo claro',
     'Spanish language': 'Idioma español',
+    'Louis Valderrama presenting to an audience in a classroom.': 'Louis Valderrama dando una presentación ante un público en un aula.',
+    'My contact information is listed below.': 'Mi información de contacto se encuentra a continuación.',
     'Heroes for Mental Health — View full image': 'Heroes for Mental Health — Ver imagen completa',
     'Illustrated by Louis Valderrama': 'Ilustrado por Louis Valderrama',
     'Heroes for Mental Health illustration showing two men talking on a couch, with Fiserv and Rutgers Veteran logos.': 'Ilustración de Heroes for Mental Health que muestra a dos hombres conversando en un sofá, con los logotipos de Fiserv y Rutgers Veteran.',

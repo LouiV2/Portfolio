@@ -719,6 +719,7 @@ footer { padding-block: 30px; }
 .hud-picture::before { top: -2px; left: -1px; border-top: 2px solid var(--accent); border-left: 2px solid var(--accent); }
 .hud-picture::after { bottom: -1px; right: -1px; border-bottom: 2px solid var(--accent); border-right: 2px solid var(--accent); }
 .hud-picture img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; }
+.hud-picture.contact-photo img { aspect-ratio: auto; object-fit: contain; }
 .hud-picture.design-artwork img {
   width: 100%;
   height: auto;
