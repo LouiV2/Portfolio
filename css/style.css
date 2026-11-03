@@ -963,8 +963,8 @@ html[data-theme="light"] main::after { filter: brightness(.55); }
   transform-origin: 51% 51%;
 }
 @keyframes balloon-sway {
-  0%, 100% { transform: rotate(-2deg); }
-  50% { transform: rotate(2deg); }
+  0%, 100% { transform: rotate(-6deg); }
+  50% { transform: rotate(6deg); }
 }
 @media (prefers-reduced-motion: no-preference) {
   .character-balloon { animation: balloon-sway 5s ease-in-out infinite; }
