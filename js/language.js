@@ -122,6 +122,7 @@
   Object.assign(spanish, {
     'Light mode': 'Modo claro',
     'Spanish language': 'Idioma español',
+    'Heroes for Mental Health — View full image': 'Heroes for Mental Health — Ver imagen completa',
     'Heroes for Mental Health illustration showing two men talking on a couch, with Fiserv and Rutgers Veteran logos.': 'Ilustración de Heroes for Mental Health que muestra a dos hombres conversando en un sofá, con los logotipos de Fiserv y Rutgers Veteran.',
     'Designer arranging colored paper swatches at a desk.': 'Diseñadora organizando muestras de papel de colores en un escritorio.',
     'Overhead view of a planner, laptop, smartphone, and stationery on a glass desk.': 'Vista desde arriba de una agenda, un portátil, un teléfono y artículos de papelería en un escritorio de vidrio.',
