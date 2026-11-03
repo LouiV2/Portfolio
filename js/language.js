@@ -9,7 +9,7 @@
     'Art. Service. Technology.': 'Arte. Servicio. Tecnología.',
     'Louis Valderrama / Portfolio': 'Louis Valderrama / Portafolio',
     'Creativity.': 'Creatividad.', 'Service.': 'Servicio.',
-    'I’m Louis, a Software and Data Engineering student at NJIT. My background brings together creative work, public service, and technology.': 'Soy Louis, estudiante de Ingeniería de Software y Datos en NJIT. Mi trayectoria combina el trabajo creativo, el servicio público y la tecnología.',
+    'I’m Louis, a Software and Data Engineering student at NJIT and Program Coordinator with the Office of Veteran Affairs at Rutgers–Newark. My background brings together creative work, public service, and technology.': 'Soy Louis, estudiante de Ingeniería de Software y Datos en NJIT y coordinador de programas en la Oficina de Asuntos de Veteranos de Rutgers–Newark. Mi trayectoria combina el trabajo creativo, el servicio público y la tecnología.',
     'Follow the story ↓': 'Sigue mi historia ↓',
     '01 / The perspective': '01 / La perspectiva',
     'Different disciplines.': 'Distintas disciplinas.',
