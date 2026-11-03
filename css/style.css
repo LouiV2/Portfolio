@@ -1135,6 +1135,33 @@ html[data-theme="light"] main::after { filter: brightness(.55); }
   .about-instrument { width: 88px; height: 88px; }
 }
 
+html.gallery-open { overflow: hidden; }
+.project-gallery {
+  width: min(1100px, 96vw);
+  max-width: 96vw;
+  max-height: 94vh;
+  max-height: 94dvh;
+  padding: clamp(12px, 3vw, 24px);
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--ink);
+}
+.project-gallery::backdrop { background: #080b10e8; }
+.gallery-toolbar, .gallery-controls { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.gallery-toolbar h2 { margin: 0; font-size: 20px; }
+.project-gallery button { min-height: 44px; padding: 10px 14px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); font: inherit; cursor: pointer; }
+.project-gallery button:hover { border-color: var(--accent); }
+.project-gallery button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.gallery-stage { margin-block: 16px; touch-action: pan-y pinch-zoom; }
+.gallery-image { display: block; width: 100%; height: 60vh; height: 60dvh; object-fit: contain; }
+.gallery-caption { margin-bottom: 16px; color: var(--ink); }
+.gallery-count { white-space: nowrap; color: var(--accent); font-family: Consolas, "Courier New", monospace; }
+.gallery-hint { margin: 12px 0 0; color: var(--muted); font-size: 14px; }
+@media (max-width: 580px) {
+  .gallery-image { height: 50vh; height: 50dvh; }
+  .project-gallery button { padding-inline: 10px; font-size: 14px; }
+}
+
 .menu-toggle {
   display: inline-flex;
   align-items: center;

@@ -6,7 +6,7 @@
     <meta name="description" content="Projects — Louis Valderrama’s personal portfolio.">
     <title>Projects | Louis Valderrama</title>
     <script src="js/theme.js"></script>
-    <link rel="stylesheet" href="css/style.css?v=mobile-menu-1">
+    <link rel="stylesheet" href="css/style.css?v=project-gallery-1">
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -152,6 +152,22 @@
         <a class="text-link" href="contact.html">Get in touch &rarr;</a>
       </section>
     </main>
+    <dialog class="project-gallery" aria-labelledby="gallery-title">
+      <div class="gallery-toolbar">
+        <h2 id="gallery-title">Project screenshots</h2>
+        <button class="gallery-close" type="button" autofocus>Close</button>
+      </div>
+      <div class="gallery-stage">
+        <img class="gallery-image" alt="">
+      </div>
+      <p class="gallery-caption" aria-live="polite" aria-atomic="true"></p>
+      <div class="gallery-controls">
+        <button class="gallery-previous" type="button">Previous image</button>
+        <span class="gallery-count"></span>
+        <button class="gallery-next" type="button">Next image</button>
+      </div>
+      <p class="gallery-hint">Swipe left or right, or use the arrow buttons.</p>
+    </dialog>
     <footer>
       <p>&copy; 2026 Louis Valderrama</p>
       <a href="contact.html">Contact</a>
@@ -162,5 +178,6 @@
     <script src="js/navigation.js" defer></script>
     <script src="js/hud-motion.js" defer></script>
     <script src="js/projects-story.js" defer></script>
+    <script src="js/project-gallery.js" defer></script>
   </body>
 </html>
