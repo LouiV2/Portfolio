@@ -983,7 +983,7 @@ html[data-theme="light"] main::after { filter: brightness(.55); }
     grid-row: 2;
     align-self: center;
     margin-top: 0;
-    transform: none;
+    transform: translateX(-24px);
   }
   .home-page .hero .profile-panel { grid-column: 3; grid-row: 2; }
   .home-page .hero .lead { grid-column: 1 / 3; grid-row: 3; margin: 0; }
