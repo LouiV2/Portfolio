@@ -6,7 +6,7 @@
     <meta name="description" content="Louis Valderrama’s personal portfolio. NJIT Software and Data Engineering student with a background in art, public administration, and technology.">
     <title>Home | Louis Valderrama</title>
     <script src="js/theme.js"></script>
-    <link rel="stylesheet" href="css/style.css?v=hero-tagline-8">
+    <link rel="stylesheet" href="css/style.css?v=mobile-menu-1">
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -25,7 +25,8 @@
         <a class="brand" href="index.html" aria-label="Louis Valderrama home">Louis Valderrama<span>.</span>
         </a>
       </div>
-      <nav aria-label="Main navigation">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation" hidden><span class="menu-icon" aria-hidden="true"></span><span>Menu</span></button>
+      <nav id="main-navigation" aria-label="Main navigation">
         <a href="index.html" aria-current="page">Home</a>
         <a href="about.html">About Me</a>
         <a href="projects.html">Projects</a>
@@ -122,6 +123,7 @@
       <button class="motion-toggle" type="button" aria-pressed="false" hidden>Pause HUD motion</button>
     </footer>
     <script src="js/language.js" defer></script>
+    <script src="js/navigation.js" defer></script>
     <script src="js/hud-motion.js" defer></script>
     <script src="js/projects-story.js" defer></script>
   </body>

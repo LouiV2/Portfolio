@@ -6,14 +6,15 @@
     <meta name="description" content="Projects — Louis Valderrama’s personal portfolio.">
     <title>Projects | Louis Valderrama</title>
     <script src="js/theme.js"></script>
-    <link rel="stylesheet" href="css/style.css?v=header-switches-1">
+    <link rel="stylesheet" href="css/style.css?v=mobile-menu-1">
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
       <a class="brand" href="index.html" aria-label="Louis Valderrama home">Louis Valderrama<span>.</span>
       </a>
-      <nav aria-label="Main navigation">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation" hidden><span class="menu-icon" aria-hidden="true"></span><span>Menu</span></button>
+      <nav id="main-navigation" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="about.html">About Me</a>
         <a href="projects.html" aria-current="page">Projects</a>
@@ -158,6 +159,7 @@
       <button class="motion-toggle" type="button" aria-pressed="false" hidden>Pause HUD motion</button>
     </footer>
     <script src="js/language.js" defer></script>
+    <script src="js/navigation.js" defer></script>
     <script src="js/hud-motion.js" defer></script>
     <script src="js/projects-story.js" defer></script>
   </body>
