@@ -1029,7 +1029,8 @@ html[data-theme="light"] main::after { filter: brightness(.55); }
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  text-align: center;
   justify-content: center;
   gap: 12px;
   min-width: 0;
