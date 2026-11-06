@@ -27,7 +27,7 @@ $checks.T8 = @($pages | Where-Object {
     $text = $contents[$_]
     @($pages | Where-Object { $text -notmatch ('href="' + [regex]::Escape($_) + '"') }).Count -gt 0
 }).Count -eq 0
-$checks.T9 = $contents['contact.html'].Contains('href="mailto:LV285@njit.edu"')
+$checks.T9 = $contents['contact.html'].Contains('href="mailto:lv285aTNJIT.edu"')
 $checks.T10 = @('name', 'email', 'message' | Where-Object {
     $contents['contact.html'] -notmatch ('<label for="contact-' + $_ + '"') -or
     $contents['contact.html'] -notmatch ('id="contact-' + $_ + '"[^>]*required')

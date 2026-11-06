@@ -49,7 +49,7 @@ contactForm.addEventListener('submit', (event) => {
   const [name, email, message] = contactFields.map(({ input }) => input.value.trim());
   const subject = window.portfolioTranslate('Portfolio inquiry');
   const body = `${window.portfolioTranslate('Name:')} ${name}\n${window.portfolioTranslate('Email:')} ${email}\n\n${message}`;
-  emailDraft.href = `mailto:LV285@njit.edu?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  emailDraft.href = `mailto:lv285aTNJIT.edu?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   emailDraft.hidden = false;
   contactStatus.textContent = window.portfolioTranslate('Your draft is ready. Open it in your email app, review it, and send it there. No message has been sent.');
 });

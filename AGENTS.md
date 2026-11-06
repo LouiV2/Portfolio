@@ -20,7 +20,7 @@ The owner is Louis Valderrama, an NJIT Software and Data Engineering student.
 The Projects page must eventually include at least three real projects, each
 with a description, image or screenshot, and a link if applicable. Clearly
 labeled placeholders are temporary until Louis supplies the project details.
-Contact uses a direct email link to LV285@njit.edu. A form is optional; if added,
+Contact uses a direct email link to lv285aTNJIT.edu. A form is optional; if added,
 validate it with JavaScript and direct visitors to email without claiming it sends.
 
 ## Design

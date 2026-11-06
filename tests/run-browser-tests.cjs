@@ -161,7 +161,7 @@ async function keyboardActivate(locator, page) {
             await a.focus();
           if (/^mailto:/.test(link.href)) {
             check(
-              link.href.startsWith("mailto:LV285@njit.edu"),
+              link.href.startsWith("mailto:lv285aTNJIT.edu"),
               "Wrong email recipient",
             );
             results.links.push({
@@ -468,7 +468,7 @@ async function keyboardActivate(locator, page) {
     await fill(p);
     await submit(p);
     const href = await p.locator("#email-draft").getAttribute("href");
-    check(href.startsWith("mailto:LV285@njit.edu?"), "Wrong mailto");
+    check(href.startsWith("mailto:lv285aTNJIT.edu?"), "Wrong mailto");
     check(
       decodeURIComponent(href).includes("C++ & Python?"),
       "Punctuation encoding lost",

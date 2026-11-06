@@ -1444,15 +1444,15 @@
       "page": "contact.html",
       "width": 375,
       "index": 8,
-      "href": "mailto:LV285@njit.edu",
-      "text": "LV285@njit.edu",
+      "href": "mailto:lv285aTNJIT.edu",
+      "text": "lv285aTNJIT.edu",
       "result": "Recipient verified; email app not opened"
     },
     {
       "page": "contact.html",
       "width": 375,
       "index": 9,
-      "href": "mailto:LV285@njit.edu?subject=Portfolio%20inquiry\u0026body=Name%3A%20Test%20Visitor%0AEmail%3A%20visitor%40example.com%0A%0AHello%20Louis!%20Can%20we%20discuss%20C%2B%2B%20%26%20Python%3F",
+      "href": "mailto:lv285aTNJIT.edu?subject=Portfolio%20inquiry\u0026body=Name%3A%20Test%20Visitor%0AEmail%3A%20visitor%40example.com%0A%0AHello%20Louis!%20Can%20we%20discuss%20C%2B%2B%20%26%20Python%3F",
       "text": "Open draft in email app ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢",
       "result": "Recipient verified; email app not opened"
     },
@@ -1548,15 +1548,15 @@
       "page": "contact.html",
       "width": 1366,
       "index": 8,
-      "href": "mailto:LV285@njit.edu",
-      "text": "LV285@njit.edu",
+      "href": "mailto:lv285aTNJIT.edu",
+      "text": "lv285aTNJIT.edu",
       "result": "Recipient verified; email app not opened"
     },
     {
       "page": "contact.html",
       "width": 1366,
       "index": 9,
-      "href": "mailto:LV285@njit.edu?subject=Portfolio%20inquiry\u0026body=Name%3A%20Test%20Visitor%0AEmail%3A%20visitor%40example.com%0A%0AHello%20Louis!%20Can%20we%20discuss%20C%2B%2B%20%26%20Python%3F",
+      "href": "mailto:lv285aTNJIT.edu?subject=Portfolio%20inquiry\u0026body=Name%3A%20Test%20Visitor%0AEmail%3A%20visitor%40example.com%0A%0AHello%20Louis!%20Can%20we%20discuss%20C%2B%2B%20%26%20Python%3F",
       "text": "Open draft in email app ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢",
       "result": "Recipient verified; email app not opened"
     },
