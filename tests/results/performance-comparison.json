@@ -1,0 +1,69 @@
+{
+  "note": "Local comparison; scores vary with environment. No animation code changed.",
+  "before": {
+    "phase": "before",
+    "url": "http://127.0.0.1:55098/index.html",
+    "date": "2026-11-06T02:08:40.432Z",
+    "runs": {
+      "mobile": {
+        "performance": 54,
+        "accessibility": 100,
+        "lighthouseVersion": "12.8.2",
+        "metrics": {
+          "first-contentful-paint": 3303.31365,
+          "largest-contentful-paint": 23252.2091,
+          "total-blocking-time": 0,
+          "cumulative-layout-shift": 0.278013161280545,
+          "speed-index": 3303.31365,
+          "total-byte-weight": 4355789
+        }
+      },
+      "desktop": {
+        "performance": 57,
+        "accessibility": 100,
+        "lighthouseVersion": "12.8.2",
+        "metrics": {
+          "first-contentful-paint": 3305.7608999999998,
+          "largest-contentful-paint": 23403.8406,
+          "total-blocking-time": 0,
+          "cumulative-layout-shift": 0.011992584687098332,
+          "speed-index": 3305.7608999999998,
+          "total-byte-weight": 4356597
+        }
+      }
+    }
+  },
+  "after": {
+    "phase": "after",
+    "url": "http://127.0.0.1:64251/index.html",
+    "date": "2026-11-06T02:09:54.389Z",
+    "runs": {
+      "mobile": {
+        "performance": 94,
+        "accessibility": 100,
+        "lighthouseVersion": "12.8.2",
+        "metrics": {
+          "first-contentful-paint": 1205.3776,
+          "largest-contentful-paint": 3005.3776,
+          "total-blocking-time": 0,
+          "cumulative-layout-shift": 0,
+          "speed-index": 1205.3776,
+          "total-byte-weight": 462674
+        }
+      },
+      "desktop": {
+        "performance": 78,
+        "accessibility": 100,
+        "lighthouseVersion": "12.8.2",
+        "metrics": {
+          "first-contentful-paint": 1353.876,
+          "largest-contentful-paint": 3078.876,
+          "total-blocking-time": 0,
+          "cumulative-layout-shift": 0,
+          "speed-index": 1353.876,
+          "total-byte-weight": 517001
+        }
+      }
+    }
+  }
+}

@@ -63,6 +63,8 @@ const mime = {
   ".jpg": "image/jpeg",
   ".svg": "image/svg+xml",
   ".ttf": "font/ttf",
+  ".woff2": "font/woff2",
+  ".webp": "image/webp",
 };
 const server = http.createServer((req, res) => {
   const filename = path.resolve(

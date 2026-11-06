@@ -1,0 +1,141 @@
+[
+  {
+    "page": "index.html",
+    "status": "Pass",
+    "loaded": true,
+    "fonts": [
+      {
+        "family": "Rajdhani",
+        "status": "loaded"
+      }
+    ],
+    "resources": [
+      "http://127.0.0.1:55849/js/theme.js",
+      "http://127.0.0.1:55849/css/style.css?v=optimized-assets-1",
+      "http://127.0.0.1:55849/fonts/Rajdhani-Bold.woff2",
+      "http://127.0.0.1:55849/images/balloon-character.webp",
+      "http://127.0.0.1:55849/js/language.js",
+      "http://127.0.0.1:55849/js/navigation.js",
+      "http://127.0.0.1:55849/js/hud-motion.js",
+      "http://127.0.0.1:55849/js/projects-story.js",
+      "http://127.0.0.1:55849/images/hud-rail.svg",
+      "http://127.0.0.1:55849/images/hud-ring.svg",
+      "http://127.0.0.1:55849/images/louis-valderrama-profile-600.webp",
+      "http://127.0.0.1:55849/images/louis-public-service.webp",
+      "http://127.0.0.1:55849/favicon.ico"
+    ],
+    "srcsets": [
+      {
+        "currentSrc": "http://127.0.0.1:55849/images/louis-valderrama-profile-600.webp",
+        "srcset": "images/louis-valderrama-profile-600.webp 600w, images/louis-valderrama-profile-1200.webp 1200w"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "page": "about.html",
+    "status": "Pass",
+    "loaded": true,
+    "fonts": [
+      {
+        "family": "Rajdhani",
+        "status": "loaded"
+      }
+    ],
+    "resources": [
+      "http://127.0.0.1:55849/js/theme.js",
+      "http://127.0.0.1:55849/fonts/Rajdhani-Bold.woff2",
+      "http://127.0.0.1:55849/css/style.css?v=optimized-assets-1",
+      "http://127.0.0.1:55849/js/language.js",
+      "http://127.0.0.1:55849/js/navigation.js",
+      "http://127.0.0.1:55849/js/hud-motion.js",
+      "http://127.0.0.1:55849/js/projects-story.js",
+      "http://127.0.0.1:55849/images/hud-rail.svg",
+      "http://127.0.0.1:55849/images/hud-ring.svg",
+      "http://127.0.0.1:55849/favicon.ico"
+    ],
+    "srcsets": [
+      {
+        "currentSrc": "",
+        "srcset": "images/louis-valderrama-profile-600.webp 600w, images/louis-valderrama-profile-1200.webp 1200w"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "page": "projects.html",
+    "status": "Pass",
+    "loaded": true,
+    "fonts": [
+      {
+        "family": "Rajdhani",
+        "status": "loaded"
+      }
+    ],
+    "resources": [
+      "http://127.0.0.1:55849/js/theme.js",
+      "http://127.0.0.1:55849/fonts/Rajdhani-Bold.woff2",
+      "http://127.0.0.1:55849/css/style.css?v=optimized-assets-1",
+      "http://127.0.0.1:55849/js/language.js",
+      "http://127.0.0.1:55849/js/navigation.js",
+      "http://127.0.0.1:55849/js/hud-motion.js",
+      "http://127.0.0.1:55849/js/projects-story.js",
+      "http://127.0.0.1:55849/js/project-gallery.js",
+      "http://127.0.0.1:55849/images/hud-rail.svg",
+      "http://127.0.0.1:55849/images/hud-ring.svg"
+    ],
+    "srcsets": [],
+    "errors": []
+  },
+  {
+    "page": "skills.html",
+    "status": "Pass",
+    "loaded": true,
+    "fonts": [
+      {
+        "family": "Rajdhani",
+        "status": "loaded"
+      }
+    ],
+    "resources": [
+      "http://127.0.0.1:55849/js/theme.js",
+      "http://127.0.0.1:55849/fonts/Rajdhani-Bold.woff2",
+      "http://127.0.0.1:55849/css/style.css?v=optimized-assets-1",
+      "http://127.0.0.1:55849/images/skills-programming-photo.jpg",
+      "http://127.0.0.1:55849/js/navigation.js",
+      "http://127.0.0.1:55849/js/hud-motion.js",
+      "http://127.0.0.1:55849/js/projects-story.js",
+      "http://127.0.0.1:55849/js/language.js",
+      "http://127.0.0.1:55849/images/hud-rail.svg",
+      "http://127.0.0.1:55849/images/hud-ring.svg",
+      "http://127.0.0.1:55849/images/heroes-for-mental-health.webp"
+    ],
+    "srcsets": [],
+    "errors": []
+  },
+  {
+    "page": "contact.html",
+    "status": "Pass",
+    "loaded": true,
+    "fonts": [
+      {
+        "family": "Rajdhani",
+        "status": "loaded"
+      }
+    ],
+    "resources": [
+      "http://127.0.0.1:55849/js/theme.js",
+      "http://127.0.0.1:55849/fonts/Rajdhani-Bold.woff2",
+      "http://127.0.0.1:55849/css/style.css?v=optimized-assets-1",
+      "http://127.0.0.1:55849/images/louis-valderrama-presentation.jpg",
+      "http://127.0.0.1:55849/js/language.js",
+      "http://127.0.0.1:55849/js/navigation.js",
+      "http://127.0.0.1:55849/js/hud-motion.js",
+      "http://127.0.0.1:55849/js/contact.js",
+      "http://127.0.0.1:55849/images/hud-rail.svg",
+      "http://127.0.0.1:55849/images/hud-ring.svg"
+    ],
+    "srcsets": [],
+    "errors": []
+  }
+]

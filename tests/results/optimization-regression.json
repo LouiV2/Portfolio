@@ -1,0 +1,63 @@
+{
+  "date": "2026-11-05 (America/New_York)",
+  "scope": "Image/font optimization working tree based on 5a02a10; historical full test run retained separately",
+  "browser": "156.0.8078.81",
+  "cases": {
+    "T21": {
+      "status": "Pass",
+      "detail": "Assertions passed."
+    },
+    "T23": {
+      "status": "Pass",
+      "detail": "Assertions passed."
+    },
+    "T24": {
+      "status": "Pass",
+      "detail": "No uncaught errors or failed local asset responses during page/control smoke test."
+    },
+    "T27": {
+      "status": "Pass",
+      "detail": "Every local link occurrence activated at phone/laptop sizes."
+    },
+    "T30": {
+      "status": "Pass",
+      "detail": "No horizontal overflow or broken images at 375x812 in both themes; screenshots captured. Visual readability not fully assessed."
+    },
+    "T31": {
+      "status": "Pass",
+      "detail": "No horizontal overflow or broken images at 1366x768 in both themes; screenshots captured. Visual readability not fully assessed."
+    },
+    "T32": {
+      "status": "Pass",
+      "detail": "No horizontal overflow or broken images at 375x812 in both themes; screenshots captured. Visual readability not fully assessed."
+    },
+    "T33": {
+      "status": "Pass",
+      "detail": "No horizontal overflow or broken images at 1366x768 in both themes; screenshots captured. Visual readability not fully assessed."
+    },
+    "T34": {
+      "status": "Pass",
+      "detail": "No horizontal overflow or broken images at 375x812 in both themes; screenshots captured. Visual readability not fully assessed."
+    },
+    "T35": {
+      "status": "Pass",
+      "detail": "No horizontal overflow or broken images at 1366x768 in both themes; screenshots captured. Visual readability not fully assessed."
+    },
+    "T36": {
+      "status": "Pass",
+      "detail": "No horizontal overflow or broken images at 375x812 in both themes; screenshots captured. Visual readability not fully assessed."
+    },
+    "T37": {
+      "status": "Pass",
+      "detail": "No horizontal overflow or broken images at 1366x768 in both themes; screenshots captured. Visual readability not fully assessed."
+    },
+    "T38": {
+      "status": "Pass",
+      "detail": "No horizontal overflow or broken images at 375x812 in both themes; screenshots captured. Visual readability not fully assessed."
+    },
+    "T39": {
+      "status": "Pass",
+      "detail": "No horizontal overflow or broken images at 1366x768 in both themes; screenshots captured. Visual readability not fully assessed."
+    }
+  }
+}

@@ -149,3 +149,21 @@ For each browser run, record:
 - Test IDs executed and their Pass/Fail results.
 - For failures: observed behavior, reproduction details, and a screenshot or console message when useful.
 - Retest date and outcome after a fix.
+
+## Image and font optimization follow-up — November 5, 2026
+
+This follow-up covers only optimized image assets, lower-page image loading, and font delivery. Original full-size images and project image links remain available. No animation CSS or JavaScript was changed. The historical 55-case results above refer to their original revision; the following checks cover the optimized working tree based on `5a02a10`.
+
+- **Pass:** T21, T23, T24, T27, and T30-T39 rerun: gallery controls and original-image links, balloon behavior, local asset smoke checks, and all five pages at phone/laptop sizes in both themes.
+- **Pass:** all 12 source checks rerun; local paths resolve. The new responsive profile candidates loaded successfully during browser layout checks.
+- **Pass:** all five pages loaded Rajdhani from WOFF2, requested no TTF, and passed the font-loading/decoding check. The font check's local server returns an empty response to Chrome's optional favicon request; this does not assert that the deployed site has a favicon.
+- Home Lighthouse comparison using the same local server setup, Lighthouse 12.8.2, a fresh Chrome profile per audit, and one run per device mode:
+
+| Mode | Before Performance | After Performance | After Accessibility |
+| --- | --- | --- | --- |
+| Mobile | 54 | 94 | 100 |
+| Desktop | 57 | 78 | 100 |
+
+Home transferred about 4.36 MB before optimization versus 0.46 MB mobile / 0.52 MB desktop afterward. Mobile Largest Contentful Paint fell from about 23.3 s to 3.0 s; measured layout shift fell to zero in both modes. These are local lab measurements; they are not directly comparable to the owner's earlier score of 83, and scores vary across devices, throttling settings, hosting, and runs.
+
+Evidence: [performance comparison](tests/results/performance-comparison.json), [four archived performance reports](tests/results/performance-reports.zip), [14 regression case results](tests/results/optimization-regression.json), and [font-loading checks](tests/results/optimized-font-checks.json). The WebP derivatives were generated with Sharp (quality 85-90 for photos/art, lossless compression for the resized Unity preview); WOFF2 was generated from the existing licensed TTF with wawoff2. Original assets and the font license are retained. These conversion tools are temporary development tools, not site dependencies.
