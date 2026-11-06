@@ -167,3 +167,22 @@ This follow-up covers only optimized image assets, lower-page image loading, and
 Home transferred about 4.36 MB before optimization versus 0.46 MB mobile / 0.52 MB desktop afterward. Mobile Largest Contentful Paint fell from about 23.3 s to 3.0 s; measured layout shift fell to zero in both modes. These are local lab measurements; they are not directly comparable to the owner's earlier score of 83, and scores vary across devices, throttling settings, hosting, and runs.
 
 Evidence: [performance comparison](tests/results/performance-comparison.json), [four archived performance reports](tests/results/performance-reports.zip), [14 regression case results](tests/results/optimization-regression.json), and [font-loading checks](tests/results/optimized-font-checks.json). The WebP derivatives were generated with Sharp (quality 85-90 for photos/art, lossless compression for the resized Unity preview); WOFF2 was generated from the existing licensed TTF with wawoff2. Original assets and the font license are retained. These conversion tools are temporary development tools, not site dependencies.
+
+## Critical-request loading follow-up — November 5, 2026
+
+Limited to shared CSS cleanup and initial theme loading, based on revision `6fcd64c`. Removed selectors for unused earlier layouts and 60 declarations superseded by later rules. The readable shared stylesheet fell from 55,452 to 47,902 bytes (about 14%). Every page now selects its saved/default palette in a small inline head script, while `js/theme.js` is deferred and handles the controls. Asset URLs were versioned for the changed stylesheet and script. Animation keyframes and behavior were preserved.
+
+- **Pass:** 60 computed-style comparisons (five pages, both themes, widths 375/580/768/850/1050/1366). Sampled layout, typography, colors, borders, and pseudo-elements matched the previous stylesheet after fonts/layout settled. Details were expanded; reduced motion froze animation for comparison. Keyframe definitions were identical. This is a sampled style-equivalence check, not an exhaustive visual-state audit.
+- **Pass:** 25 initial-theme checks (all five pages with saved light, saved dark, invalid preference, no preference, or blocked storage). The expected theme was already applied when CSS was requested while the external control script was delayed 300 ms; the switch state agreed afterward. No script errors were recorded.
+- **Pass:** T14, T19-T24, T40-T44, T53, and T54 rerun for navigation, keyboard controls, persistence, gallery behavior, reduced motion, no-JavaScript behavior, and storage/language integration. The keyboard runner now waits for focused lazy media to finish layout before measuring its bounds.
+- **Pass:** T1-T12 source checks rerun; JavaScript syntax and diff checks passed.
+- **Pass:** Lighthouse's render-blocking list no longer includes `js/theme.js`; it lists only the smaller stylesheet. The stylesheet remains render-blocking so initial content retains its correct layout.
+
+| Local Home audit | Before Performance | After Performance | After Accessibility |
+| --- | --- | --- | --- |
+| Mobile | 94 | 95 | 100 |
+| Desktop | 80 | 80 | 100 |
+
+One fresh-profile Lighthouse 12.8.2 run per device mode before and after; scores are environment-dependent. These changes shorten loading dependencies without promising a particular score increase. Hosting compression and cache headers were not changed.
+
+Evidence: [computed-style comparisons](tests/results/css-equivalence.json), [initial-theme checks](tests/results/theme-first-paint.json), [regression results](tests/results/critical-loading-regression.json), [performance and blocking-request comparison](tests/results/critical-request-comparison.json), and [four full Lighthouse reports](tests/results/critical-loading-reports.zip). Earlier test results above remain historical for their stated revisions.

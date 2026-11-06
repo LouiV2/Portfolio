@@ -1,0 +1,431 @@
+{
+  "baseline": "6fcd64c",
+  "date": "2026-11-06T02:31:36.947Z",
+  "note": "CSS-only equivalence: both runs use current HTML/JS, routing the baseline or cleaned stylesheet. Reduced motion freezes animations; every element and its pseudo-elements are compared.",
+  "beforeBytes": 55452,
+  "afterBytes": 47902,
+  "cases": [
+    {
+      "page": "index.html",
+      "theme": "dark",
+      "width": 375,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "index.html",
+      "theme": "dark",
+      "width": 580,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "index.html",
+      "theme": "dark",
+      "width": 768,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "index.html",
+      "theme": "dark",
+      "width": 850,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "index.html",
+      "theme": "dark",
+      "width": 1050,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "index.html",
+      "theme": "dark",
+      "width": 1366,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "index.html",
+      "theme": "light",
+      "width": 375,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "index.html",
+      "theme": "light",
+      "width": 580,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "index.html",
+      "theme": "light",
+      "width": 768,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "index.html",
+      "theme": "light",
+      "width": 850,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "index.html",
+      "theme": "light",
+      "width": 1050,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "index.html",
+      "theme": "light",
+      "width": 1366,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "about.html",
+      "theme": "dark",
+      "width": 375,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "about.html",
+      "theme": "dark",
+      "width": 580,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "about.html",
+      "theme": "dark",
+      "width": 768,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "about.html",
+      "theme": "dark",
+      "width": 850,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "about.html",
+      "theme": "dark",
+      "width": 1050,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "about.html",
+      "theme": "dark",
+      "width": 1366,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "about.html",
+      "theme": "light",
+      "width": 375,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "about.html",
+      "theme": "light",
+      "width": 580,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "about.html",
+      "theme": "light",
+      "width": 768,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "about.html",
+      "theme": "light",
+      "width": 850,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "about.html",
+      "theme": "light",
+      "width": 1050,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "about.html",
+      "theme": "light",
+      "width": 1366,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "projects.html",
+      "theme": "dark",
+      "width": 375,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "projects.html",
+      "theme": "dark",
+      "width": 580,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "projects.html",
+      "theme": "dark",
+      "width": 768,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "projects.html",
+      "theme": "dark",
+      "width": 850,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "projects.html",
+      "theme": "dark",
+      "width": 1050,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "projects.html",
+      "theme": "dark",
+      "width": 1366,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "projects.html",
+      "theme": "light",
+      "width": 375,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "projects.html",
+      "theme": "light",
+      "width": 580,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "projects.html",
+      "theme": "light",
+      "width": 768,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "projects.html",
+      "theme": "light",
+      "width": 850,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "projects.html",
+      "theme": "light",
+      "width": 1050,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "projects.html",
+      "theme": "light",
+      "width": 1366,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "skills.html",
+      "theme": "dark",
+      "width": 375,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "skills.html",
+      "theme": "dark",
+      "width": 580,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "skills.html",
+      "theme": "dark",
+      "width": 768,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "skills.html",
+      "theme": "dark",
+      "width": 850,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "skills.html",
+      "theme": "dark",
+      "width": 1050,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "skills.html",
+      "theme": "dark",
+      "width": 1366,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "skills.html",
+      "theme": "light",
+      "width": 375,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "skills.html",
+      "theme": "light",
+      "width": 580,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "skills.html",
+      "theme": "light",
+      "width": 768,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "skills.html",
+      "theme": "light",
+      "width": 850,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "skills.html",
+      "theme": "light",
+      "width": 1050,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "skills.html",
+      "theme": "light",
+      "width": 1366,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "contact.html",
+      "theme": "dark",
+      "width": 375,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "contact.html",
+      "theme": "dark",
+      "width": 580,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "contact.html",
+      "theme": "dark",
+      "width": 768,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "contact.html",
+      "theme": "dark",
+      "width": 850,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "contact.html",
+      "theme": "dark",
+      "width": 1050,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "contact.html",
+      "theme": "dark",
+      "width": 1366,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "contact.html",
+      "theme": "light",
+      "width": 375,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "contact.html",
+      "theme": "light",
+      "width": 580,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "contact.html",
+      "theme": "light",
+      "width": 768,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "contact.html",
+      "theme": "light",
+      "width": 850,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "contact.html",
+      "theme": "light",
+      "width": 1050,
+      "status": "Pass",
+      "differences": 0
+    },
+    {
+      "page": "contact.html",
+      "theme": "light",
+      "width": 1366,
+      "status": "Pass",
+      "differences": 0
+    }
+  ],
+  "differences": [],
+  "keyframesUnchanged": true
+}

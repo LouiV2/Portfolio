@@ -322,6 +322,19 @@ async function keyboardActivate(locator, page) {
         const visited = new Set();
         for (let n = 0; n < 120; n++) {
           await p.keyboard.press("Tab");
+          // Focus can reveal a lazy image; wait for its layout before measuring.
+          await p.waitForFunction(
+            () => {
+              const element = document.activeElement;
+              const bounds = element.getBoundingClientRect();
+              return (
+                element === document.body ||
+                (bounds.width > 0 && bounds.height > 0)
+              );
+            },
+            null,
+            { timeout: 3000 },
+          );
           const active = await p.evaluate(() => {
             const a = document.activeElement,
               s = getComputedStyle(a),

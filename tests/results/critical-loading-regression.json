@@ -1,0 +1,63 @@
+{
+  "baseRevision": "6fcd64c",
+  "scope": "Critical CSS/theme loading optimization working tree; historical full-suite results are separate",
+  "browser": "156.0.8078.81",
+  "cases": {
+    "T14": {
+      "status": "Pass",
+      "detail": "Assertions passed."
+    },
+    "T19": {
+      "status": "Pass",
+      "detail": "Assertions passed."
+    },
+    "T20": {
+      "status": "Pass",
+      "detail": "Assertions passed."
+    },
+    "T21": {
+      "status": "Pass",
+      "detail": "Assertions passed."
+    },
+    "T22": {
+      "status": "Pass",
+      "detail": "Assertions passed."
+    },
+    "T23": {
+      "status": "Pass",
+      "detail": "Assertions passed."
+    },
+    "T24": {
+      "status": "Pass",
+      "detail": "No uncaught errors or failed local asset responses during page/control smoke test."
+    },
+    "T40": {
+      "status": "Pass",
+      "detail": "Tab traversal, visible-focus state, Enter buttons/details, and page-specific keyboard assertions passed at both sizes. Email app not launched."
+    },
+    "T41": {
+      "status": "Pass",
+      "detail": "Tab traversal, visible-focus state, Enter buttons/details, and page-specific keyboard assertions passed at both sizes. Email app not launched."
+    },
+    "T42": {
+      "status": "Pass",
+      "detail": "Tab traversal, visible-focus state, Enter buttons/details, and page-specific keyboard assertions passed at both sizes. Email app not launched."
+    },
+    "T43": {
+      "status": "Pass",
+      "detail": "Tab traversal, visible-focus state, Enter buttons/details, and page-specific keyboard assertions passed at both sizes. Email app not launched."
+    },
+    "T44": {
+      "status": "Pass",
+      "detail": "Tab traversal, visible-focus state, Enter buttons/details, and page-specific keyboard assertions passed at both sizes. Email app not launched."
+    },
+    "T53": {
+      "status": "Pass",
+      "detail": "Assertions passed."
+    },
+    "T54": {
+      "status": "Pass",
+      "detail": "Assertions passed."
+    }
+  }
+}

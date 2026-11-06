@@ -1,15 +1,7 @@
 (() => {
   const root = document.documentElement;
-  let theme = 'dark';
-
-  try {
-    const savedTheme = localStorage.getItem('portfolio-theme');
-    if (savedTheme === 'light' || savedTheme === 'dark') theme = savedTheme;
-  } catch {
-    // The toggle still works when browser storage is unavailable.
-  }
-  root.dataset.theme = theme;
-
+  // The inline head script applies the saved theme before the first paint.
+  // This deferred script attaches the controls after the document is parsed.
   document.addEventListener('DOMContentLoaded', () => {
     const toggle = document.querySelector('.theme-toggle');
     if (!toggle) return;

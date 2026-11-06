@@ -1,0 +1,109 @@
+{
+  "note": "Local single-run comparison per device mode; scores vary. Changes are limited to CSS cleanup and early theme initialization. Animation keyframes unchanged.",
+  "before": {
+    "phase": "before",
+    "url": "http://127.0.0.1:51157/index.html",
+    "date": "2026-11-06T02:27:58.109Z",
+    "runs": {
+      "mobile": {
+        "performance": 94,
+        "accessibility": 100,
+        "lighthouseVersion": "12.8.2",
+        "metrics": {
+          "first-contentful-paint": 1205.5494,
+          "largest-contentful-paint": 3005.5494,
+          "total-blocking-time": 0,
+          "cumulative-layout-shift": 0,
+          "speed-index": 1205.5494,
+          "total-byte-weight": 462674
+        },
+        "renderBlockingResources": [
+          {
+            "url": "/css/style.css",
+            "bytes": 55620,
+            "estimatedBlockingMs": 603
+          },
+          {
+            "url": "/js/theme.js",
+            "bytes": 1340,
+            "estimatedBlockingMs": 303
+          }
+        ]
+      },
+      "desktop": {
+        "performance": 80,
+        "accessibility": 100,
+        "lighthouseVersion": "12.8.2",
+        "metrics": {
+          "first-contentful-paint": 1203.5437,
+          "largest-contentful-paint": 3078.5437,
+          "total-blocking-time": 0,
+          "cumulative-layout-shift": 0,
+          "speed-index": 1203.5437,
+          "total-byte-weight": 517001
+        },
+        "renderBlockingResources": [
+          {
+            "url": "/css/style.css",
+            "bytes": 55620,
+            "estimatedBlockingMs": 602
+          },
+          {
+            "url": "/js/theme.js",
+            "bytes": 1340,
+            "estimatedBlockingMs": 302
+          }
+        ]
+      }
+    },
+    "revision": "6fcd64c"
+  },
+  "after": {
+    "phase": "after",
+    "url": "http://127.0.0.1:55381/index.html",
+    "date": "2026-11-06T02:33:42.026Z",
+    "runs": {
+      "mobile": {
+        "performance": 95,
+        "accessibility": 100,
+        "lighthouseVersion": "12.8.2",
+        "metrics": {
+          "first-contentful-paint": 1056.507,
+          "largest-contentful-paint": 2931.5069999999996,
+          "total-blocking-time": 0,
+          "cumulative-layout-shift": 0,
+          "speed-index": 1056.507,
+          "total-byte-weight": 455376
+        },
+        "renderBlockingResources": [
+          {
+            "url": "/css/style.css",
+            "bytes": 48070,
+            "estimatedBlockingMs": 453
+          }
+        ]
+      },
+      "desktop": {
+        "performance": 80,
+        "accessibility": 100,
+        "lighthouseVersion": "12.8.2",
+        "metrics": {
+          "first-contentful-paint": 1203.3313,
+          "largest-contentful-paint": 3003.3313,
+          "total-blocking-time": 0,
+          "cumulative-layout-shift": 0,
+          "speed-index": 1203.3313,
+          "total-byte-weight": 509703
+        },
+        "renderBlockingResources": [
+          {
+            "url": "/css/style.css",
+            "bytes": 48070,
+            "estimatedBlockingMs": 602
+          }
+        ]
+      }
+    },
+    "revision": "Working tree based on 6fcd64c"
+  }
+}

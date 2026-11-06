@@ -1,0 +1,180 @@
+{
+  "note": "Theme verified while CSS was intercepted and external theme.js delayed 300 ms; optional favicon served as empty response.",
+  "cases": [
+    {
+      "page": "index.html",
+      "preference": "light",
+      "expected": "light",
+      "earlyTheme": "light",
+      "status": "Pass"
+    },
+    {
+      "page": "index.html",
+      "preference": "dark",
+      "expected": "dark",
+      "earlyTheme": "dark",
+      "status": "Pass"
+    },
+    {
+      "page": "index.html",
+      "preference": "invalid",
+      "expected": "dark",
+      "earlyTheme": "dark",
+      "status": "Pass"
+    },
+    {
+      "page": "index.html",
+      "preference": null,
+      "expected": "dark",
+      "earlyTheme": "dark",
+      "status": "Pass"
+    },
+    {
+      "page": "index.html",
+      "preference": "blocked",
+      "expected": "dark",
+      "earlyTheme": "dark",
+      "status": "Pass"
+    },
+    {
+      "page": "about.html",
+      "preference": "light",
+      "expected": "light",
+      "earlyTheme": "light",
+      "status": "Pass"
+    },
+    {
+      "page": "about.html",
+      "preference": "dark",
+      "expected": "dark",
+      "earlyTheme": "dark",
+      "status": "Pass"
+    },
+    {
+      "page": "about.html",
+      "preference": "invalid",
+      "expected": "dark",
+      "earlyTheme": "dark",
+      "status": "Pass"
+    },
+    {
+      "page": "about.html",
+      "preference": null,
+      "expected": "dark",
+      "earlyTheme": "dark",
+      "status": "Pass"
+    },
+    {
+      "page": "about.html",
+      "preference": "blocked",
+      "expected": "dark",
+      "earlyTheme": "dark",
+      "status": "Pass"
+    },
+    {
+      "page": "projects.html",
+      "preference": "light",
+      "expected": "light",
+      "earlyTheme": "light",
+      "status": "Pass"
+    },
+    {
+      "page": "projects.html",
+      "preference": "dark",
+      "expected": "dark",
+      "earlyTheme": "dark",
+      "status": "Pass"
+    },
+    {
+      "page": "projects.html",
+      "preference": "invalid",
+      "expected": "dark",
+      "earlyTheme": "dark",
+      "status": "Pass"
+    },
+    {
+      "page": "projects.html",
+      "preference": null,
+      "expected": "dark",
+      "earlyTheme": "dark",
+      "status": "Pass"
+    },
+    {
+      "page": "projects.html",
+      "preference": "blocked",
+      "expected": "dark",
+      "earlyTheme": "dark",
+      "status": "Pass"
+    },
+    {
+      "page": "skills.html",
+      "preference": "light",
+      "expected": "light",
+      "earlyTheme": "light",
+      "status": "Pass"
+    },
+    {
+      "page": "skills.html",
+      "preference": "dark",
+      "expected": "dark",
+      "earlyTheme": "dark",
+      "status": "Pass"
+    },
+    {
+      "page": "skills.html",
+      "preference": "invalid",
+      "expected": "dark",
+      "earlyTheme": "dark",
+      "status": "Pass"
+    },
+    {
+      "page": "skills.html",
+      "preference": null,
+      "expected": "dark",
+      "earlyTheme": "dark",
+      "status": "Pass"
+    },
+    {
+      "page": "skills.html",
+      "preference": "blocked",
+      "expected": "dark",
+      "earlyTheme": "dark",
+      "status": "Pass"
+    },
+    {
+      "page": "contact.html",
+      "preference": "light",
+      "expected": "light",
+      "earlyTheme": "light",
+      "status": "Pass"
+    },
+    {
+      "page": "contact.html",
+      "preference": "dark",
+      "expected": "dark",
+      "earlyTheme": "dark",
+      "status": "Pass"
+    },
+    {
+      "page": "contact.html",
+      "preference": "invalid",
+      "expected": "dark",
+      "earlyTheme": "dark",
+      "status": "Pass"
+    },
+    {
+      "page": "contact.html",
+      "preference": null,
+      "expected": "dark",
+      "earlyTheme": "dark",
+      "status": "Pass"
+    },
+    {
+      "page": "contact.html",
+      "preference": "blocked",
+      "expected": "dark",
+      "earlyTheme": "dark",
+      "status": "Pass"
+    }
+  ]
+}
