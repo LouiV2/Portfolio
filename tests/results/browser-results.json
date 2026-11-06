@@ -1,0 +1,1664 @@
+{
+  "revision": "135e2412afd1ab36204223d18a17a58a75115b6d",
+  "date": "2026-11-06T00:00:47.475Z",
+  "cases": {
+    "T25": {
+      "status": "Pass",
+      "detail": "Every local link occurrence activated at phone/laptop sizes."
+    },
+    "T26": {
+      "status": "Pass",
+      "detail": "Every local link occurrence activated at phone/laptop sizes."
+    },
+    "T27": {
+      "status": "Pass",
+      "detail": "Every local link occurrence activated at phone/laptop sizes."
+    },
+    "T28": {
+      "status": "Blocked",
+      "detail": "BLOCKED external checks: https://www.pexels.com/de-de/foto/bildschirm-computer-daten-display-160107/: HTTP 403; https://www.pexels.com/photo/an-organizer-and-pen-beside-a-notebook-on-a-glass-desk-with-wireless-gadgets-5712118/: HTTP 403; https://www.pexels.com/de-de/foto/bildschirm-computer-daten-display-160107/: HTTP 403; https://www.pexels.com/photo/an-organizer-and-pen-beside-a-notebook-on-a-glass-desk-with-wireless-gadgets-5712118/: HTTP 403. All local link activations passed at both sizes."
+    },
+    "T29": {
+      "status": "Blocked",
+      "detail": "BLOCKED external checks: https://www.linkedin.com/in/louisvalderrama: HTTP 999; https://www.linkedin.com/in/louisvalderrama: HTTP 999. All local link activations passed at both sizes."
+    },
+    "T30": {
+      "status": "Pass",
+      "detail": "No horizontal overflow or broken images at 375x812 in both themes; screenshots captured. Visual readability not fully assessed."
+    },
+    "T31": {
+      "status": "Pass",
+      "detail": "No horizontal overflow or broken images at 1366x768 in both themes; screenshots captured. Visual readability not fully assessed."
+    },
+    "T32": {
+      "status": "Pass",
+      "detail": "No horizontal overflow or broken images at 375x812 in both themes; screenshots captured. Visual readability not fully assessed."
+    },
+    "T33": {
+      "status": "Pass",
+      "detail": "No horizontal overflow or broken images at 1366x768 in both themes; screenshots captured. Visual readability not fully assessed."
+    },
+    "T34": {
+      "status": "Pass",
+      "detail": "No horizontal overflow or broken images at 375x812 in both themes; screenshots captured. Visual readability not fully assessed."
+    },
+    "T35": {
+      "status": "Pass",
+      "detail": "No horizontal overflow or broken images at 1366x768 in both themes; screenshots captured. Visual readability not fully assessed."
+    },
+    "T36": {
+      "status": "Pass",
+      "detail": "No horizontal overflow or broken images at 375x812 in both themes; screenshots captured. Visual readability not fully assessed."
+    },
+    "T37": {
+      "status": "Pass",
+      "detail": "No horizontal overflow or broken images at 1366x768 in both themes; screenshots captured. Visual readability not fully assessed."
+    },
+    "T38": {
+      "status": "Pass",
+      "detail": "No horizontal overflow or broken images at 375x812 in both themes; screenshots captured. Visual readability not fully assessed."
+    },
+    "T39": {
+      "status": "Pass",
+      "detail": "No horizontal overflow or broken images at 1366x768 in both themes; screenshots captured. Visual readability not fully assessed."
+    },
+    "T40": {
+      "status": "Pass",
+      "detail": "Tab traversal, visible-focus state, Enter buttons/details, and page-specific keyboard assertions passed at both sizes. Email app not launched."
+    },
+    "T41": {
+      "status": "Pass",
+      "detail": "Tab traversal, visible-focus state, Enter buttons/details, and page-specific keyboard assertions passed at both sizes. Email app not launched."
+    },
+    "T42": {
+      "status": "Pass",
+      "detail": "Tab traversal, visible-focus state, Enter buttons/details, and page-specific keyboard assertions passed at both sizes. Email app not launched."
+    },
+    "T43": {
+      "status": "Pass",
+      "detail": "Tab traversal, visible-focus state, Enter buttons/details, and page-specific keyboard assertions passed at both sizes. Email app not launched."
+    },
+    "T44": {
+      "status": "Pass",
+      "detail": "Tab traversal, visible-focus state, Enter buttons/details, and page-specific keyboard assertions passed at both sizes. Email app not launched."
+    },
+    "T16": {
+      "status": "Pass",
+      "detail": "Assertions passed."
+    },
+    "T17": {
+      "status": "Pass",
+      "detail": "Encoded draft and stale reset verified; OS email app intentionally not launched."
+    },
+    "T18": {
+      "status": "Pass",
+      "detail": "Assertions passed."
+    },
+    "T55": {
+      "status": "Pass",
+      "detail": "Assertions passed."
+    },
+    "T19": {
+      "status": "Pass",
+      "detail": "Assertions passed."
+    },
+    "T20": {
+      "status": "Pass",
+      "detail": "Assertions passed."
+    },
+    "T14": {
+      "status": "Pass",
+      "detail": "Assertions passed."
+    },
+    "T21": {
+      "status": "Pass",
+      "detail": "Assertions passed."
+    },
+    "T22": {
+      "status": "Pass",
+      "detail": "Assertions passed."
+    },
+    "T23": {
+      "status": "Pass",
+      "detail": "Assertions passed."
+    },
+    "T50": {
+      "status": "Pass",
+      "detail": "Assertions passed."
+    },
+    "T51": {
+      "status": "Pass",
+      "detail": "Assertions passed."
+    },
+    "T52": {
+      "status": "Pass",
+      "detail": "Synthetic touch gestures and all seven unsupported-dialog links passed; physical-device touch not tested."
+    },
+    "T53": {
+      "status": "Pass",
+      "detail": "Assertions passed."
+    },
+    "T54": {
+      "status": "Pass",
+      "detail": "Assertions passed."
+    },
+    "T24": {
+      "status": "Pass",
+      "detail": "No uncaught errors or failed local asset responses during page/control smoke test."
+    },
+    "T13": {
+      "status": "Blocked",
+      "detail": "See T25, T26, T27, T28, T29"
+    },
+    "T15": {
+      "status": "Pass",
+      "detail": "See T40, T41, T42, T43, T44"
+    },
+    "T45": {
+      "status": "Pass",
+      "detail": "{\"mobile\":100,\"desktop\":100}"
+    },
+    "T46": {
+      "status": "Pass",
+      "detail": "{\"mobile\":100,\"desktop\":100}"
+    },
+    "T47": {
+      "status": "Pass",
+      "detail": "{\"mobile\":100,\"desktop\":100}"
+    },
+    "T48": {
+      "status": "Pass",
+      "detail": "{\"mobile\":100,\"desktop\":100}"
+    },
+    "T49": {
+      "status": "Pass",
+      "detail": "{\"mobile\":100,\"desktop\":100}"
+    },
+    "T1": {
+      "detail": "PowerShell source check; see TESTING.md for the assertion.",
+      "status": "Pass"
+    },
+    "T2": {
+      "detail": "PowerShell source check; see TESTING.md for the assertion.",
+      "status": "Pass"
+    },
+    "T3": {
+      "detail": "PowerShell source check; see TESTING.md for the assertion.",
+      "status": "Pass"
+    },
+    "T4": {
+      "detail": "PowerShell source check; see TESTING.md for the assertion.",
+      "status": "Pass"
+    },
+    "T5": {
+      "detail": "PowerShell source check; see TESTING.md for the assertion.",
+      "status": "Pass"
+    },
+    "T6": {
+      "detail": "PowerShell source check; see TESTING.md for the assertion.",
+      "status": "Pass"
+    },
+    "T7": {
+      "detail": "PowerShell source check; see TESTING.md for the assertion.",
+      "status": "Pass"
+    },
+    "T8": {
+      "detail": "PowerShell source check; see TESTING.md for the assertion.",
+      "status": "Pass"
+    },
+    "T9": {
+      "detail": "PowerShell source check; see TESTING.md for the assertion.",
+      "status": "Pass"
+    },
+    "T10": {
+      "detail": "PowerShell source check; see TESTING.md for the assertion.",
+      "status": "Pass"
+    },
+    "T11": {
+      "detail": "PowerShell source check; see TESTING.md for the assertion.",
+      "status": "Pass"
+    },
+    "T12": {
+      "detail": "PowerShell source check; see TESTING.md for the assertion.",
+      "status": "Pass"
+    }
+  },
+  "links": [
+    {
+      "page": "index.html",
+      "width": 375,
+      "index": 0,
+      "href": "#main",
+      "text": "Skip to content",
+      "result": "Pass"
+    },
+    {
+      "page": "index.html",
+      "width": 375,
+      "index": 1,
+      "href": "index.html",
+      "text": "Louis Valderrama.",
+      "result": "Pass"
+    },
+    {
+      "page": "index.html",
+      "width": 375,
+      "index": 2,
+      "href": "index.html",
+      "text": "Home",
+      "result": "Pass"
+    },
+    {
+      "page": "index.html",
+      "width": 375,
+      "index": 3,
+      "href": "about.html",
+      "text": "About Me",
+      "result": "Pass"
+    },
+    {
+      "page": "index.html",
+      "width": 375,
+      "index": 4,
+      "href": "projects.html",
+      "text": "Projects",
+      "result": "Pass"
+    },
+    {
+      "page": "index.html",
+      "width": 375,
+      "index": 5,
+      "href": "skills.html",
+      "text": "Skills",
+      "result": "Pass"
+    },
+    {
+      "page": "index.html",
+      "width": 375,
+      "index": 6,
+      "href": "contact.html",
+      "text": "Contact",
+      "result": "Pass"
+    },
+    {
+      "page": "index.html",
+      "width": 375,
+      "index": 7,
+      "href": "#perspective",
+      "text": "Follow the story ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬Å“",
+      "result": "Pass"
+    },
+    {
+      "page": "index.html",
+      "width": 375,
+      "index": 8,
+      "href": "#perspective",
+      "text": "01 The perspective",
+      "result": "Pass"
+    },
+    {
+      "page": "index.html",
+      "width": 375,
+      "index": 9,
+      "href": "#people",
+      "text": "02 The people",
+      "result": "Pass"
+    },
+    {
+      "page": "index.html",
+      "width": 375,
+      "index": 10,
+      "href": "#work",
+      "text": "03 The work ahead",
+      "result": "Pass"
+    },
+    {
+      "page": "index.html",
+      "width": 375,
+      "index": 11,
+      "href": "about.html",
+      "text": "Explore my background ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢",
+      "result": "Pass"
+    },
+    {
+      "page": "index.html",
+      "width": 375,
+      "index": 12,
+      "href": "skills.html",
+      "text": "See my creative and technical toolkit ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢",
+      "result": "Pass"
+    },
+    {
+      "page": "index.html",
+      "width": 375,
+      "index": 13,
+      "href": "projects.html",
+      "text": "Visit the projects page ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢",
+      "result": "Pass"
+    },
+    {
+      "page": "index.html",
+      "width": 375,
+      "index": 14,
+      "href": "images/work-ahead-api-notebook.png",
+      "text": "Python notebook showing an OpenWeatherMap request, weather-file output, and the start of a SQLite currency-rate table.",
+      "result": "Pass"
+    },
+    {
+      "page": "index.html",
+      "width": 375,
+      "index": 15,
+      "href": "about.html",
+      "text": "Meet Louis ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢",
+      "result": "Pass"
+    },
+    {
+      "page": "index.html",
+      "width": 375,
+      "index": 16,
+      "href": "contact.html",
+      "text": "Contact",
+      "result": "Pass"
+    },
+    {
+      "page": "index.html",
+      "width": 1366,
+      "index": 0,
+      "href": "#main",
+      "text": "Skip to content",
+      "result": "Pass"
+    },
+    {
+      "page": "index.html",
+      "width": 1366,
+      "index": 1,
+      "href": "index.html",
+      "text": "Louis Valderrama.",
+      "result": "Pass"
+    },
+    {
+      "page": "index.html",
+      "width": 1366,
+      "index": 2,
+      "href": "index.html",
+      "text": "Home",
+      "result": "Pass"
+    },
+    {
+      "page": "index.html",
+      "width": 1366,
+      "index": 3,
+      "href": "about.html",
+      "text": "About Me",
+      "result": "Pass"
+    },
+    {
+      "page": "index.html",
+      "width": 1366,
+      "index": 4,
+      "href": "projects.html",
+      "text": "Projects",
+      "result": "Pass"
+    },
+    {
+      "page": "index.html",
+      "width": 1366,
+      "index": 5,
+      "href": "skills.html",
+      "text": "Skills",
+      "result": "Pass"
+    },
+    {
+      "page": "index.html",
+      "width": 1366,
+      "index": 6,
+      "href": "contact.html",
+      "text": "Contact",
+      "result": "Pass"
+    },
+    {
+      "page": "index.html",
+      "width": 1366,
+      "index": 7,
+      "href": "#perspective",
+      "text": "Follow the story ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬Å“",
+      "result": "Pass"
+    },
+    {
+      "page": "index.html",
+      "width": 1366,
+      "index": 8,
+      "href": "#perspective",
+      "text": "01 The perspective",
+      "result": "Pass"
+    },
+    {
+      "page": "index.html",
+      "width": 1366,
+      "index": 9,
+      "href": "#people",
+      "text": "02 The people",
+      "result": "Pass"
+    },
+    {
+      "page": "index.html",
+      "width": 1366,
+      "index": 10,
+      "href": "#work",
+      "text": "03 The work ahead",
+      "result": "Pass"
+    },
+    {
+      "page": "index.html",
+      "width": 1366,
+      "index": 11,
+      "href": "about.html",
+      "text": "Explore my background ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢",
+      "result": "Pass"
+    },
+    {
+      "page": "index.html",
+      "width": 1366,
+      "index": 12,
+      "href": "skills.html",
+      "text": "See my creative and technical toolkit ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢",
+      "result": "Pass"
+    },
+    {
+      "page": "index.html",
+      "width": 1366,
+      "index": 13,
+      "href": "projects.html",
+      "text": "Visit the projects page ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢",
+      "result": "Pass"
+    },
+    {
+      "page": "index.html",
+      "width": 1366,
+      "index": 14,
+      "href": "images/work-ahead-api-notebook.png",
+      "text": "Python notebook showing an OpenWeatherMap request, weather-file output, and the start of a SQLite currency-rate table.",
+      "result": "Pass"
+    },
+    {
+      "page": "index.html",
+      "width": 1366,
+      "index": 15,
+      "href": "about.html",
+      "text": "Meet Louis ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢",
+      "result": "Pass"
+    },
+    {
+      "page": "index.html",
+      "width": 1366,
+      "index": 16,
+      "href": "contact.html",
+      "text": "Contact",
+      "result": "Pass"
+    },
+    {
+      "page": "about.html",
+      "width": 375,
+      "index": 0,
+      "href": "#main",
+      "text": "Skip to content",
+      "result": "Pass"
+    },
+    {
+      "page": "about.html",
+      "width": 375,
+      "index": 1,
+      "href": "index.html",
+      "text": "Louis Valderrama.",
+      "result": "Pass"
+    },
+    {
+      "page": "about.html",
+      "width": 375,
+      "index": 2,
+      "href": "index.html",
+      "text": "Home",
+      "result": "Pass"
+    },
+    {
+      "page": "about.html",
+      "width": 375,
+      "index": 3,
+      "href": "about.html",
+      "text": "About Me",
+      "result": "Pass"
+    },
+    {
+      "page": "about.html",
+      "width": 375,
+      "index": 4,
+      "href": "projects.html",
+      "text": "Projects",
+      "result": "Pass"
+    },
+    {
+      "page": "about.html",
+      "width": 375,
+      "index": 5,
+      "href": "skills.html",
+      "text": "Skills",
+      "result": "Pass"
+    },
+    {
+      "page": "about.html",
+      "width": 375,
+      "index": 6,
+      "href": "contact.html",
+      "text": "Contact",
+      "result": "Pass"
+    },
+    {
+      "page": "about.html",
+      "width": 375,
+      "index": 7,
+      "href": "#background",
+      "text": "Follow my path ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬Å“",
+      "result": "Pass"
+    },
+    {
+      "page": "about.html",
+      "width": 375,
+      "index": 8,
+      "href": "#background",
+      "text": "01 / My background",
+      "result": "Pass"
+    },
+    {
+      "page": "about.html",
+      "width": 375,
+      "index": 9,
+      "href": "#education",
+      "text": "02 / Education",
+      "result": "Pass"
+    },
+    {
+      "page": "about.html",
+      "width": 375,
+      "index": 10,
+      "href": "#service",
+      "text": "03 / Public service",
+      "result": "Pass"
+    },
+    {
+      "page": "about.html",
+      "width": 375,
+      "index": 11,
+      "href": "#interests",
+      "text": "04 / Outside of work \u0026 school",
+      "result": "Pass"
+    },
+    {
+      "page": "about.html",
+      "width": 375,
+      "index": 12,
+      "href": "#education",
+      "text": "Explore the education behind it ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬Å“",
+      "result": "Pass"
+    },
+    {
+      "page": "about.html",
+      "width": 375,
+      "index": 13,
+      "href": "#service",
+      "text": "From education to public service ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬Å“",
+      "result": "Pass"
+    },
+    {
+      "page": "about.html",
+      "width": 375,
+      "index": 14,
+      "href": "#interests",
+      "text": "Outside of work \u0026 school ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬Å“",
+      "result": "Pass"
+    },
+    {
+      "page": "about.html",
+      "width": 375,
+      "index": 15,
+      "href": "skills.html",
+      "text": "Explore my skills ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢",
+      "result": "Pass"
+    },
+    {
+      "page": "about.html",
+      "width": 375,
+      "index": 16,
+      "href": "contact.html",
+      "text": "Contact",
+      "result": "Pass"
+    },
+    {
+      "page": "about.html",
+      "width": 1366,
+      "index": 0,
+      "href": "#main",
+      "text": "Skip to content",
+      "result": "Pass"
+    },
+    {
+      "page": "about.html",
+      "width": 1366,
+      "index": 1,
+      "href": "index.html",
+      "text": "Louis Valderrama.",
+      "result": "Pass"
+    },
+    {
+      "page": "about.html",
+      "width": 1366,
+      "index": 2,
+      "href": "index.html",
+      "text": "Home",
+      "result": "Pass"
+    },
+    {
+      "page": "about.html",
+      "width": 1366,
+      "index": 3,
+      "href": "about.html",
+      "text": "About Me",
+      "result": "Pass"
+    },
+    {
+      "page": "about.html",
+      "width": 1366,
+      "index": 4,
+      "href": "projects.html",
+      "text": "Projects",
+      "result": "Pass"
+    },
+    {
+      "page": "about.html",
+      "width": 1366,
+      "index": 5,
+      "href": "skills.html",
+      "text": "Skills",
+      "result": "Pass"
+    },
+    {
+      "page": "about.html",
+      "width": 1366,
+      "index": 6,
+      "href": "contact.html",
+      "text": "Contact",
+      "result": "Pass"
+    },
+    {
+      "page": "about.html",
+      "width": 1366,
+      "index": 7,
+      "href": "#background",
+      "text": "Follow my path ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬Å“",
+      "result": "Pass"
+    },
+    {
+      "page": "about.html",
+      "width": 1366,
+      "index": 8,
+      "href": "#background",
+      "text": "01 / My background",
+      "result": "Pass"
+    },
+    {
+      "page": "about.html",
+      "width": 1366,
+      "index": 9,
+      "href": "#education",
+      "text": "02 / Education",
+      "result": "Pass"
+    },
+    {
+      "page": "about.html",
+      "width": 1366,
+      "index": 10,
+      "href": "#service",
+      "text": "03 / Public service",
+      "result": "Pass"
+    },
+    {
+      "page": "about.html",
+      "width": 1366,
+      "index": 11,
+      "href": "#interests",
+      "text": "04 / Outside of work \u0026 school",
+      "result": "Pass"
+    },
+    {
+      "page": "about.html",
+      "width": 1366,
+      "index": 12,
+      "href": "#education",
+      "text": "Explore the education behind it ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬Å“",
+      "result": "Pass"
+    },
+    {
+      "page": "about.html",
+      "width": 1366,
+      "index": 13,
+      "href": "#service",
+      "text": "From education to public service ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬Å“",
+      "result": "Pass"
+    },
+    {
+      "page": "about.html",
+      "width": 1366,
+      "index": 14,
+      "href": "#interests",
+      "text": "Outside of work \u0026 school ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬Å“",
+      "result": "Pass"
+    },
+    {
+      "page": "about.html",
+      "width": 1366,
+      "index": 15,
+      "href": "skills.html",
+      "text": "Explore my skills ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢",
+      "result": "Pass"
+    },
+    {
+      "page": "about.html",
+      "width": 1366,
+      "index": 16,
+      "href": "contact.html",
+      "text": "Contact",
+      "result": "Pass"
+    },
+    {
+      "page": "projects.html",
+      "width": 375,
+      "index": 0,
+      "href": "#main",
+      "text": "Skip to content",
+      "result": "Pass"
+    },
+    {
+      "page": "projects.html",
+      "width": 375,
+      "index": 1,
+      "href": "index.html",
+      "text": "Louis Valderrama.",
+      "result": "Pass"
+    },
+    {
+      "page": "projects.html",
+      "width": 375,
+      "index": 2,
+      "href": "index.html",
+      "text": "Home",
+      "result": "Pass"
+    },
+    {
+      "page": "projects.html",
+      "width": 375,
+      "index": 3,
+      "href": "about.html",
+      "text": "About Me",
+      "result": "Pass"
+    },
+    {
+      "page": "projects.html",
+      "width": 375,
+      "index": 4,
+      "href": "projects.html",
+      "text": "Projects",
+      "result": "Pass"
+    },
+    {
+      "page": "projects.html",
+      "width": 375,
+      "index": 5,
+      "href": "skills.html",
+      "text": "Skills",
+      "result": "Pass"
+    },
+    {
+      "page": "projects.html",
+      "width": 375,
+      "index": 6,
+      "href": "contact.html",
+      "text": "Contact",
+      "result": "Pass"
+    },
+    {
+      "page": "projects.html",
+      "width": 375,
+      "index": 7,
+      "href": "#chapter-1",
+      "text": "01 Alien Escape",
+      "result": "Pass"
+    },
+    {
+      "page": "projects.html",
+      "width": 375,
+      "index": 8,
+      "href": "#chapter-2",
+      "text": "02 Sorting Algorithms",
+      "result": "Pass"
+    },
+    {
+      "page": "projects.html",
+      "width": 375,
+      "index": 9,
+      "href": "#chapter-3",
+      "text": "03 News Aggregator",
+      "result": "Pass"
+    },
+    {
+      "page": "projects.html",
+      "width": 375,
+      "index": 10,
+      "href": "images/project-1-unity-game.png",
+      "text": "Unity editor showing a nighttime forest game scene with a UFO, characters, pickup count, and timer.",
+      "result": "Pass"
+    },
+    {
+      "page": "projects.html",
+      "width": 375,
+      "index": 11,
+      "href": "images/project-1-player-controller.png",
+      "text": "Visual Studio Code showing the C# PlayerController script, including startup, movement input, and pickup-count logic.",
+      "result": "Pass"
+    },
+    {
+      "page": "projects.html",
+      "width": 375,
+      "index": 12,
+      "href": "images/project-2-sorting-1.png",
+      "text": "C++ implementations of insertion sort, selection sort, and bubble sort.",
+      "result": "Pass"
+    },
+    {
+      "page": "projects.html",
+      "width": 375,
+      "index": 13,
+      "href": "images/project-2-sorting-2.png",
+      "text": "C++ array-printing function, integer input, range checks, and sorting algorithm menu.",
+      "result": "Pass"
+    },
+    {
+      "page": "projects.html",
+      "width": 375,
+      "index": 14,
+      "href": "images/project-2-sorting-3.png",
+      "text": "C++ switch statement calling the selected sorting function and printing the sorted array.",
+      "result": "Pass"
+    },
+    {
+      "page": "projects.html",
+      "width": 375,
+      "index": 15,
+      "href": "images/project-3-news-01.png",
+      "text": "Python notebook showing topic input, NewsAPI requests, and SQLite news-table creation.",
+      "result": "Pass"
+    },
+    {
+      "page": "projects.html",
+      "width": 375,
+      "index": 16,
+      "href": "images/project-3-news-02.png",
+      "text": "Python functions inserting articles into SQLite without duplicate headlines and displaying numbered article details.",
+      "result": "Pass"
+    },
+    {
+      "page": "projects.html",
+      "width": 375,
+      "index": 17,
+      "href": "contact.html",
+      "text": "Get in touch ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢",
+      "result": "Pass"
+    },
+    {
+      "page": "projects.html",
+      "width": 375,
+      "index": 18,
+      "href": "contact.html",
+      "text": "Contact",
+      "result": "Pass"
+    },
+    {
+      "page": "projects.html",
+      "width": 1366,
+      "index": 0,
+      "href": "#main",
+      "text": "Skip to content",
+      "result": "Pass"
+    },
+    {
+      "page": "projects.html",
+      "width": 1366,
+      "index": 1,
+      "href": "index.html",
+      "text": "Louis Valderrama.",
+      "result": "Pass"
+    },
+    {
+      "page": "projects.html",
+      "width": 1366,
+      "index": 2,
+      "href": "index.html",
+      "text": "Home",
+      "result": "Pass"
+    },
+    {
+      "page": "projects.html",
+      "width": 1366,
+      "index": 3,
+      "href": "about.html",
+      "text": "About Me",
+      "result": "Pass"
+    },
+    {
+      "page": "projects.html",
+      "width": 1366,
+      "index": 4,
+      "href": "projects.html",
+      "text": "Projects",
+      "result": "Pass"
+    },
+    {
+      "page": "projects.html",
+      "width": 1366,
+      "index": 5,
+      "href": "skills.html",
+      "text": "Skills",
+      "result": "Pass"
+    },
+    {
+      "page": "projects.html",
+      "width": 1366,
+      "index": 6,
+      "href": "contact.html",
+      "text": "Contact",
+      "result": "Pass"
+    },
+    {
+      "page": "projects.html",
+      "width": 1366,
+      "index": 7,
+      "href": "#chapter-1",
+      "text": "01 Alien Escape",
+      "result": "Pass"
+    },
+    {
+      "page": "projects.html",
+      "width": 1366,
+      "index": 8,
+      "href": "#chapter-2",
+      "text": "02 Sorting Algorithms",
+      "result": "Pass"
+    },
+    {
+      "page": "projects.html",
+      "width": 1366,
+      "index": 9,
+      "href": "#chapter-3",
+      "text": "03 News Aggregator",
+      "result": "Pass"
+    },
+    {
+      "page": "projects.html",
+      "width": 1366,
+      "index": 10,
+      "href": "images/project-1-unity-game.png",
+      "text": "Unity editor showing a nighttime forest game scene with a UFO, characters, pickup count, and timer.",
+      "result": "Pass"
+    },
+    {
+      "page": "projects.html",
+      "width": 1366,
+      "index": 11,
+      "href": "images/project-1-player-controller.png",
+      "text": "Visual Studio Code showing the C# PlayerController script, including startup, movement input, and pickup-count logic.",
+      "result": "Pass"
+    },
+    {
+      "page": "projects.html",
+      "width": 1366,
+      "index": 12,
+      "href": "images/project-2-sorting-1.png",
+      "text": "C++ implementations of insertion sort, selection sort, and bubble sort.",
+      "result": "Pass"
+    },
+    {
+      "page": "projects.html",
+      "width": 1366,
+      "index": 13,
+      "href": "images/project-2-sorting-2.png",
+      "text": "C++ array-printing function, integer input, range checks, and sorting algorithm menu.",
+      "result": "Pass"
+    },
+    {
+      "page": "projects.html",
+      "width": 1366,
+      "index": 14,
+      "href": "images/project-2-sorting-3.png",
+      "text": "C++ switch statement calling the selected sorting function and printing the sorted array.",
+      "result": "Pass"
+    },
+    {
+      "page": "projects.html",
+      "width": 1366,
+      "index": 15,
+      "href": "images/project-3-news-01.png",
+      "text": "Python notebook showing topic input, NewsAPI requests, and SQLite news-table creation.",
+      "result": "Pass"
+    },
+    {
+      "page": "projects.html",
+      "width": 1366,
+      "index": 16,
+      "href": "images/project-3-news-02.png",
+      "text": "Python functions inserting articles into SQLite without duplicate headlines and displaying numbered article details.",
+      "result": "Pass"
+    },
+    {
+      "page": "projects.html",
+      "width": 1366,
+      "index": 17,
+      "href": "contact.html",
+      "text": "Get in touch ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢",
+      "result": "Pass"
+    },
+    {
+      "page": "projects.html",
+      "width": 1366,
+      "index": 18,
+      "href": "contact.html",
+      "text": "Contact",
+      "result": "Pass"
+    },
+    {
+      "page": "skills.html",
+      "width": 375,
+      "index": 0,
+      "href": "#main",
+      "text": "Skip to content",
+      "result": "Pass"
+    },
+    {
+      "page": "skills.html",
+      "width": 375,
+      "index": 1,
+      "href": "index.html",
+      "text": "Louis Valderrama.",
+      "result": "Pass"
+    },
+    {
+      "page": "skills.html",
+      "width": 375,
+      "index": 2,
+      "href": "index.html",
+      "text": "Home",
+      "result": "Pass"
+    },
+    {
+      "page": "skills.html",
+      "width": 375,
+      "index": 3,
+      "href": "about.html",
+      "text": "About Me",
+      "result": "Pass"
+    },
+    {
+      "page": "skills.html",
+      "width": 375,
+      "index": 4,
+      "href": "projects.html",
+      "text": "Projects",
+      "result": "Pass"
+    },
+    {
+      "page": "skills.html",
+      "width": 375,
+      "index": 5,
+      "href": "skills.html",
+      "text": "Skills",
+      "result": "Pass"
+    },
+    {
+      "page": "skills.html",
+      "width": 375,
+      "index": 6,
+      "href": "contact.html",
+      "text": "Contact",
+      "result": "Pass"
+    },
+    {
+      "page": "skills.html",
+      "width": 375,
+      "index": 7,
+      "href": "#skill-chapter-1",
+      "text": "01 Languages",
+      "result": "Pass"
+    },
+    {
+      "page": "skills.html",
+      "width": 375,
+      "index": 8,
+      "href": "#skill-chapter-2",
+      "text": "02 Creative tools",
+      "result": "Pass"
+    },
+    {
+      "page": "skills.html",
+      "width": 375,
+      "index": 9,
+      "href": "#skill-chapter-3",
+      "text": "03 Everyday tools",
+      "result": "Pass"
+    },
+    {
+      "page": "skills.html",
+      "width": 375,
+      "index": 10,
+      "href": "https://www.pexels.com/de-de/foto/bildschirm-computer-daten-display-160107/",
+      "text": "Photo: Negative Space / Pexels",
+      "result": "External request attempted; see case detail"
+    },
+    {
+      "page": "skills.html",
+      "width": 375,
+      "index": 11,
+      "href": "projects.html#chapter-2",
+      "text": "See Sorting Algorithms ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢",
+      "result": "Pass"
+    },
+    {
+      "page": "skills.html",
+      "width": 375,
+      "index": 12,
+      "href": "projects.html#chapter-1",
+      "text": "See Alien Escape ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢",
+      "result": "Pass"
+    },
+    {
+      "page": "skills.html",
+      "width": 375,
+      "index": 13,
+      "href": "projects.html#chapter-3",
+      "text": "See News Aggregator ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢",
+      "result": "Pass"
+    },
+    {
+      "page": "skills.html",
+      "width": 375,
+      "index": 14,
+      "href": "images/heroes-for-mental-health.png",
+      "text": "Heroes for Mental Health ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â View full image",
+      "result": "Pass"
+    },
+    {
+      "page": "skills.html",
+      "width": 375,
+      "index": 15,
+      "href": "projects.html#chapter-1",
+      "text": "See Alien Escape ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢",
+      "result": "Pass"
+    },
+    {
+      "page": "skills.html",
+      "width": 375,
+      "index": 16,
+      "href": "https://www.pexels.com/photo/an-organizer-and-pen-beside-a-notebook-on-a-glass-desk-with-wireless-gadgets-5712118/",
+      "text": "Photo: Arina Krasnikova / Pexels",
+      "result": "External request attempted; see case detail"
+    },
+    {
+      "page": "skills.html",
+      "width": 375,
+      "index": 17,
+      "href": "projects.html",
+      "text": "Explore the projects ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢",
+      "result": "Pass"
+    },
+    {
+      "page": "skills.html",
+      "width": 375,
+      "index": 18,
+      "href": "contact.html",
+      "text": "Contact",
+      "result": "Pass"
+    },
+    {
+      "page": "skills.html",
+      "width": 1366,
+      "index": 0,
+      "href": "#main",
+      "text": "Skip to content",
+      "result": "Pass"
+    },
+    {
+      "page": "skills.html",
+      "width": 1366,
+      "index": 1,
+      "href": "index.html",
+      "text": "Louis Valderrama.",
+      "result": "Pass"
+    },
+    {
+      "page": "skills.html",
+      "width": 1366,
+      "index": 2,
+      "href": "index.html",
+      "text": "Home",
+      "result": "Pass"
+    },
+    {
+      "page": "skills.html",
+      "width": 1366,
+      "index": 3,
+      "href": "about.html",
+      "text": "About Me",
+      "result": "Pass"
+    },
+    {
+      "page": "skills.html",
+      "width": 1366,
+      "index": 4,
+      "href": "projects.html",
+      "text": "Projects",
+      "result": "Pass"
+    },
+    {
+      "page": "skills.html",
+      "width": 1366,
+      "index": 5,
+      "href": "skills.html",
+      "text": "Skills",
+      "result": "Pass"
+    },
+    {
+      "page": "skills.html",
+      "width": 1366,
+      "index": 6,
+      "href": "contact.html",
+      "text": "Contact",
+      "result": "Pass"
+    },
+    {
+      "page": "skills.html",
+      "width": 1366,
+      "index": 7,
+      "href": "#skill-chapter-1",
+      "text": "01 Languages",
+      "result": "Pass"
+    },
+    {
+      "page": "skills.html",
+      "width": 1366,
+      "index": 8,
+      "href": "#skill-chapter-2",
+      "text": "02 Creative tools",
+      "result": "Pass"
+    },
+    {
+      "page": "skills.html",
+      "width": 1366,
+      "index": 9,
+      "href": "#skill-chapter-3",
+      "text": "03 Everyday tools",
+      "result": "Pass"
+    },
+    {
+      "page": "skills.html",
+      "width": 1366,
+      "index": 10,
+      "href": "https://www.pexels.com/de-de/foto/bildschirm-computer-daten-display-160107/",
+      "text": "Photo: Negative Space / Pexels",
+      "result": "External request attempted; see case detail"
+    },
+    {
+      "page": "skills.html",
+      "width": 1366,
+      "index": 11,
+      "href": "projects.html#chapter-2",
+      "text": "See Sorting Algorithms ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢",
+      "result": "Pass"
+    },
+    {
+      "page": "skills.html",
+      "width": 1366,
+      "index": 12,
+      "href": "projects.html#chapter-1",
+      "text": "See Alien Escape ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢",
+      "result": "Pass"
+    },
+    {
+      "page": "skills.html",
+      "width": 1366,
+      "index": 13,
+      "href": "projects.html#chapter-3",
+      "text": "See News Aggregator ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢",
+      "result": "Pass"
+    },
+    {
+      "page": "skills.html",
+      "width": 1366,
+      "index": 14,
+      "href": "images/heroes-for-mental-health.png",
+      "text": "Heroes for Mental Health ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â View full image",
+      "result": "Pass"
+    },
+    {
+      "page": "skills.html",
+      "width": 1366,
+      "index": 15,
+      "href": "projects.html#chapter-1",
+      "text": "See Alien Escape ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢",
+      "result": "Pass"
+    },
+    {
+      "page": "skills.html",
+      "width": 1366,
+      "index": 16,
+      "href": "https://www.pexels.com/photo/an-organizer-and-pen-beside-a-notebook-on-a-glass-desk-with-wireless-gadgets-5712118/",
+      "text": "Photo: Arina Krasnikova / Pexels",
+      "result": "External request attempted; see case detail"
+    },
+    {
+      "page": "skills.html",
+      "width": 1366,
+      "index": 17,
+      "href": "projects.html",
+      "text": "Explore the projects ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢",
+      "result": "Pass"
+    },
+    {
+      "page": "skills.html",
+      "width": 1366,
+      "index": 18,
+      "href": "contact.html",
+      "text": "Contact",
+      "result": "Pass"
+    },
+    {
+      "page": "contact.html",
+      "width": 375,
+      "index": 0,
+      "href": "#main",
+      "text": "Skip to content",
+      "result": "Pass"
+    },
+    {
+      "page": "contact.html",
+      "width": 375,
+      "index": 1,
+      "href": "index.html",
+      "text": "Louis Valderrama.",
+      "result": "Pass"
+    },
+    {
+      "page": "contact.html",
+      "width": 375,
+      "index": 2,
+      "href": "index.html",
+      "text": "Home",
+      "result": "Pass"
+    },
+    {
+      "page": "contact.html",
+      "width": 375,
+      "index": 3,
+      "href": "about.html",
+      "text": "About Me",
+      "result": "Pass"
+    },
+    {
+      "page": "contact.html",
+      "width": 375,
+      "index": 4,
+      "href": "projects.html",
+      "text": "Projects",
+      "result": "Pass"
+    },
+    {
+      "page": "contact.html",
+      "width": 375,
+      "index": 5,
+      "href": "skills.html",
+      "text": "Skills",
+      "result": "Pass"
+    },
+    {
+      "page": "contact.html",
+      "width": 375,
+      "index": 6,
+      "href": "contact.html",
+      "text": "Contact",
+      "result": "Pass"
+    },
+    {
+      "page": "contact.html",
+      "width": 375,
+      "index": 7,
+      "href": "https://www.linkedin.com/in/louisvalderrama",
+      "text": "LinkedIn ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Louis Valderrama ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢",
+      "result": "External request attempted; see case detail"
+    },
+    {
+      "page": "contact.html",
+      "width": 375,
+      "index": 8,
+      "href": "mailto:LV285@njit.edu",
+      "text": "LV285@njit.edu",
+      "result": "Recipient verified; email app not opened"
+    },
+    {
+      "page": "contact.html",
+      "width": 375,
+      "index": 9,
+      "href": "mailto:LV285@njit.edu?subject=Portfolio%20inquiry\u0026body=Name%3A%20Test%20Visitor%0AEmail%3A%20visitor%40example.com%0A%0AHello%20Louis!%20Can%20we%20discuss%20C%2B%2B%20%26%20Python%3F",
+      "text": "Open draft in email app ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢",
+      "result": "Recipient verified; email app not opened"
+    },
+    {
+      "page": "contact.html",
+      "width": 375,
+      "index": 10,
+      "href": "about.html",
+      "text": "More about me ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢",
+      "result": "Pass"
+    },
+    {
+      "page": "contact.html",
+      "width": 375,
+      "index": 11,
+      "href": "index.html",
+      "text": "Return home ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢",
+      "result": "Pass"
+    },
+    {
+      "page": "contact.html",
+      "width": 375,
+      "index": 12,
+      "href": "contact.html",
+      "text": "Contact",
+      "result": "Pass"
+    },
+    {
+      "page": "contact.html",
+      "width": 1366,
+      "index": 0,
+      "href": "#main",
+      "text": "Skip to content",
+      "result": "Pass"
+    },
+    {
+      "page": "contact.html",
+      "width": 1366,
+      "index": 1,
+      "href": "index.html",
+      "text": "Louis Valderrama.",
+      "result": "Pass"
+    },
+    {
+      "page": "contact.html",
+      "width": 1366,
+      "index": 2,
+      "href": "index.html",
+      "text": "Home",
+      "result": "Pass"
+    },
+    {
+      "page": "contact.html",
+      "width": 1366,
+      "index": 3,
+      "href": "about.html",
+      "text": "About Me",
+      "result": "Pass"
+    },
+    {
+      "page": "contact.html",
+      "width": 1366,
+      "index": 4,
+      "href": "projects.html",
+      "text": "Projects",
+      "result": "Pass"
+    },
+    {
+      "page": "contact.html",
+      "width": 1366,
+      "index": 5,
+      "href": "skills.html",
+      "text": "Skills",
+      "result": "Pass"
+    },
+    {
+      "page": "contact.html",
+      "width": 1366,
+      "index": 6,
+      "href": "contact.html",
+      "text": "Contact",
+      "result": "Pass"
+    },
+    {
+      "page": "contact.html",
+      "width": 1366,
+      "index": 7,
+      "href": "https://www.linkedin.com/in/louisvalderrama",
+      "text": "LinkedIn ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Louis Valderrama ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢",
+      "result": "External request attempted; see case detail"
+    },
+    {
+      "page": "contact.html",
+      "width": 1366,
+      "index": 8,
+      "href": "mailto:LV285@njit.edu",
+      "text": "LV285@njit.edu",
+      "result": "Recipient verified; email app not opened"
+    },
+    {
+      "page": "contact.html",
+      "width": 1366,
+      "index": 9,
+      "href": "mailto:LV285@njit.edu?subject=Portfolio%20inquiry\u0026body=Name%3A%20Test%20Visitor%0AEmail%3A%20visitor%40example.com%0A%0AHello%20Louis!%20Can%20we%20discuss%20C%2B%2B%20%26%20Python%3F",
+      "text": "Open draft in email app ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢",
+      "result": "Recipient verified; email app not opened"
+    },
+    {
+      "page": "contact.html",
+      "width": 1366,
+      "index": 10,
+      "href": "about.html",
+      "text": "More about me ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢",
+      "result": "Pass"
+    },
+    {
+      "page": "contact.html",
+      "width": 1366,
+      "index": 11,
+      "href": "index.html",
+      "text": "Return home ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢",
+      "result": "Pass"
+    },
+    {
+      "page": "contact.html",
+      "width": 1366,
+      "index": 12,
+      "href": "contact.html",
+      "text": "Contact",
+      "result": "Pass"
+    }
+  ],
+  "lighthouse": {
+    "index.html-mobile": {
+      "score": 100,
+      "version": "12.8.2",
+      "failedAudits": []
+    },
+    "index.html-desktop": {
+      "score": 100,
+      "version": "12.8.2",
+      "failedAudits": []
+    },
+    "about.html-mobile": {
+      "score": 100,
+      "version": "12.8.2",
+      "failedAudits": []
+    },
+    "about.html-desktop": {
+      "score": 100,
+      "version": "12.8.2",
+      "failedAudits": []
+    },
+    "projects.html-mobile": {
+      "score": 100,
+      "version": "12.8.2",
+      "failedAudits": []
+    },
+    "projects.html-desktop": {
+      "score": 100,
+      "version": "12.8.2",
+      "failedAudits": []
+    },
+    "skills.html-mobile": {
+      "score": 100,
+      "version": "12.8.2",
+      "failedAudits": []
+    },
+    "skills.html-desktop": {
+      "score": 100,
+      "version": "12.8.2",
+      "failedAudits": []
+    },
+    "contact.html-mobile": {
+      "score": 100,
+      "version": "12.8.2",
+      "failedAudits": []
+    },
+    "contact.html-desktop": {
+      "score": 100,
+      "version": "12.8.2",
+      "failedAudits": []
+    }
+  },
+  "errors": [],
+  "browser": "156.0.8078.81",
+  "platform": "win32",
+  "clientTestDate": "2026-11-05 (America/New_York)",
+  "methodology": "Headless Chrome; emulated phone/laptop; synthetic touch; OS mail app not opened. External HTTP 403/999 are blocked, not passes. Corrected test-runner timing, dynamic link indexing, and popup-event handling before retests. No site files changed.",
+  "externalBrowserChecks": [
+    {
+      "outcome": "Blocked by browser challenge",
+      "status": 403,
+      "url": "https://www.pexels.com/de-de/foto/bildschirm-computer-daten-display-160107/",
+      "title": "Just a moment..."
+    },
+    {
+      "outcome": "Blocked by browser challenge",
+      "status": 403,
+      "url": "https://www.pexels.com/photo/an-organizer-and-pen-beside-a-notebook-on-a-glass-desk-with-wireless-gadgets-5712118/",
+      "title": "Just a moment..."
+    },
+    {
+      "outcome": "Browser navigation blocked",
+      "status": 999,
+      "url": "https://www.linkedin.com/in/louisvalderrama"
+    }
+  ]
+}
