@@ -1,0 +1,149 @@
+{
+  "cases": [
+    {
+      "page": "index.html",
+      "mode": "delayed-mobile",
+      "width": 375,
+      "headerHeightBefore": 159.390625,
+      "headerHeightAfter": 159.390625,
+      "status": "Pass"
+    },
+    {
+      "page": "index.html",
+      "mode": "delayed-desktop",
+      "width": 1366,
+      "headerHeightBefore": 116.796875,
+      "headerHeightAfter": 116.796875,
+      "resizeFocusReturned": true,
+      "status": "Pass"
+    },
+    {
+      "page": "index.html",
+      "mode": "no-javascript",
+      "width": 375,
+      "status": "Pass"
+    },
+    {
+      "page": "index.html",
+      "mode": "failed-navigation",
+      "width": 375,
+      "status": "Pass"
+    },
+    {
+      "page": "about.html",
+      "mode": "delayed-mobile",
+      "width": 375,
+      "headerHeightBefore": 185.1875,
+      "headerHeightAfter": 185.1875,
+      "status": "Pass"
+    },
+    {
+      "page": "about.html",
+      "mode": "delayed-desktop",
+      "width": 1366,
+      "headerHeightBefore": 96,
+      "headerHeightAfter": 96,
+      "resizeFocusReturned": true,
+      "status": "Pass"
+    },
+    {
+      "page": "about.html",
+      "mode": "no-javascript",
+      "width": 375,
+      "status": "Pass"
+    },
+    {
+      "page": "about.html",
+      "mode": "failed-navigation",
+      "width": 375,
+      "status": "Pass"
+    },
+    {
+      "page": "projects.html",
+      "mode": "delayed-mobile",
+      "width": 375,
+      "headerHeightBefore": 185.1875,
+      "headerHeightAfter": 185.1875,
+      "status": "Pass"
+    },
+    {
+      "page": "projects.html",
+      "mode": "delayed-desktop",
+      "width": 1366,
+      "headerHeightBefore": 96,
+      "headerHeightAfter": 96,
+      "resizeFocusReturned": true,
+      "status": "Pass"
+    },
+    {
+      "page": "projects.html",
+      "mode": "no-javascript",
+      "width": 375,
+      "status": "Pass"
+    },
+    {
+      "page": "projects.html",
+      "mode": "failed-navigation",
+      "width": 375,
+      "status": "Pass"
+    },
+    {
+      "page": "skills.html",
+      "mode": "delayed-mobile",
+      "width": 375,
+      "headerHeightBefore": 185.1875,
+      "headerHeightAfter": 185.1875,
+      "status": "Pass"
+    },
+    {
+      "page": "skills.html",
+      "mode": "delayed-desktop",
+      "width": 1366,
+      "headerHeightBefore": 96,
+      "headerHeightAfter": 96,
+      "resizeFocusReturned": true,
+      "status": "Pass"
+    },
+    {
+      "page": "skills.html",
+      "mode": "no-javascript",
+      "width": 375,
+      "status": "Pass"
+    },
+    {
+      "page": "skills.html",
+      "mode": "failed-navigation",
+      "width": 375,
+      "status": "Pass"
+    },
+    {
+      "page": "contact.html",
+      "mode": "delayed-mobile",
+      "width": 375,
+      "headerHeightBefore": 185.1875,
+      "headerHeightAfter": 185.1875,
+      "status": "Pass"
+    },
+    {
+      "page": "contact.html",
+      "mode": "delayed-desktop",
+      "width": 1366,
+      "headerHeightBefore": 96,
+      "headerHeightAfter": 96,
+      "resizeFocusReturned": true,
+      "status": "Pass"
+    },
+    {
+      "page": "contact.html",
+      "mode": "no-javascript",
+      "width": 375,
+      "status": "Pass"
+    },
+    {
+      "page": "contact.html",
+      "mode": "failed-navigation",
+      "width": 375,
+      "status": "Pass"
+    }
+  ]
+}

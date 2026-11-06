@@ -1,0 +1,147 @@
+{
+  "baseline": "7fe0090 (site code unchanged from a55f1bb)",
+  "method": "Home at 375/768/1366 x 812 CSS pixels; normal load, 1000 ms script delays, or 1800 ms font delay. PerformanceObserver sums non-input layout-shift entries during loading; no user interactions. These are targeted browser observations, not field measurements.",
+  "before": [
+    {
+      "width": 375,
+      "scenario": "normal",
+      "observedShiftSum": 0,
+      "shiftedElements": []
+    },
+    {
+      "width": 375,
+      "scenario": "delayed-scripts",
+      "observedShiftSum": 0.2250691589386572,
+      "shiftedElements": [
+        "MAIN#main.home-page story-motion",
+        "ASIDE#.profile-panel",
+        "DIV#.hero-character",
+        "Text node",
+        "A#.text-link"
+      ]
+    },
+    {
+      "width": 375,
+      "scenario": "delayed-font",
+      "observedShiftSum": 0.01027156474607716,
+      "shiftedElements": [
+        "PRE#.header-code",
+        "ASIDE#.profile-panel",
+        "IMG#.character-balloon",
+        "DIV#.hero-character",
+        "Text node"
+      ]
+    },
+    {
+      "width": 768,
+      "scenario": "normal",
+      "observedShiftSum": 0,
+      "shiftedElements": []
+    },
+    {
+      "width": 768,
+      "scenario": "delayed-scripts",
+      "observedShiftSum": 0.23108062055392073,
+      "shiftedElements": [
+        "MAIN#main.home-page story-motion",
+        "Text node",
+        "DIV#.hero-character",
+        "A#.text-link"
+      ]
+    },
+    {
+      "width": 768,
+      "scenario": "delayed-font",
+      "observedShiftSum": 0.016996673986817024,
+      "shiftedElements": ["Text node", "PRE#.header-code"]
+    },
+    {
+      "width": 1366,
+      "scenario": "normal",
+      "observedShiftSum": 0,
+      "shiftedElements": []
+    },
+    {
+      "width": 1366,
+      "scenario": "delayed-scripts",
+      "observedShiftSum": 0.004724319947903038,
+      "shiftedElements": ["NAV#main-navigation."]
+    },
+    {
+      "width": 1366,
+      "scenario": "delayed-font",
+      "observedShiftSum": 0.005725506011534367,
+      "shiftedElements": [
+        "NAV#main-navigation.",
+        "Text node",
+        "PRE#.header-code"
+      ]
+    }
+  ],
+  "after": [
+    {
+      "width": 375,
+      "scenario": "normal",
+      "observedShiftSum": 0,
+      "shiftedElements": []
+    },
+    {
+      "width": 375,
+      "scenario": "delayed-scripts",
+      "observedShiftSum": 0,
+      "shiftedElements": []
+    },
+    {
+      "width": 375,
+      "scenario": "delayed-font",
+      "observedShiftSum": 0.010271582910438254,
+      "shiftedElements": [
+        "PRE#.header-code",
+        "ASIDE#.profile-panel",
+        "IMG#.character-balloon",
+        "DIV#.hero-character",
+        "Text node"
+      ]
+    },
+    {
+      "width": 768,
+      "scenario": "normal",
+      "observedShiftSum": 0,
+      "shiftedElements": []
+    },
+    {
+      "width": 768,
+      "scenario": "delayed-scripts",
+      "observedShiftSum": 0,
+      "shiftedElements": []
+    },
+    {
+      "width": 768,
+      "scenario": "delayed-font",
+      "observedShiftSum": 0.016996790091652794,
+      "shiftedElements": ["Text node", "PRE#.header-code"]
+    },
+    {
+      "width": 1366,
+      "scenario": "normal",
+      "observedShiftSum": 0,
+      "shiftedElements": []
+    },
+    {
+      "width": 1366,
+      "scenario": "delayed-scripts",
+      "observedShiftSum": 0,
+      "shiftedElements": []
+    },
+    {
+      "width": 1366,
+      "scenario": "delayed-font",
+      "observedShiftSum": 0.005725506011534367,
+      "shiftedElements": [
+        "NAV#main-navigation.",
+        "Text node",
+        "PRE#.header-code"
+      ]
+    }
+  ]
+}

@@ -186,3 +186,24 @@ Limited to shared CSS cleanup and initial theme loading, based on revision `6fcd
 One fresh-profile Lighthouse 12.8.2 run per device mode before and after; scores are environment-dependent. These changes shorten loading dependencies without promising a particular score increase. Hosting compression and cache headers were not changed.
 
 Evidence: [computed-style comparisons](tests/results/css-equivalence.json), [initial-theme checks](tests/results/theme-first-paint.json), [regression results](tests/results/critical-loading-regression.json), [performance and blocking-request comparison](tests/results/critical-request-comparison.json), and [four full Lighthouse reports](tests/results/critical-loading-reports.zip). Earlier test results above remain historical for their stated revisions.
+
+## Stable header loading follow-up — November 5, 2026
+
+The header now reserves space for language/theme controls before their scripts initialize. An early JavaScript marker lets CSS begin with mobile navigation closed; a navigation-ready marker ends that startup rule so subsequent resizing preserves keyboard focus. With JavaScript disabled, links remain visible and unavailable controls stay hidden. If the navigation script fails to load, its error handler restores the visible-link fallback. Shared styles and navigation script URLs were versioned. Font and animation behavior are unchanged.
+
+The original issue was reproduced by delaying scripts 1,000 ms: the expanded navigation collapsed and controls appeared after the first paint, moving `main.home-page.story-motion`. That affected element was not proof that the story animation caused the shift.
+
+| Home width (CSS pixels) | Delayed-script shift before | Delayed-script shift after | Delayed-font shift after |
+| --- | --- | --- | --- |
+| 375 | 0.225 | 0 | 0.010 |
+| 768 | 0.231 | 0 | 0.017 |
+| 1366 | 0.0047 | 0 | 0.0057 |
+
+These are sums of non-input layout-shift entries observed during targeted local loads at 812px height, with fresh browser contexts. The font stress test delayed WOFF2 by 1,800 ms; small font-related shifts remain below 0.02. Normal-load observations were zero at all three widths. These measurements reproduce the reported mechanism but do not guarantee zero CLS under all devices, preferences, or hosting conditions.
+
+- **Pass:** 20 header-loading cases across all five pages: pre-initialization control space, hidden-control focus exclusion, unchanged header height after scripts start, ready menu opening/Escape, resize focus return, no-JavaScript links, failed-navigation-script fallback, and console checks (expected aborted-script errors excluded).
+- **Pass:** T14, T19, T20, T22, T24, T30-T44, T53, and T54 rerun for responsive pages, keyboard/mobile navigation, theme/language controls, storage fallback, no-JavaScript behavior, and local asset errors. T14 was rerun after the startup rule was limited to initialization.
+- **Pass:** T1-T12 source checks, navigation JavaScript syntax, and diff checks.
+- Final Home Lighthouse 12.8.2 runs: Performance **95 mobile / 80 desktop**, Accessibility **100 in both**, CLS **0 in both**. Each is one fresh-profile local audit; results may vary on the published site.
+
+Evidence: [targeted shift comparison](tests/results/header-cls-comparison.json), [20 header-loading cases](tests/results/header-loading.json), [regression case outcomes](tests/results/header-regression.json), [Lighthouse metrics](tests/results/header-lighthouse.json), and [two complete Lighthouse reports](tests/results/header-lighthouse-reports.zip). Historical runs above retain their original revision scope.

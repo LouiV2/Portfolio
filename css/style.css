@@ -1124,3 +1124,18 @@ html[data-theme="light"] .header-code-string { color: #005a8c; }
   .contact-form-layout { grid-template-columns: minmax(0, 1fr); gap: 0; }
   .contact-character { max-width: 180px; margin-bottom: 28px; }
 }
+
+/* Reserve the controls' space while their scripts initialize. Visibility keeps
+   these unavailable controls out of keyboard and accessibility navigation. */
+html[data-js] .site-header .language-toggle[hidden],
+html[data-js] .site-header .theme-toggle[hidden] {
+  display: inline-block;
+  visibility: hidden;
+}
+@media (max-width: 850px) {
+  /* Collapse only the initial layout; the ready menu handles later resizes.
+     Without JavaScript, keep the page links visible as the fallback. */
+  html[data-js] .site-header:not([data-navigation-ready]) nav {
+    display: none;
+  }
+}

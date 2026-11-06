@@ -6,7 +6,8 @@
     <meta name="description" content="Louis Valderrama’s personal portfolio. NJIT Software and Data Engineering student with a background in art, public administration, and technology.">
     <title>Home | Louis Valderrama</title>
     <script>
-      // Apply the saved palette before rendering, without a blocking request.
+      // Establish the enhanced header layout and palette before rendering.
+      document.documentElement.dataset.js = '';
       try {
         const savedTheme = localStorage.getItem('portfolio-theme');
         document.documentElement.dataset.theme = savedTheme === 'light' ? 'light' : 'dark';
@@ -16,7 +17,7 @@
     </script>
     <script src="js/theme.js?v=deferred-theme-1" defer></script>
     <link rel="preload" href="fonts/Rajdhani-Bold.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="css/style.css?v=critical-loading-1">
+    <link rel="stylesheet" href="css/style.css?v=stable-header-1">
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -133,7 +134,7 @@
       <button class="motion-toggle" type="button" aria-pressed="false" hidden>Pause HUD motion</button>
     </footer>
     <script src="js/language.js" defer></script>
-    <script src="js/navigation.js" defer></script>
+    <script src="js/navigation.js?v=stable-header-1" defer onerror="document.documentElement.removeAttribute('data-js')"></script>
     <script src="js/hud-motion.js" defer></script>
     <script src="js/projects-story.js" defer></script>
   </body>

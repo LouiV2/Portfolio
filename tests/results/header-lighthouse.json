@@ -1,0 +1,33 @@
+{
+  "phase": "current",
+  "url": "http://127.0.0.1:54906/index.html",
+  "date": "2026-11-06T03:00:12.182Z",
+  "runs": {
+    "mobile": {
+      "performance": 95,
+      "accessibility": 100,
+      "lighthouseVersion": "12.8.2",
+      "metrics": {
+        "first-contentful-paint": 1057.0278,
+        "largest-contentful-paint": 2932.0278,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0,
+        "speed-index": 1057.0278,
+        "total-byte-weight": 456117
+      }
+    },
+    "desktop": {
+      "performance": 80,
+      "accessibility": 100,
+      "lighthouseVersion": "12.8.2",
+      "metrics": {
+        "first-contentful-paint": 1209.2593,
+        "largest-contentful-paint": 3084.2592999999997,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0,
+        "speed-index": 1209.2593,
+        "total-byte-weight": 510444
+      }
+    }
+  }
+}

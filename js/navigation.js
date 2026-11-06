@@ -31,4 +31,5 @@
   });
   mobile.addEventListener('change', updateLayout);
   updateLayout();
+  header.dataset.navigationReady = '';
 })();
