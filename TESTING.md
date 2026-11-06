@@ -186,20 +186,3 @@ Limited to shared CSS cleanup and initial theme loading, based on revision `6fcd
 One fresh-profile Lighthouse 12.8.2 run per device mode before and after; scores are environment-dependent. These changes shorten loading dependencies without promising a particular score increase. Hosting compression and cache headers were not changed.
 
 Evidence: [computed-style comparisons](tests/results/css-equivalence.json), [initial-theme checks](tests/results/theme-first-paint.json), [regression results](tests/results/critical-loading-regression.json), [performance and blocking-request comparison](tests/results/critical-request-comparison.json), and [four full Lighthouse reports](tests/results/critical-loading-reports.zip). Earlier test results above remain historical for their stated revisions.
-
-## Home inline-critical-CSS trial — November 5, 2026
-
-**Decision: not retained.** The approved Home-only trial extracted about 17 KB of critical styles for the page shell, header, hero, and chapter navigation, kept responsive/theme rules, rewrote relative font/image paths for inline use, and loaded the complete stylesheet asynchronously with a no-JavaScript fallback. Other pages were not changed.
-
-The trial eliminated the stylesheet from Lighthouse's render-blocking list. It did not improve measured first paint or LCP, and transferred an additional 17,316 bytes in each device mode because the inline styles duplicated part of the shared stylesheet.
-
-| Local Home audit | Existing page Performance | Trial Performance | Existing LCP | Trial LCP |
-| --- | --- | --- | --- | --- |
-| Mobile | 95 | 94 | 3.01 s | 3.16 s |
-| Desktop | 80 | 78 | 3.08 s | 3.23 s |
-
-Accessibility remained 100 and measured layout shift remained zero in both variants. One fresh-profile Lighthouse 12.8.2 audit was run for each device mode and variant; these are local lab observations, not a statistical claim about other hosts/devices. Full visual and fallback testing was not pursued because the trial failed the performance acceptance condition.
-
-`index.html` was restored to its baseline from `a55f1bb`, and Git confirmed no content difference. The production HTML, CSS, and JavaScript remain unchanged. This follows the agreed condition to keep the experiment only if it helps.
-
-Evidence: [trial comparison and decision](tests/results/inline-css-comparison.json) and [four archived Lighthouse reports](tests/results/inline-css-trial-reports.zip).
