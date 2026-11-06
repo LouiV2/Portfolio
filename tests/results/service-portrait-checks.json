@@ -1,0 +1,113 @@
+{
+  "note": "Headless Chrome mobile-sized and desktop layouts; physical phone browser was not identified. Network-gated image reserves its height, decodes, stays visible in both themes, and remains visible with CSS aspect-ratio reset to auto.",
+  "cases": [
+    {
+      "width": 320,
+      "status": "Pass",
+      "before": {
+        "width": 255.59375,
+        "height": 319.484375,
+        "loaded": false,
+        "position": "static"
+      },
+      "after": {
+        "width": 255.59375,
+        "height": 319.484375,
+        "naturalWidth": 480,
+        "naturalHeight": 600,
+        "position": "static"
+      },
+      "consoleErrors": []
+    },
+    {
+      "width": 375,
+      "status": "Pass",
+      "before": {
+        "width": 304,
+        "height": 380,
+        "loaded": false,
+        "position": "static"
+      },
+      "after": {
+        "width": 304,
+        "height": 380,
+        "naturalWidth": 480,
+        "naturalHeight": 600,
+        "position": "static"
+      },
+      "consoleErrors": []
+    },
+    {
+      "width": 390,
+      "status": "Pass",
+      "before": {
+        "width": 317.1875,
+        "height": 396.484375,
+        "loaded": false,
+        "position": "static"
+      },
+      "after": {
+        "width": 317.1875,
+        "height": 396.484375,
+        "naturalWidth": 480,
+        "naturalHeight": 600,
+        "position": "static"
+      },
+      "consoleErrors": []
+    },
+    {
+      "width": 430,
+      "status": "Pass",
+      "before": {
+        "width": 352.390625,
+        "height": 440.484375,
+        "loaded": false,
+        "position": "static"
+      },
+      "after": {
+        "width": 352.390625,
+        "height": 440.484375,
+        "naturalWidth": 480,
+        "naturalHeight": 600,
+        "position": "static"
+      },
+      "consoleErrors": []
+    },
+    {
+      "width": 768,
+      "status": "Pass",
+      "before": {
+        "width": 534,
+        "height": 667.5,
+        "loaded": false,
+        "position": "static"
+      },
+      "after": {
+        "width": 534,
+        "height": 667.5,
+        "naturalWidth": 480,
+        "naturalHeight": 600,
+        "position": "static"
+      },
+      "consoleErrors": []
+    },
+    {
+      "width": 1366,
+      "status": "Pass",
+      "before": {
+        "width": 354,
+        "height": 442.5,
+        "loaded": false,
+        "position": "static"
+      },
+      "after": {
+        "width": 354,
+        "height": 442.5,
+        "naturalWidth": 480,
+        "naturalHeight": 600,
+        "position": "static"
+      },
+      "consoleErrors": []
+    }
+  ]
+}

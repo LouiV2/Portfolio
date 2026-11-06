@@ -330,16 +330,12 @@ nav a::before, .brand::before { content: none; }
 .work-chapter .portrait-frame img { aspect-ratio: auto; }
 .work-image-link { display: block; }
 .service-chapter .portrait-frame { max-width: 380px; justify-self: center; }
-/* Display a crop around Louis; retain the unmodified source photograph. */
-.service-photo-crop { position: relative; aspect-ratio: 4 / 5; overflow: hidden; }
-.service-chapter .service-photo-crop img {
-  position: absolute;
-  width: 315%;
-  max-width: none;
+/* The portrait asset contains the crop; keep it in normal flow on all screens. */
+.service-chapter .portrait-frame img {
+  width: 100%;
   height: auto;
-  aspect-ratio: auto;
-  left: -68.75%;
-  top: -91.6667%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
 }
 @media (max-width: 850px) {
   .perspective-chapter { grid-template-columns: minmax(0, 1fr); gap: 36px; }

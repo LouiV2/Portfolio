@@ -207,3 +207,11 @@ These are sums of non-input layout-shift entries observed during targeted local 
 - Final Home Lighthouse 12.8.2 runs: Performance **95 mobile / 80 desktop**, Accessibility **100 in both**, CLS **0 in both**. Each is one fresh-profile local audit; results may vary on the published site.
 
 Evidence: [targeted shift comparison](tests/results/header-cls-comparison.json), [20 header-loading cases](tests/results/header-loading.json), [regression case outcomes](tests/results/header-regression.json), [Lighthouse metrics](tests/results/header-lighthouse.json), and [two complete Lighthouse reports](tests/results/header-lighthouse-reports.zip). Historical runs above retain their original revision scope.
+
+## Service portrait follow-up — November 5, 2026
+
+Replaced Home's oversized, absolutely positioned Service image and clipping wrapper with a normal-flow 480 x 600 portrait. The new WebP is cropped from `louis-public-service.png` at x=330, y=550, width=480, height=600 to match the previous framing. Its intrinsic dimensions and 4:5 styling reserve the image area while it loads. The original photograph remains available in the repository. The portrait is 38,220 bytes versus the previous full-frame WebP's 129,414 bytes.
+
+**Pass:** Headless Chrome checks at widths 320, 375, 390, 430, 768, and 1366 verified reserved height with the image request held, successful decoding, matching before/after dimensions, normal-flow positioning, both themes, no horizontal overflow, and no console/script errors. The image remained visible with its CSS aspect ratio reset to `auto`; its natural dimensions still supply the portrait ratio. The 390px section screenshot was visually reviewed against the previous framing. Home's local links/assets resolve and the diff check passed.
+
+The reported disappearance was not reproduced in the earlier Chrome check, and the owner's phone/browser was not identified. This removes the fragile positioning/crop dependency; physical-device confirmation is still needed. Evidence: [six portrait loading checks](tests/results/service-portrait-checks.json).
