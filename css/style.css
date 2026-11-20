@@ -327,8 +327,6 @@ nav a::before, .brand::before { content: none; }
 .portrait-mark { display: flex; justify-content: space-between; gap: 16px; padding: 2px 4px 12px; color: var(--accent); font: 12px/1.5 Consolas, "Courier New", monospace; letter-spacing: .08em; }
 .portrait-frame figcaption { border-top: 1px solid var(--line); margin-top: 12px; }
 
-.work-chapter .portrait-frame img { aspect-ratio: auto; }
-.work-image-link { display: block; }
 .service-chapter .portrait-frame { max-width: 380px; justify-self: center; }
 /* The portrait asset contains the crop; keep it in normal flow on all screens. */
 .service-chapter .portrait-frame img {
@@ -719,6 +717,14 @@ footer { padding-block: 30px; }
 .source-keyword { color: #8ac5ff; }
 .source-type { color: #79d9c0; }
 .source-number { color: #c5daa0; }
+.work-source {
+  width: 100%;
+  max-width: 560px;
+  margin: 0;
+  justify-self: center;
+  align-self: center;
+}
+.work-source .project-source-preview { margin: 0; }
 /* The homepage moves from background, to service, to the work itself. */
 .home-page .story-chapter { padding-block: 100px; scroll-margin-top: 110px; align-items: start; }
 .home-page .story-chapter > div:first-child { position: sticky; top: 115px; padding-block: 18px; }

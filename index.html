@@ -17,7 +17,7 @@
     </script>
     <script src="js/theme.js?v=theme-action-1" defer></script>
     <link rel="preload" href="fonts/Rajdhani-Bold.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="css/style.css?v=service-portrait-1&amp;theme=action-1">
+    <link rel="stylesheet" href="css/style.css?v=home-news-source-1">
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -108,15 +108,21 @@
           <p class="eyebrow">03 / The work ahead</p>
           <div class="chapter-instrument" aria-hidden="true"></div>
           <h2 data-reveal>A place for what I build.</h2>
-          <p class="lead" data-reveal>This portfolio brings together my projects and the code behind them. Here is a look at my Python notebook work with APIs and SQLite.</p>
+          <p class="lead" data-reveal>This portfolio brings together my projects and the code behind them. My News Aggregator uses Python to fetch headlines from NewsAPI and store them in SQLite.</p>
           <a class="text-link" href="projects.html">Visit the projects page &rarr;</a>
         </div>
-        <figure class="hud-picture portrait-frame" data-reveal>
-          <div class="portrait-mark" aria-hidden="true"><span>LV / DEVELOPMENT</span><span>+ &nbsp; + &nbsp; +</span></div>
-          <a class="work-image-link" href="images/work-ahead-api-notebook.png">
-            <img src="images/work-ahead-api-notebook.png" alt="Python notebook showing an OpenWeatherMap request, weather-file output, and the start of a SQLite currency-rate table." width="986" height="907" loading="lazy" decoding="async">
-          </a>
-          <figcaption>Python / APIs &amp; SQLite — Select to view full size</figcaption>
+        <figure class="project-source work-source" data-reveal>
+          <figcaption class="source-toolbar">
+            <span class="source-filename">News Aggregator / Python</span>
+            <a class="source-action" href="projects.html#chapter-3">View the full project</a>
+          </figcaption>
+          <pre class="project-source-preview"><code><span class="source-keyword">def</span> get_headlines(topic):
+
+    url = <span class="source-string">f&quot;https://newsapi.org/v2/everything?q={topic}&amp;pageSize=5&amp;sortBy=publishedAt&amp;apiKey={apikey}&quot;</span>
+    response = requests.get(url)
+    data = response.json()
+    articles = data[<span class="source-string">&#39;articles&#39;</span>]
+    <span class="source-keyword">return</span> articles</code></pre>
         </figure>
       </section>
       <section class="story-next" aria-labelledby="continue-heading">
@@ -131,7 +137,7 @@
       <span>Art. Service. Technology.</span>
       <button class="motion-toggle" type="button" aria-pressed="false" hidden>Pause HUD motion</button>
     </footer>
-    <script src="js/language.js?v=theme-action-1" defer></script>
+    <script src="js/language.js?v=home-news-source-1" defer></script>
     <script src="js/navigation.js?v=stable-header-1" defer onerror="document.documentElement.removeAttribute('data-js')"></script>
     <script src="js/hud-motion.js" defer></script>
     <script src="js/projects-story.js" defer></script>

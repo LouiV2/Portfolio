@@ -206,6 +206,8 @@
     '1 sample article': '1 artículo de muestra',
     '{count} sample articles': '{count} artículos de muestra',
     'News Aggregator / Python': 'Agregador de noticias / Python',
+    'This portfolio brings together my projects and the code behind them. My News Aggregator uses Python to fetch headlines from NewsAPI and store them in SQLite.': 'Este portafolio reúne mis proyectos y su código. Mi agregador de noticias usa Python para obtener titulares de NewsAPI y guardarlos en SQLite.',
+    'View the full project': 'Ver el proyecto completo',
     'Python source code': 'Código fuente en Python',
     'Three projects. Different approaches.': 'Tres proyectos. Diferentes enfoques.',
     '03 / Python & SQLite': '03 / Python y SQLite',
