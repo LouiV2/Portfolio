@@ -512,6 +512,16 @@ footer { padding-block: 30px; }
   background: var(--panel);
 }
 .game-player p { margin: 0; color: var(--muted); }
+.game-player.game-video { display: none; }
+@media (max-width: 580px),
+       (max-width: 850px) and (pointer: coarse),
+       (max-height: 580px) and (pointer: coarse) {
+  .game-player:not(.game-video) { display: none; }
+  .game-player.game-video {
+    display: grid;
+    padding: 20px;
+  }
+}
 .project-game {
   display: block;
   width: 100%;
