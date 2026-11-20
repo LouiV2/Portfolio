@@ -1,6 +1,7 @@
 const contactForm = document.querySelector('#contact-form');
 const contactStatus = document.querySelector('#contact-status');
 const emailDraft = document.querySelector('#email-draft');
+const emailLink = document.querySelector('a.email');
 const contactFields = ['name', 'email', 'message'].map((name) => ({
   input: document.querySelector(`#contact-${name}`),
   error: document.querySelector(`#${name}-error`),
@@ -49,7 +50,7 @@ contactForm.addEventListener('submit', (event) => {
   const [name, email, message] = contactFields.map(({ input }) => input.value.trim());
   const subject = window.portfolioTranslate('Portfolio inquiry');
   const body = `${window.portfolioTranslate('Name:')} ${name}\n${window.portfolioTranslate('Email:')} ${email}\n\n${message}`;
-  emailDraft.href = `mailto:lv285aTNJIT.edu?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  emailDraft.href = `${emailLink.href}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   emailDraft.hidden = false;
   contactStatus.textContent = window.portfolioTranslate('Your draft is ready. Open it in your email app, review it, and send it there. No message has been sent.');
 });

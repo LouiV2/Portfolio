@@ -210,6 +210,20 @@ nav a[aria-current]::before { color: var(--accent); }
 .education > div:hover, .skill-list article:hover { border-left-color: var(--accent); }
 .tags li { border-left: 2px solid #facc1566; }
 .button { border-radius: 0; box-shadow: 4px 4px 0 #facc1520; }
+.linkedin-button {
+  background: #132638;
+  color: #a9d3ff;
+  border-color: #70b5f9;
+  box-shadow: 4px 4px 0 #70b5f933;
+}
+.linkedin-button:hover { background: #203d55; color: #e3f1ff; }
+html[data-theme="light"] .linkedin-button {
+  background: #0a66c2;
+  color: #fff;
+  border-color: #0a66c2;
+  box-shadow: 4px 4px 0 #0a66c233;
+}
+html[data-theme="light"] .linkedin-button:hover { background: #084d94; }
 @media (max-width: 1050px) {
   .site-header { flex-direction: column; align-items: flex-start; gap: 15px; }
 }
