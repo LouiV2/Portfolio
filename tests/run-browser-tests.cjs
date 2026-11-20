@@ -196,30 +196,7 @@ async function keyboardActivate(locator, page) {
               await p.locator(link.href).count(),
               "Missing fragment " + link.href,
             );
-          else if (link.href.startsWith("images/") && i === 2) {
-            check(
-              await p.locator(".project-gallery").evaluate((d) => d.open),
-              "Gallery did not open",
-            );
-            check(
-              (await p.locator(".gallery-image").getAttribute("src")).endsWith(
-                link.href,
-              ),
-              "Wrong gallery image",
-            );
-            const response = await ctx.request.get(base + link.href);
-            check(response.ok(), "Missing screenshot");
-            await p.keyboard.press("Escape");
-            const popupPromise = ctx.waitForEvent("page", { timeout: 5000 });
-            await a.click({ modifiers: ["Control"] });
-            const popup = await popupPromise;
-            await popup.waitForLoadState();
-            check(
-              popup.url().endsWith(link.href),
-              "Modified screenshot link failed",
-            );
-            await popup.close();
-          } else {
+          else {
             check(
               p.url().endsWith(link.href),
               "Wrong destination " + link.href,
@@ -291,12 +268,14 @@ async function keyboardActivate(locator, page) {
             "Broken image",
           );
           if (i === 2) {
-            await p.locator(".project-screenshot a").first().click();
+            const source = p.locator("#chapter-3 .project-source");
+            await source.locator("summary").click();
+            check(await source.locator("pre").isVisible(), "Python source hidden");
             check(
-              await p.locator(".gallery-close").isVisible(),
-              "Gallery close invisible",
+              await p.evaluate(() => document.documentElement.scrollWidth <= innerWidth),
+              "Expanded source caused page overflow",
             );
-            await p.keyboard.press("Escape");
+            await source.locator("summary").click();
           }
         }
         await ctx.close();
@@ -396,18 +375,11 @@ async function keyboardActivate(locator, page) {
             await keyboardActivate(p.locator(selector), p);
         }
         if (i === 2) {
-          const a = p.locator(".project-screenshot a").first();
-          await keyboardActivate(a, p);
+          const source = p.locator("#chapter-3 .project-source");
+          await keyboardActivate(source.locator("summary"), p);
+          check(await source.locator("pre").isVisible(), "Keyboard did not open Python source");
           await p.keyboard.press("Tab");
-          check(
-            await p.evaluate(() => !!document.activeElement.closest("dialog")),
-            "Modal focus escaped",
-          );
-          await p.keyboard.press("Escape");
-          check(
-            await a.evaluate((a) => a === document.activeElement),
-            "Gallery focus not restored",
-          );
+          check(await source.locator("pre").evaluate((pane) => pane === document.activeElement), "Source pane not keyboard focusable");
         }
         if (i === 4) {
           await keyboardActivate(p.locator("[type=submit]"), p);
@@ -594,37 +566,21 @@ async function keyboardActivate(locator, page) {
   });
   await test("T21", async () => {
     await goto(p, "projects.html");
-    const links = p.locator(".project-screenshot a");
-    for (let i = 0; i < (await links.count()); i++) {
-      await links.nth(i).click();
+    for (const source of await p.locator(".project-source").all()) {
+      await source.locator("summary").click();
+      const pane = source.locator("pre");
+      check(await pane.isVisible(), "Code disclosure did not open");
       check(
-        (await p.locator(".gallery-count").textContent()).startsWith(
-          String(i + 1) + " /",
-        ),
-        "Wrong count",
+        await pane.evaluate((element) => {
+          element.scrollTop = element.scrollHeight;
+          return element.scrollTop > 0 &&
+            Math.abs(element.scrollHeight - element.clientHeight - element.scrollTop) < 2;
+        }),
+        "Could not scroll the code to the end",
       );
-      await p.keyboard.press("Escape");
+      await source.locator("summary").click();
+      check(await pane.isHidden(), "Code disclosure did not close");
     }
-    await links.first().click();
-    await p.locator(".gallery-previous").click();
-    check(
-      (await p.locator(".gallery-count").textContent()).startsWith("7 /"),
-      "Previous wrap",
-    );
-    await p.keyboard.press("ArrowRight");
-    check(
-      (await p.locator(".gallery-count").textContent()).startsWith("1 /"),
-      "Next wrap",
-    );
-    await p.keyboard.press("ArrowLeft");
-    await p.locator(".gallery-next").click();
-    await p.locator(".gallery-close").click();
-    check(
-      !(await p
-        .locator("html")
-        .evaluate((h) => h.classList.contains("gallery-open"))),
-      "Scroll lock remains",
-    );
   });
   await test("T22", async () => {
     const c = await context({ javaScriptEnabled: false });
@@ -643,11 +599,10 @@ async function keyboardActivate(locator, page) {
         check(await q.locator("noscript").isVisible(), "No-JS notice hidden");
       }
       if (file === "projects.html") {
-        await q.locator(".project-screenshot a").first().click();
-        check(
-          q.url().includes("project-1-unity-game.png"),
-          "No-JS screenshot failed",
-        );
+        const source = q.locator("#chapter-3 .project-source");
+        await source.locator("summary").click();
+        check(await source.locator("pre").isVisible(), "No-JS source disclosure failed");
+        check(await q.locator("#news-demo").isHidden(), "No-JS news demo visible");
       }
     }
     await c.close();
@@ -742,65 +697,15 @@ async function keyboardActivate(locator, page) {
   });
   await test("T52", async () => {
     await goto(p, "projects.html");
-    const screenshots = p.locator(".project-screenshot a");
-    const screenshotCount = await screenshots.count();
-    await screenshots.first().click();
-    async function swipe(dx, dy, multi = false, cancel = false) {
-      await p.locator(".gallery-stage").evaluate(
-        (el, { dx, dy, multi, cancel }) => {
-          const t = { identifier: 1, target: el, clientX: 100, clientY: 100 };
-          el.dispatchEvent(
-            new TouchEvent("touchstart", {
-              touches: multi
-                ? [new Touch(t), new Touch({ ...t, identifier: 2 })]
-                : [new Touch(t)],
-            }),
-          );
-          if (cancel) el.dispatchEvent(new TouchEvent("touchcancel"));
-          el.dispatchEvent(
-            new TouchEvent("touchend", {
-              touches: [],
-              changedTouches: [
-                new Touch({ ...t, clientX: 100 + dx, clientY: 100 + dy }),
-              ],
-            }),
-          );
-        },
-        { dx, dy, multi, cancel },
-      );
-    }
-    await swipe(-100, 0);
-    check(
-      (await p.locator(".gallery-count").textContent()).startsWith("2 /"),
-      "Swipe failed",
-    );
-    for (const args of [
-      [0, 100],
-      [10, 0],
-      [-100, 0, true],
-      [-100, 0, false, true],
-    ]) {
-      await swipe(...args);
-      check(
-        (await p.locator(".gallery-count").textContent()).startsWith("2 /"),
-        "Ignored gesture advanced",
-      );
-    }
-    await p.keyboard.press("Escape");
-    const c = await context();
-    await c.addInitScript(() => {
-      HTMLDialogElement.prototype.showModal = undefined;
-    });
-    const q = await c.newPage();
-    for (let i = 0; i < screenshotCount; i++) {
-      await goto(q, "projects.html");
-      const a = q.locator(".project-screenshot a").nth(i),
-        href = await a.getAttribute("href");
-      await a.click();
-      check(q.url().endsWith(href), "Dialog fallback failed");
-    }
-    await c.close();
-    return `Synthetic touch gestures and all ${screenshotCount} unsupported-dialog links passed; physical-device touch not tested.`;
+    const search = p.locator("#news-search");
+    const articles = p.locator("#news-results li");
+    check((await articles.count()) === 5, "Wrong initial article count");
+    await search.fill("library");
+    check((await articles.count()) === 1, "Duplicate headline was shown");
+    await p.locator("#news-topic").selectOption("science");
+    check((await articles.count()) === 0, "Search result was stale after switching topics");
+    await search.fill("");
+    check((await articles.count()) === 5, "Clearing the filter did not restore articles");
   });
   await test("T53", async () => {
     const c = await context();
@@ -871,13 +776,10 @@ async function keyboardActivate(locator, page) {
       "Draft untranslated",
     );
     await goto(p, "projects.html");
-    await p.locator(".project-screenshot a").first().click();
-    const caption = await p.locator(".gallery-caption").textContent();
-    await p.evaluate(() => document.querySelector(".language-toggle").click());
-    check(
-      (await p.locator(".gallery-caption").textContent()) !== caption,
-      "Gallery caption untranslated",
-    );
+    const headline = p.locator("#news-results h5").first();
+    const title = await headline.textContent();
+    await p.locator(".language-toggle").click();
+    check((await headline.textContent()) !== title, "Sample headline untranslated");
   });
   await test("T24", async () => {
     const c = await context();

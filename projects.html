@@ -17,7 +17,7 @@
     </script>
     <script src="js/theme.js?v=deferred-theme-1" defer></script>
     <link rel="preload" href="fonts/Rajdhani-Bold.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="css/style.css?v=interactive-sorting-1">
+    <link rel="stylesheet" href="css/style.css?v=interactive-news-1">
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -454,9 +454,9 @@
                 <p data-reveal>Try a browser version of my C++ sorting program. The result updates as you edit the numbers or choose a different algorithm.</p>
               </div>
               <div class="project-visual">
-                <form class="sorting-demo" id="sorting-demo" aria-labelledby="sorting-demo-title" hidden>
+                <form class="project-demo" id="sorting-demo" aria-labelledby="sorting-demo-title" hidden>
                   <h4 id="sorting-demo-title">Try the sort</h4>
-                  <div class="sorting-fields">
+                  <div class="demo-fields">
                     <div class="form-field">
                       <label for="sorting-input">Numbers to sort</label>
                       <p id="sorting-help">Enter 5 to 10 integers separated by commas or spaces.</p>
@@ -654,39 +654,146 @@
               </div>
             </div>
           </article>
-          <article class="code-project" id="chapter-3" aria-labelledby="project-3">
+          <article class="code-project interactive-project" id="chapter-3" aria-labelledby="project-3">
             <div class="code-project-body">
               <div class="project-brief">
-                <div class="chapter-instrument" aria-hidden="true"></div>
-                <p class="chapter-hook" data-reveal>Finally, connect information.</p>
                 <p class="eyebrow">03 / Python &amp; SQLite</p>
                 <h3 data-reveal id="project-3">News Aggregator</h3>
-                <p data-reveal>A Python notebook that prompts for a news topic, retrieves five recent articles through NewsAPI using requests, and stores their headlines, descriptions, and publication dates in SQLite.</p>
-                <p data-reveal>The code uses unique headlines to avoid duplicate database entries and displays the stored article details in a numbered list. Select either screenshot to read the code at full size.</p>
-                <ol class="project-flow" aria-label="Project sequence" data-reveal>
-                  <li>Choose a topic</li>
-                  <li>Fetch five articles</li>
-                  <li>Store and display</li>
-                </ol>
+                <p data-reveal>A Python notebook that fetches five headlines from NewsAPI and stores article details in SQLite without saving duplicate titles.</p>
               </div>
               <div class="project-visual">
-                <figure class="project-screenshot" data-reveal>
-                  <a href="images/project-3-news-01.png">
-                    <img src="images/project-3-news-01.png" alt="Python notebook showing topic input, NewsAPI requests, and SQLite news-table creation." width="934" height="882" loading="lazy" decoding="async">
-                  </a>
-                  <figcaption>01 / Fetch articles and create the database</figcaption>
-                </figure>
-                <figure class="project-screenshot" data-reveal>
-                  <a href="images/project-3-news-02.png">
-                    <img src="images/project-3-news-02.png" alt="Python functions inserting articles into SQLite without duplicate headlines and displaying numbered article details." width="1105" height="844" loading="lazy" decoding="async">
-                  </a>
-                  <figcaption>02 / Store and display the headlines</figcaption>
-                </figure>
+                <section class="project-demo news-demo" id="news-demo" aria-labelledby="news-demo-title" hidden>
+                  <h4 id="news-demo-title">Try the news search</h4>
+                  <p class="demo-note">This demo uses fictional sample articles. It updates as you change the topic or search.</p>
+                  <div class="demo-fields">
+                    <div class="form-field">
+                      <label for="news-topic">Topic</label>
+                      <select id="news-topic">
+                        <option value="technology">Technology</option>
+                        <option value="science">Science</option>
+                        <option value="sports">Sports</option>
+                      </select>
+                    </div>
+                    <div class="form-field">
+                      <label for="news-search">Filter by keyword</label>
+                      <input id="news-search" type="search" autocomplete="off">
+                    </div>
+                  </div>
+                  <p id="news-status" class="demo-note" role="status"></p>
+                  <ol class="news-results" id="news-results"></ol>
+                  <template>
+                    <li>
+                      <time></time>
+                      <h5></h5>
+                      <p></p>
+                    </li>
+                  </template>
+                </section>
+                <noscript><p>Enable JavaScript to try the news demo.</p></noscript>
+                <details class="project-source">
+                  <summary>
+                    <span class="source-toolbar">
+                      <span class="source-filename">News Aggregator / Python</span>
+                      <span class="source-action source-expand">Expand full code</span>
+                      <span class="source-action source-collapse">Collapse code</span>
+                    </span>
+                    <code class="project-source-preview" aria-hidden="true"><span class="source-keyword">from</span> google.colab <span class="source-keyword">import</span> userdata
+<span class="source-keyword">import</span> requests
+<span class="source-keyword">import</span> sqlite3
+
+apikey = userdata.get(<span class="source-string">&#39;NewsAggregator&#39;</span>)
+
+url = <span class="source-string">f&quot;https://newsapi.org/v2/everything?domains=wsj.com&amp;apiKey={apikey}&quot;</span>
+
+<span class="source-comment"># a. Prompts the user to enter a news topic (e.g., &quot;technology&quot;, &quot;sports&quot;).</span></code>
+                  </summary>
+                  <pre class="project-source-full" tabindex="0" role="region" aria-label="Python source code"><code><span class="source-keyword">from</span> google.colab <span class="source-keyword">import</span> userdata
+<span class="source-keyword">import</span> requests
+<span class="source-keyword">import</span> sqlite3
+
+apikey = userdata.get(<span class="source-string">&#39;NewsAggregator&#39;</span>)
+
+url = <span class="source-string">f&quot;https://newsapi.org/v2/everything?domains=wsj.com&amp;apiKey={apikey}&quot;</span>
+
+<span class="source-comment"># a. Prompts the user to enter a news topic (e.g., &quot;technology&quot;, &quot;sports&quot;).</span>
+
+<span class="source-keyword">def</span> main():
+
+    topic = <span class="source-type">input</span>(<span class="source-string">&quot;Enter news topic: &quot;</span>)
+    articles = get_headlines(topic)
+    conn, cursor = create_database(<span class="source-string">&quot;news.db&quot;</span>)
+    store_data(conn, cursor, articles)
+    read_data(cursor, articles)
+    <span class="source-type">print</span>(<span class="source-string">&quot;Data has been saved to the database.&quot;</span>)
+    conn.close()
+
+<span class="source-comment"># b. Retrieves the top 5 headlines related to the topic using the requests package.</span>
+
+<span class="source-keyword">def</span> get_headlines(topic):
+
+    url = <span class="source-string">f&quot;https://newsapi.org/v2/everything?q={topic}&amp;pageSize=5&amp;sortBy=publishedAt&amp;apiKey={apikey}&quot;</span>
+    response = requests.get(url)
+    data = response.json()
+    articles = data[<span class="source-string">&#39;articles&#39;</span>]
+    <span class="source-keyword">return</span> articles
+
+<span class="source-comment"># c. Stores the headlines, descriptions, and publication dates in an SQLite database.</span>
+
+<span class="source-keyword">def</span> create_database(db_name):
+    conn = sqlite3.connect(db_name)
+    cursor = conn.cursor()
+    cursor.execute(<span class="source-string">&#39;&#39;&#39;
+        CREATE TABLE IF NOT EXISTS news (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            title TEXT UNIQUE,
+            description TEXT,
+            published_at TEXT
+        )
+    &#39;&#39;&#39;</span>)
+
+    conn.commit()
+    <span class="source-keyword">return</span> conn, cursor
+
+<span class="source-keyword">def</span> store_data(conn, cursor, articles):
+    <span class="source-keyword">for</span> article <span class="source-keyword">in</span> articles:
+        title = article[<span class="source-string">&#39;title&#39;</span>]
+        description = article[<span class="source-string">&#39;description&#39;</span>]
+        published_at = article[<span class="source-string">&#39;publishedAt&#39;</span>]
+
+        <span class="source-comment"># e. Ensures that duplicate headlines are not stored in the database.</span>
+
+        cursor.execute(<span class="source-string">&#39;&#39;&#39;
+            INSERT OR IGNORE INTO news (title, description, published_at)
+            VALUES (?, ?, ?)
+        &#39;&#39;&#39;</span>, (title, description, published_at))
+
+    conn.commit()
+
+<span class="source-comment"># d. Reads back the data from the database and displays it to the user in a readable format. Must be numbered from 1 to 5.</span>
+
+<span class="source-keyword">def</span> read_data(cursor, articles):
+
+    <span class="source-type">print</span>(<span class="source-string">&quot;\nTop Headlines:\n&quot;</span>)
+
+    number = <span class="source-number">1</span>
+
+    <span class="source-keyword">for</span> article <span class="source-keyword">in</span> articles:
+        cursor.execute(<span class="source-string">&#39;SELECT title, description, published_at FROM news WHERE title = ?&#39;</span>, (article[<span class="source-string">&#39;title&#39;</span>],))
+        row = cursor.fetchone()
+
+        <span class="source-type">print</span>(<span class="source-string">f&quot;{number}. {row[0]}\n&quot;</span>)
+        <span class="source-type">print</span>(<span class="source-string">f&quot;Description: {row[1]}\n&quot;</span>)
+        <span class="source-type">print</span>(<span class="source-string">f&quot;Published At: {row[2]}\n&quot;</span>)
+
+
+        number += <span class="source-number">1</span>
+
+main()</code></pre>
+                </details>
               </div>
             </div>
           </article>
         </div>
-        <p class="note">Screenshots show my project code and development work. Additional links will be added when available.</p>
       </section>
       <section class="story-next" aria-labelledby="continue-heading">
         <p class="eyebrow">Next / Contact</p>
@@ -694,22 +801,6 @@
         <a class="text-link" href="contact.html">Get in touch &rarr;</a>
       </section>
     </main>
-    <dialog class="project-gallery" aria-labelledby="gallery-title">
-      <div class="gallery-toolbar">
-        <h2 id="gallery-title">Project screenshots</h2>
-        <button class="gallery-close" type="button" autofocus>Close</button>
-      </div>
-      <div class="gallery-stage">
-        <img class="gallery-image" alt="">
-      </div>
-      <p class="gallery-caption" aria-live="polite" aria-atomic="true"></p>
-      <div class="gallery-controls">
-        <button class="gallery-previous" type="button">Previous image</button>
-        <span class="gallery-count"></span>
-        <button class="gallery-next" type="button">Next image</button>
-      </div>
-      <p class="gallery-hint">Swipe left or right, or use the arrow buttons.</p>
-    </dialog>
     <footer>
       <p>&copy; 2026 Louis Valderrama</p>
       <a href="contact.html">Contact</a>
@@ -722,6 +813,6 @@
     <script src="js/projects-story.js" defer></script>
     <script src="js/game-player.js" defer></script>
     <script src="js/sorting-demo.js" defer></script>
-    <script src="js/project-gallery.js" defer></script>
+    <script src="js/news-demo.js" defer></script>
   </body>
 </html>
