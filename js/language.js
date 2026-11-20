@@ -157,6 +157,7 @@
     'Conversation illustration': 'Ilustración de una conversación',
     'Weightlifting illustration (2026)': 'Ilustración de levantamiento de pesas (2026)',
     'Illustrated by Louis Valderrama': 'Ilustrado por Louis Valderrama',
+    'Designed multiple marketing and outreach flyers for the Rutgers-Newark Mental Health Resource Fair, engaging students, faculty, and staff with information about mental health support and wellness resources.': 'Diseñé varios folletos promocionales y de difusión para la Feria de Recursos de Salud Mental de Rutgers-Newark, para informar a estudiantes, docentes y personal sobre servicios de apoyo en salud mental y recursos de bienestar.',
     'Denim Day poster with red lettering and an illustrated woman in glasses and a patterned dress.': 'Póster del Día de la mezclilla con letras rojas y una mujer ilustrada con gafas y un vestido estampado.',
     'Comic-style illustration of a man holding a colorful folding fan beside two speech bubbles.': 'Ilustración estilo cómic de un hombre con un abanico de colores junto a dos globos de diálogo.',
     'Two men talking on a couch beneath the Fiserv and Rutgers Veteran logos.': 'Dos hombres conversan en un sofá debajo de los logotipos de Fiserv y Rutgers Veteran.',
