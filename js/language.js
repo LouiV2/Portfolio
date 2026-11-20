@@ -75,6 +75,7 @@
     'See where the toolkit leads.': 'Descubre adónde llevan estas herramientas.',
     'Explore the projects →': 'Explora los proyectos →',
     '04 / Contact': '04 / Contacto', 'Let’s get': 'Pongámonos', 'in touch.': 'en contacto.',
+    "Louis's email!": '¡El correo de Louis!',
     'Every conversation starts with a connection. My contact information is listed below.': 'Toda conversación comienza con una conexión. A continuación encontrarás mis datos de contacto.',
     'Email Louis': 'Escribe a Louis',
     'Prepare an email below, then open the draft in your email app to send it. This website does not send or store messages.': 'Prepara un correo a continuación y abre el borrador en tu aplicación de correo para enviarlo. Este sitio no envía ni almacena mensajes.',
