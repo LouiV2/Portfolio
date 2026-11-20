@@ -59,7 +59,7 @@
           trail.forEach((glyph, row) => {
             const y = (head - row) * spacing;
             if (y < 0 || y > height + spacing) return;
-            context.fillStyle = row === 0 ? '#bbf7d0' : `rgba(74, 222, 128, ${.75 * (1 - row / trail.length)})`;
+            context.fillStyle = row === 0 ? '#fde68a' : `rgba(250, 204, 21, ${.75 * (1 - row / trail.length)})`;
             context.fillText(glyph, column * spacing, y);
           });
         });
