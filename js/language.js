@@ -141,7 +141,7 @@
     'Explore the education behind it ↓': 'Explora mi formación ↓',
     'I hold two associate degrees, two bachelor’s degrees, and a master’s degree. Each discipline is part of the background I bring to my current studies.': 'Tengo dos títulos de asociado, dos licenciaturas y una maestría. Cada disciplina forma parte de la experiencia que aporto a mis estudios actuales.',
     'From education to public service ↓': 'De la formación al servicio público ↓',
-    'Working with people.': 'Trabajar con las personas.',
+    'Working with Military-Connected Students.': 'Trabajar con estudiantes vinculados a las Fuerzas Armadas.',
     'Alongside my creative and technical education, public administration and my work at Rutgers are the service side of my story.': 'Junto con mi formación creativa y técnica, la administración pública y mi trabajo en Rutgers representan el servicio en mi historia.',
     'Outside of work & school ↓': 'Fuera del trabajo y los estudios ↓',
     'There’s more to my story than work and degrees. Outside of both, these are my interests.': 'Mi historia va más allá del trabajo y los títulos. Fuera de ambos, estos son mis intereses.',
