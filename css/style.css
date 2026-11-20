@@ -421,7 +421,6 @@ footer { padding-block: 30px; }
 @media (prefers-reduced-motion: no-preference) {
   .projects-page.story-motion [data-reveal] { opacity: .45; transform: translateY(24px); transition: opacity 650ms ease, transform 650ms ease; }
   .projects-page.story-motion [data-reveal].is-revealed { opacity: 1; transform: none; }
-  .projects-page.story-motion .chapter-instrument { animation: hud-orbit 90s linear infinite; }
 }
 @media (max-width: 850px) {
   .projects-page .code-project-body { grid-template-columns: minmax(0, 1fr); gap: 24px; }
@@ -451,6 +450,26 @@ footer { padding-block: 30px; }
   padding: 0;
 }
 .projects-page .interactive-project .project-brief h3 { margin-bottom: 12px; }
+.project-hud {
+  display: grid;
+  grid-template-columns: 1fr 48px 1fr;
+  align-items: center;
+  gap: 12px;
+  width: min(100%, 260px);
+  margin: 0 auto 12px;
+}
+.project-hud::before,
+.project-hud::after {
+  content: "";
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent));
+  opacity: .55;
+}
+.project-hud::after { transform: scaleX(-1); }
+.project-hud span {
+  aspect-ratio: 1;
+  background: url("../images/hud-ring.svg") center / contain no-repeat;
+}
 .projects-page .interactive-project .project-visual {
   align-items: center;
   gap: clamp(28px, 5vw, 48px);
@@ -633,16 +652,67 @@ footer { padding-block: 30px; }
     overflow-wrap: anywhere;
   }
 }
-.game-player,
-.project-source { box-shadow: 0 0 0 0 transparent; }
-.game-player:is(:hover, :focus-within),
-.project-source:is(:hover, :focus-within, [open]) {
-  border-color: #facc15;
-  box-shadow: 0 0 16px #facc1540;
+.projects-page :is(.game-player, .project-demo, .project-source) {
+  position: relative;
+  box-shadow: 0 0 0 0 transparent;
+}
+.projects-page :is(.game-player, .project-demo, .project-source)::before,
+.projects-page :is(.game-player, .project-demo, .project-source)::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: solid var(--accent);
+  opacity: .55;
+  pointer-events: none;
+}
+.projects-page :is(.game-player, .project-demo, .project-source)::before {
+  inset: -1px auto auto -1px;
+  border-width: 2px 0 0 2px;
+}
+.projects-page :is(.game-player, .project-demo, .project-source)::after {
+  inset: auto -1px -1px auto;
+  border-width: 0 2px 2px 0;
+}
+.projects-page :is(.game-player, .project-demo, .project-source):focus-within,
+.projects-page .project-source[open] {
+  border-color: var(--accent);
+  box-shadow: 0 0 16px #facc152e;
+}
+.projects-page :is(.game-player, .project-demo, .project-source):focus-within::before,
+.projects-page :is(.game-player, .project-demo, .project-source):focus-within::after,
+.projects-page .project-source[open]::before,
+.projects-page .project-source[open]::after {
+  width: 28px;
+  height: 24px;
+  opacity: 1;
+}
+@media (hover: hover) {
+  .projects-page :is(.game-player, .project-demo, .project-source):hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 16px #facc152e;
+  }
+  .projects-page :is(.game-player, .project-demo, .project-source):hover::before,
+  .projects-page :is(.game-player, .project-demo, .project-source):hover::after {
+    width: 28px;
+    height: 24px;
+    opacity: 1;
+  }
 }
 @media (prefers-reduced-motion: no-preference) {
-  .game-player,
-  .project-source { transition: border-color 200ms ease, box-shadow 200ms ease; }
+  html:not([data-hud-paused]) .projects-page :is(.game-player, .project-demo, .project-source) {
+    transition: border-color 220ms ease, box-shadow 220ms ease;
+  }
+  html:not([data-hud-paused]) .projects-page :is(.game-player, .project-demo, .project-source)::before,
+  html:not([data-hud-paused]) .projects-page :is(.game-player, .project-demo, .project-source)::after {
+    transition: width 220ms ease, height 220ms ease, opacity 220ms ease;
+  }
+  html:not([data-hud-paused]) .projects-page.story-motion .project-brief:has(h3.is-revealed) .project-hud span {
+    animation: project-hud-reveal 520ms ease-out both;
+  }
+}
+@keyframes project-hud-reveal {
+  from { opacity: .35; transform: rotate(-48deg) scale(.85); }
 }
 .source-comment { color: #9bb98a; }
 .source-string { color: #e8aa91; }
