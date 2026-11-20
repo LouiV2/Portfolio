@@ -1,18 +1,6 @@
 (() => {
-  const dialog = document.querySelector('#project-gallery');
+  const dialog = document.querySelector('.project-gallery');
   if (!dialog || typeof dialog.showModal !== 'function') return;
-  const sourceDialog = document.querySelector('#source-dialog');
-  const sourceButton = document.querySelector('.project-source');
-  if (sourceDialog && sourceButton) {
-    const sourceCode = sourceDialog.querySelector('.project-source-full');
-    sourceButton.addEventListener('click', () => {
-      sourceDialog.showModal();
-      sourceCode.scrollTo(0, 0);
-    });
-    sourceDialog.addEventListener('close', () => {
-      sourceButton.focus({ preventScroll: true });
-    });
-  }
   const links = [...document.querySelectorAll('.project-screenshot a')];
   const image = dialog.querySelector('.gallery-image');
   const caption = dialog.querySelector('.gallery-caption');

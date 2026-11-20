@@ -520,24 +520,21 @@ footer { padding-block: 30px; }
   border: 1px solid var(--line);
   background: var(--paper);
 }
-.project-source,
-.project-gallery.source-dialog {
-  color-scheme: dark;
-  padding: 0;
-  border: 1px solid #435063;
-  background: #171c24;
-  color: #e5e7eb;
-  box-shadow: 0 12px 28px #0005;
-  text-align: left;
-}
 .project-source {
   width: min(100%, 720px);
   min-width: 0;
-  cursor: pointer;
-  font: inherit;
+  color-scheme: dark;
+  border: 1px solid #435063;
+  background: #171c24;
+  color: #e5e7eb;
+  text-align: left;
 }
-.project-source:hover { border-color: #facc15; }
-.project-source:focus-visible,
+.project-source summary {
+  display: block;
+  cursor: pointer;
+}
+.project-source summary::-webkit-details-marker { display: none; }
+.project-source summary:focus-visible,
 .project-source-full:focus-visible { outline: 2px solid #facc15; outline-offset: -3px; }
 .source-toolbar {
   display: flex;
@@ -555,6 +552,10 @@ footer { padding-block: 30px; }
   font: 700 .9rem/1.5 Consolas, "Courier New", monospace;
 }
 .source-action { color: #facc15; font-size: .875rem; }
+.source-collapse,
+.project-source[open] .source-expand,
+.project-source[open] .project-source-preview { display: none; }
+.project-source[open] .source-collapse { display: inline; }
 .project-source-preview,
 .project-source-full {
   padding: 16px;
@@ -566,23 +567,21 @@ footer { padding-block: 30px; }
   white-space: pre-wrap;
   overflow-wrap: anywhere;
 }
-.source-dialog[open] {
-  display: flex;
-  flex-direction: column;
-}
-.source-dialog .source-toolbar { flex: none; }
-.source-dialog .source-toolbar button {
-  border-color: #435063;
-  background: #171c24;
-  color: #e5e7eb;
-}
-.source-dialog .source-toolbar button:hover { border-color: #facc15; }
 .project-source-full {
-  min-height: 0;
-  max-height: 76dvh;
+  max-height: min(60vh, 30rem);
   margin: 0;
   overflow: auto;
-  overscroll-behavior: contain;
+}
+.game-player,
+.project-source { box-shadow: 0 0 0 0 transparent; }
+.game-player:is(:hover, :focus-within),
+.project-source:is(:hover, :focus-within, [open]) {
+  border-color: #facc15;
+  box-shadow: 0 0 16px #facc1540;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .game-player,
+  .project-source { transition: border-color 200ms ease, box-shadow 200ms ease; }
 }
 .source-comment { color: #9bb98a; }
 .source-string { color: #e8aa91; }
@@ -1097,7 +1096,6 @@ html[data-theme="light"] main::after { filter: brightness(.55); }
 }
 
 html.gallery-open { overflow: hidden; }
-html:has(.source-dialog[open]) { overflow: hidden; }
 .project-gallery {
   width: min(1100px, 96vw);
   max-width: 96vw;

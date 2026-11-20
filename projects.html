@@ -77,123 +77,22 @@
                     allowfullscreen></iframe>
                   <a class="button" href="https://play.unity.com/en/games/ecff1250-1a35-46a9-8a32-bf8d7f8c786b/week7">Open on Unity Play</a>
                 </div>
-                <button class="project-source" type="button" aria-haspopup="dialog" aria-controls="source-dialog">
-                  <span class="source-toolbar">
-                    <span class="source-filename">PlayerController.cs</span>
-                    <span class="source-action">View full code</span>
-                  </span>
-                  <code class="project-source-preview" aria-hidden="true"><span class="source-keyword">using</span> UnityEngine;
+                <details class="project-source">
+                  <summary>
+                    <span class="source-toolbar">
+                      <span class="source-filename">PlayerController.cs</span>
+                      <span class="source-action source-expand">Expand full code</span>
+                      <span class="source-action source-collapse">Collapse code</span>
+                    </span>
+                    <code class="project-source-preview" aria-hidden="true"><span class="source-keyword">using</span> UnityEngine;
 <span class="source-keyword">using</span> UnityEngine.InputSystem;
 <span class="source-keyword">using</span> UnityEngine.SceneManagement;
 <span class="source-keyword">using</span> TMPro;
 
 <span class="source-keyword">public</span> <span class="source-keyword">class</span> PlayerController : <span class="source-type">MonoBehaviour</span>
 {</code>
-                </button>
-              </div>
-            </div>
-          </article>
-          <article class="code-project" id="chapter-2" aria-labelledby="project-2">
-            <div class="code-project-body">
-              <div class="project-brief">
-                <div class="chapter-instrument" aria-hidden="true"></div>
-                <p class="chapter-hook" data-reveal>Then, bring order to the logic.</p>
-                <p class="eyebrow">02 / C++</p>
-                <h3 data-reveal id="project-2">Sorting Algorithms</h3>
-                <p data-reveal>A C++ console program that accepts 5 to 10 integers and lets the user choose insertion sort, selection sort, or bubble sort. It displays the array before and after sorting.</p>
-                <p data-reveal>The screenshots follow the code from the sorting functions to the input menu and final output logic. Select any image to read it at full size.</p>
-                <ol class="project-flow" aria-label="Project sequence" data-reveal>
-                  <li>Enter integers</li>
-                  <li>Choose a sort</li>
-                  <li>Print the result</li>
-                </ol>
-              </div>
-              <div class="project-visual">
-                <figure class="project-screenshot sorting-screenshot" data-reveal>
-                  <a href="images/project-2-sorting-1.png">
-                    <img src="images/project-2-sorting-1.png" alt="C++ implementations of insertion sort, selection sort, and bubble sort." width="746" height="1315" loading="lazy" decoding="async">
-                  </a>
-                  <figcaption>01 / Sorting functions</figcaption>
-                </figure>
-                <figure class="project-screenshot sorting-screenshot" data-reveal>
-                  <a href="images/project-2-sorting-2.png">
-                    <img src="images/project-2-sorting-2.png" alt="C++ array-printing function, integer input, range checks, and sorting algorithm menu." width="805" height="1162" loading="lazy" decoding="async">
-                  </a>
-                  <figcaption>02 / Input and algorithm selection</figcaption>
-                </figure>
-                <figure class="project-screenshot sorting-screenshot" data-reveal>
-                  <a href="images/project-2-sorting-3.png">
-                    <img src="images/project-2-sorting-3.png" alt="C++ switch statement calling the selected sorting function and printing the sorted array." width="408" height="399" loading="lazy" decoding="async">
-                  </a>
-                  <figcaption>03 / Sort and print the result</figcaption>
-                </figure>
-              </div>
-            </div>
-          </article>
-          <article class="code-project" id="chapter-3" aria-labelledby="project-3">
-            <div class="code-project-body">
-              <div class="project-brief">
-                <div class="chapter-instrument" aria-hidden="true"></div>
-                <p class="chapter-hook" data-reveal>Finally, connect information.</p>
-                <p class="eyebrow">03 / Python &amp; SQLite</p>
-                <h3 data-reveal id="project-3">News Aggregator</h3>
-                <p data-reveal>A Python notebook that prompts for a news topic, retrieves five recent articles through NewsAPI using requests, and stores their headlines, descriptions, and publication dates in SQLite.</p>
-                <p data-reveal>The code uses unique headlines to avoid duplicate database entries and displays the stored article details in a numbered list. Select either screenshot to read the code at full size.</p>
-                <ol class="project-flow" aria-label="Project sequence" data-reveal>
-                  <li>Choose a topic</li>
-                  <li>Fetch five articles</li>
-                  <li>Store and display</li>
-                </ol>
-              </div>
-              <div class="project-visual">
-                <figure class="project-screenshot" data-reveal>
-                  <a href="images/project-3-news-01.png">
-                    <img src="images/project-3-news-01.png" alt="Python notebook showing topic input, NewsAPI requests, and SQLite news-table creation." width="934" height="882" loading="lazy" decoding="async">
-                  </a>
-                  <figcaption>01 / Fetch articles and create the database</figcaption>
-                </figure>
-                <figure class="project-screenshot" data-reveal>
-                  <a href="images/project-3-news-02.png">
-                    <img src="images/project-3-news-02.png" alt="Python functions inserting articles into SQLite without duplicate headlines and displaying numbered article details." width="1105" height="844" loading="lazy" decoding="async">
-                  </a>
-                  <figcaption>02 / Store and display the headlines</figcaption>
-                </figure>
-              </div>
-            </div>
-          </article>
-        </div>
-        <p class="note">Screenshots show my project code and development work. Additional links will be added when available.</p>
-      </section>
-      <section class="story-next" aria-labelledby="continue-heading">
-        <p class="eyebrow">Next / Contact</p>
-        <h2 id="continue-heading">Continue the conversation.</h2>
-        <a class="text-link" href="contact.html">Get in touch &rarr;</a>
-      </section>
-    </main>
-    <dialog class="project-gallery" id="project-gallery" aria-labelledby="gallery-title">
-      <div class="gallery-toolbar">
-        <h2 id="gallery-title">Project screenshots</h2>
-        <button class="gallery-close" type="button" autofocus>Close</button>
-      </div>
-      <div class="gallery-stage">
-        <img class="gallery-image" alt="">
-      </div>
-      <p class="gallery-caption" aria-live="polite" aria-atomic="true"></p>
-      <div class="gallery-controls">
-        <button class="gallery-previous" type="button">Previous image</button>
-        <span class="gallery-count"></span>
-        <button class="gallery-next" type="button">Next image</button>
-      </div>
-      <p class="gallery-hint">Swipe left or right, or use the arrow buttons.</p>
-    </dialog>
-    <dialog class="project-gallery source-dialog" id="source-dialog" aria-labelledby="source-title">
-      <div class="source-toolbar">
-        <h2 class="source-filename" id="source-title">PlayerController.cs</h2>
-        <form method="dialog">
-          <button type="submit" autofocus>Close</button>
-        </form>
-      </div>
-      <pre class="project-source-full" tabindex="0" role="region" aria-label="C# source code"><code><span class="source-keyword">using</span> UnityEngine;
+                  </summary>
+                  <pre class="project-source-full" tabindex="0" role="region" aria-label="C# source code"><code><span class="source-keyword">using</span> UnityEngine;
 <span class="source-keyword">using</span> UnityEngine.InputSystem;
 <span class="source-keyword">using</span> UnityEngine.SceneManagement;
 <span class="source-keyword">using</span> TMPro;
@@ -535,6 +434,102 @@
         }
     }
 }</code></pre>
+                </details>
+              </div>
+            </div>
+          </article>
+          <article class="code-project" id="chapter-2" aria-labelledby="project-2">
+            <div class="code-project-body">
+              <div class="project-brief">
+                <div class="chapter-instrument" aria-hidden="true"></div>
+                <p class="chapter-hook" data-reveal>Then, bring order to the logic.</p>
+                <p class="eyebrow">02 / C++</p>
+                <h3 data-reveal id="project-2">Sorting Algorithms</h3>
+                <p data-reveal>A C++ console program that accepts 5 to 10 integers and lets the user choose insertion sort, selection sort, or bubble sort. It displays the array before and after sorting.</p>
+                <p data-reveal>The screenshots follow the code from the sorting functions to the input menu and final output logic. Select any image to read it at full size.</p>
+                <ol class="project-flow" aria-label="Project sequence" data-reveal>
+                  <li>Enter integers</li>
+                  <li>Choose a sort</li>
+                  <li>Print the result</li>
+                </ol>
+              </div>
+              <div class="project-visual">
+                <figure class="project-screenshot sorting-screenshot" data-reveal>
+                  <a href="images/project-2-sorting-1.png">
+                    <img src="images/project-2-sorting-1.png" alt="C++ implementations of insertion sort, selection sort, and bubble sort." width="746" height="1315" loading="lazy" decoding="async">
+                  </a>
+                  <figcaption>01 / Sorting functions</figcaption>
+                </figure>
+                <figure class="project-screenshot sorting-screenshot" data-reveal>
+                  <a href="images/project-2-sorting-2.png">
+                    <img src="images/project-2-sorting-2.png" alt="C++ array-printing function, integer input, range checks, and sorting algorithm menu." width="805" height="1162" loading="lazy" decoding="async">
+                  </a>
+                  <figcaption>02 / Input and algorithm selection</figcaption>
+                </figure>
+                <figure class="project-screenshot sorting-screenshot" data-reveal>
+                  <a href="images/project-2-sorting-3.png">
+                    <img src="images/project-2-sorting-3.png" alt="C++ switch statement calling the selected sorting function and printing the sorted array." width="408" height="399" loading="lazy" decoding="async">
+                  </a>
+                  <figcaption>03 / Sort and print the result</figcaption>
+                </figure>
+              </div>
+            </div>
+          </article>
+          <article class="code-project" id="chapter-3" aria-labelledby="project-3">
+            <div class="code-project-body">
+              <div class="project-brief">
+                <div class="chapter-instrument" aria-hidden="true"></div>
+                <p class="chapter-hook" data-reveal>Finally, connect information.</p>
+                <p class="eyebrow">03 / Python &amp; SQLite</p>
+                <h3 data-reveal id="project-3">News Aggregator</h3>
+                <p data-reveal>A Python notebook that prompts for a news topic, retrieves five recent articles through NewsAPI using requests, and stores their headlines, descriptions, and publication dates in SQLite.</p>
+                <p data-reveal>The code uses unique headlines to avoid duplicate database entries and displays the stored article details in a numbered list. Select either screenshot to read the code at full size.</p>
+                <ol class="project-flow" aria-label="Project sequence" data-reveal>
+                  <li>Choose a topic</li>
+                  <li>Fetch five articles</li>
+                  <li>Store and display</li>
+                </ol>
+              </div>
+              <div class="project-visual">
+                <figure class="project-screenshot" data-reveal>
+                  <a href="images/project-3-news-01.png">
+                    <img src="images/project-3-news-01.png" alt="Python notebook showing topic input, NewsAPI requests, and SQLite news-table creation." width="934" height="882" loading="lazy" decoding="async">
+                  </a>
+                  <figcaption>01 / Fetch articles and create the database</figcaption>
+                </figure>
+                <figure class="project-screenshot" data-reveal>
+                  <a href="images/project-3-news-02.png">
+                    <img src="images/project-3-news-02.png" alt="Python functions inserting articles into SQLite without duplicate headlines and displaying numbered article details." width="1105" height="844" loading="lazy" decoding="async">
+                  </a>
+                  <figcaption>02 / Store and display the headlines</figcaption>
+                </figure>
+              </div>
+            </div>
+          </article>
+        </div>
+        <p class="note">Screenshots show my project code and development work. Additional links will be added when available.</p>
+      </section>
+      <section class="story-next" aria-labelledby="continue-heading">
+        <p class="eyebrow">Next / Contact</p>
+        <h2 id="continue-heading">Continue the conversation.</h2>
+        <a class="text-link" href="contact.html">Get in touch &rarr;</a>
+      </section>
+    </main>
+    <dialog class="project-gallery" aria-labelledby="gallery-title">
+      <div class="gallery-toolbar">
+        <h2 id="gallery-title">Project screenshots</h2>
+        <button class="gallery-close" type="button" autofocus>Close</button>
+      </div>
+      <div class="gallery-stage">
+        <img class="gallery-image" alt="">
+      </div>
+      <p class="gallery-caption" aria-live="polite" aria-atomic="true"></p>
+      <div class="gallery-controls">
+        <button class="gallery-previous" type="button">Previous image</button>
+        <span class="gallery-count"></span>
+        <button class="gallery-next" type="button">Next image</button>
+      </div>
+      <p class="gallery-hint">Swipe left or right, or use the arrow buttons.</p>
     </dialog>
     <footer>
       <p>&copy; 2026 Louis Valderrama</p>
