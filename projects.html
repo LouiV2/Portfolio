@@ -77,362 +77,19 @@
                     allowfullscreen></iframe>
                   <a class="button" href="https://play.unity.com/en/games/ecff1250-1a35-46a9-8a32-bf8d7f8c786b/week7">Open on Unity Play</a>
                 </div>
-                <details class="project-source">
-                  <summary>
-                    <span class="project-source-title">PlayerController.cs</span>
-                    <span class="project-source-expand">Expand full C# source</span>
-                    <span class="project-source-collapse">Collapse C# source</span>
-                    <code class="project-source-preview" aria-hidden="true">using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
-using TMPro;
+                <button class="project-source" type="button" aria-haspopup="dialog" aria-controls="source-dialog">
+                  <span class="source-toolbar">
+                    <span class="source-filename">PlayerController.cs</span>
+                    <span class="source-action">View full code</span>
+                  </span>
+                  <code class="project-source-preview" aria-hidden="true"><span class="source-keyword">using</span> UnityEngine;
+<span class="source-keyword">using</span> UnityEngine.InputSystem;
+<span class="source-keyword">using</span> UnityEngine.SceneManagement;
+<span class="source-keyword">using</span> TMPro;
 
-public class PlayerController : MonoBehaviour
+<span class="source-keyword">public</span> <span class="source-keyword">class</span> PlayerController : <span class="source-type">MonoBehaviour</span>
 {</code>
-                  </summary>
-                  <pre class="project-source-full" tabindex="0" role="region" aria-label="PlayerController.cs source code"><code>using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
-using TMPro;
-
-public class PlayerController : MonoBehaviour
-{
-    public TextMeshProUGUI countText;   // UI text to display the number of pickups collected
-    public GameObject winTextObject;    // "You win!" text (starts disabled)
-
-    private Rigidbody rb;   // the player's rigidbody
-    private int count;      // the number of pickups collected
-    private float movementX;    // input for horizontal movement
-    private float movementY;    // input for vertical movement
-    public float jumpPower = 5f;    // starting jump power
-    public Transform respawnPoint;  // where the player respawns if they die
-
-    public float dashCooldown = 1f; // how long between dashes
-    private float nextDashTime = 0f;    // when the next dash is available
-
-    public float maxSpeed = 8f;          // normal top speed
-    public float dashMaxSpeed = 20f;     // top speed while dashing
-    public float dashDuration = 0.3f;    // how long the higher speed lasts
-    private float dashEndTime = 0f;      // when the dash ends
-
-    public GameObject pauseMenuObject;  // pause menu (starts disabled)
-    private bool isPaused;  // whether the game is paused
-    private bool gameEnded; // whether the game has ended
-    private bool gameWon;   // whether the game has won
-
-    public AudioClip pickupSound; // sound to play when a pickup is collected
-    private AudioSource audioSource;    // the player's audio source
-
-    public float startTimeSeconds = 60f;         // how long the player gets to complete the level
-    public TextMeshProUGUI timerText;            // on-screen timer text
-    public GameObject gameOverTextObject;        // "Game Over" text
-    private float timeRemaining;                 // how much time is left
-    private bool timerRunning;                   // whether the timer is running
-
-    public int startingLives = 3;                // starting number of lives
-    public GameObject[] lifeIcons;               // 3D objects, one per life
-    public float invulnerableSeconds = 1.5f;     // grace period after respawning
-    private int lives;                           // current number of lives
-    private float invulnerableUntil = 0f;        // when the player becomes invulnerable
-    private Vector3 startPosition;               // player's starting position for respawning
-
-    public GameObject exitPortal;               // exit portal
-    public int pickupsNeeded = 13;              // how many pickups are needed to win
-    public string finalSceneName = "LevelTwo";  // name of the final level
-    private bool exitUnlocked = false;          // whether the exit has been unlocked
-    public bool ExitOpen =&gt; exitUnlocked;       // whether the exit is open
-
-    public bool cameraRelativeMovement = false; // tank controls for the camera
-    public bool tankControls = false;           // tank controls for the player
-    public float TurnInput =&gt; movementX;        // input for turning
-
-    void Start()
-    {
-        // Pause the game.
-        Time.timeScale = 1f;
-        if (pauseMenuObject != null) pauseMenuObject.SetActive(false);
-
-        // Get the player's rigidbody
-        rb = GetComponent&lt;Rigidbody&gt;();
-        count = 0;
-
-        // Get the player's starting position.
-        startPosition = transform.position;
-        lives = startingLives;
-        UpdateLivesDisplay();
-
-        // Get the player's audio source
-        audioSource = GetComponent&lt;AudioSource&gt;();
-
-        // Start the timer and hide the win text and exit portal.
-        if (winTextObject != null) winTextObject.SetActive(false);
-        if (exitPortal != null) exitPortal.SetActive(false);
-        timeRemaining = startTimeSeconds;
-        timerRunning = true;
-
-        // Hide the game over text.
-        if (gameOverTextObject != null) gameOverTextObject.SetActive(false);
-
-        SetCountText();
-        UpdateTimerText();
-
-    }
-
-    // Called when the player moves.
-    void OnMove(InputValue movementValue)
-    {
-        Vector2 movementVector = movementValue.Get&lt;Vector2&gt;();
-
-        movementX = movementVector.x;
-        movementY = movementVector.y;
-    }
-
-    // Function is called when the player picks up a pickup.
-    // Function also checks if level can be unlocked and game can be won.
-    void SetCountText()
-    {
-        if (countText != null)
-        countText.text = "Count: " + count.ToString();
-
-        if (count &gt;= pickupsNeeded &amp;&amp; !gameWon &amp;&amp; !exitUnlocked)
-        {
-            bool finalLevel = SceneManager.GetActiveScene().name == finalSceneName;
-
-            if (finalLevel)
-            {
-            // Level is won
-                gameWon = true;
-                timerRunning = false;
-                if (winTextObject != null) winTextObject.SetActive(true);
-            }
-        else
-        {
-            // Level is unlocked
-            exitUnlocked = true;
-
-            if (exitPortal != null) exitPortal.SetActive(true);
-        }
-
-            GameObject enemy = GameObject.FindGameObjectWithTag("Enemy");
-            if (enemy != null) Destroy(enemy);
-        }
-    }
-
-    // Function is called when the player moves and camera moves.
-    void FixedUpdate()
-{
-    Vector3 input;
-    // if statement that moves the camera in the direction of the player when tank controls are on. Used for the second level.
-    if (tankControls &amp;&amp; Camera.main != null)
-    {
-        Transform cam = Camera.main.transform;
-        Vector3 forward = cam.forward; forward.y = 0f; forward.Normalize();
-        input = forward * movementY;
-    }
-    // else if statement that moves the player in the direction of the camera when tank controls are off. Mainly used for the first level.
-    else if (cameraRelativeMovement &amp;&amp; Camera.main != null)
-    {
-        Transform cam = Camera.main.transform;
-        Vector3 forward = cam.forward; forward.y = 0f; forward.Normalize();
-        Vector3 right = cam.right; right.y = 0f; right.Normalize();
-        input = forward * movementY + right * movementX;
-    }
-    else
-    {
-        input = new Vector3(movementX, 0f, movementY);
-    }
-
-    // if statement that nmakes sure the player doesn't move faster than the max speed.
-    if (input.sqrMagnitude &gt; 1f) input.Normalize();
-    float currentSpeed = Time.time &lt; dashEndTime ? dashMaxSpeed : maxSpeed;
-
-    Vector3 v = rb.linearVelocity;
-    rb.linearVelocity = new Vector3(input.x * currentSpeed, v.y, input.z * currentSpeed); //moves the player
-}
-
-    // Called when the player jumps.
-    void OnJump(InputValue value)
-    {
-        if (isPaused || gameEnded) return;
-
-        if (value.isPressed &amp;&amp; IsGrounded())
-        {
-            Vector3 v = rb.linearVelocity;
-            rb.linearVelocity = new Vector3(v.x, jumpPower, v.z);
-        }
-    }
-
-    // Called every frame
-    void Update()
-    {
-        if (gameEnded) return;
-
-        // Pause the game when P is pressed. Calls the function TogglePause()
-        if (Keyboard.current != null &amp;&amp; Keyboard.current.pKey.wasPressedThisFrame)
-        {
-            TogglePause();
-        }
-
-        // Dash. Calls the function Dash().
-        if (Keyboard.current != null &amp;&amp; (Keyboard.current.leftShiftKey.isPressed || Keyboard.current.rightShiftKey.isPressed))
-        {
-            Dash();
-        }
-                // Timer
-                if (timerRunning)
-        {
-            timeRemaining -= Time.deltaTime;
-
-            if (timeRemaining &lt;= 0f)
-            {
-                timeRemaining = 0f;
-                UpdateTimerText();
-                GameOver();
-            }
-            else
-            {
-                UpdateTimerText();
-            }
-        }
-    }
-
-    // Function is called when the player dashes. This dictates the dash duration and cooldown.
-    void Dash()
-    {
-        if (Time.time &lt; nextDashTime) return;
-
-        Vector3 direction = new Vector3(movementX, 0.0f, movementY);
-
-        if (direction.sqrMagnitude &gt; 0.01f)
-        {
-            dashEndTime = Time.time + dashDuration;
-            nextDashTime = Time.time + dashCooldown;
-        }
-    }
-
-    // Function is called when the player pauses. This toggles the pause menu.
-    void TogglePause()
-    {
-        isPaused = !isPaused;
-        Time.timeScale = isPaused ? 0f : 1f;
-
-        if (pauseMenuObject != null)
-            pauseMenuObject.SetActive(isPaused);
-    }
-
-    // Checks if the player is on the ground.
-    private bool IsGrounded()
-    {
-        return Physics.Raycast(transform.position, Vector3.down, 0.6f, ~0, QueryTriggerInteraction.Ignore);
-    }
-
-    // Function shows the time remaining.
-    void UpdateTimerText()
-    {
-        if (timerText == null) return;
-
-        int totalSeconds = Mathf.CeilToInt(timeRemaining);
-        int minutes = totalSeconds / 60;
-        int seconds = totalSeconds % 60;
-        timerText.text = "Time: " + minutes.ToString("00") + ":" + seconds.ToString("00");
-    }
-        // Function shows the number of lives.
-        void UpdateLivesDisplay()
-    {
-        if (lifeIcons == null) return;
-
-        for (int i = 0; i &lt; lifeIcons.Length; i++)
-        {
-            if (lifeIcons[i] != null)
-                lifeIcons[i].SetActive(i &lt; lives);
-        }
-    }
-
-    // Function is called when the player loses a life.
-    void LoseLife()
-    {
-        if (gameEnded || gameWon) return;
-        if (Time.time &lt; invulnerableUntil) return;
-
-        lives--;
-        UpdateLivesDisplay();
-
-        if (lives &lt;= 0)
-        {
-            GameOver();
-            return;
-        }
-
-        invulnerableUntil = Time.time + invulnerableSeconds;
-    }
-
-    //Resapwn the player to the starting position.
-    void Respawn()
-    {
-        rb.linearVelocity = Vector3.zero;
-        rb.angularVelocity = Vector3.zero;
-        movementX = 0f;
-        movementY = 0f;
-        transform.position = respawnPoint != null ? respawnPoint.position : startPosition;
-    }
-
-    // Function is called when the timer runs out.
-     void GameOver()
-    {
-        timerRunning = false;
-        gameEnded = true;
-
-        if (gameOverTextObject != null) gameOverTextObject.SetActive(true);
-
-        Time.timeScale = 0f;
-    }
-
-    // Function is called when the player collides with an enemy.
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            LoseLife();
-        }
-    }
-
-    // Function is called when the player collides with a pickup.
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.CompareTag("PickUp"))
-        {
-            other.gameObject.SetActive(false);
-            count = count + 1;
-
-            if (audioSource != null &amp;&amp; pickupSound != null)
-                audioSource.PlayOneShot(pickupSound);
-
-            SetCountText();
-        }
-
-        // if statement is called when the player collides with a kill floor.
-        if (other.gameObject.CompareTag("killFloor"))
-        {
-            LoseLife();
-            if (!gameEnded) Respawn();
-        }
-
-        //if statement is called when the player collides with a life pickup.
-        if (other.gameObject.CompareTag("LifePickup"))
-        {
-            if (lives &lt; startingLives &amp;&amp; !gameEnded)
-            {
-                lives++;
-                UpdateLivesDisplay();
-                other.gameObject.SetActive(false);
-
-                if (audioSource != null &amp;&amp; pickupSound != null)
-                    audioSource.PlayOneShot(pickupSound);
-            }
-        }
-    }
-}</code></pre>
-                </details>
+                </button>
               </div>
             </div>
           </article>
@@ -513,7 +170,7 @@ public class PlayerController : MonoBehaviour
         <a class="text-link" href="contact.html">Get in touch &rarr;</a>
       </section>
     </main>
-    <dialog class="project-gallery" aria-labelledby="gallery-title">
+    <dialog class="project-gallery" id="project-gallery" aria-labelledby="gallery-title">
       <div class="gallery-toolbar">
         <h2 id="gallery-title">Project screenshots</h2>
         <button class="gallery-close" type="button" autofocus>Close</button>
@@ -528,6 +185,356 @@ public class PlayerController : MonoBehaviour
         <button class="gallery-next" type="button">Next image</button>
       </div>
       <p class="gallery-hint">Swipe left or right, or use the arrow buttons.</p>
+    </dialog>
+    <dialog class="project-gallery source-dialog" id="source-dialog" aria-labelledby="source-title">
+      <div class="source-toolbar">
+        <h2 class="source-filename" id="source-title">PlayerController.cs</h2>
+        <form method="dialog">
+          <button type="submit" autofocus>Close</button>
+        </form>
+      </div>
+      <pre class="project-source-full" tabindex="0" role="region" aria-label="C# source code"><code><span class="source-keyword">using</span> UnityEngine;
+<span class="source-keyword">using</span> UnityEngine.InputSystem;
+<span class="source-keyword">using</span> UnityEngine.SceneManagement;
+<span class="source-keyword">using</span> TMPro;
+
+<span class="source-keyword">public</span> <span class="source-keyword">class</span> PlayerController : <span class="source-type">MonoBehaviour</span>
+{
+    <span class="source-keyword">public</span> <span class="source-type">TextMeshProUGUI</span> countText;   <span class="source-comment">// UI text to display the number of pickups collected</span>
+    <span class="source-keyword">public</span> <span class="source-type">GameObject</span> winTextObject;    <span class="source-comment">// &quot;You win!&quot; text (starts disabled)</span>
+
+    <span class="source-keyword">private</span> <span class="source-type">Rigidbody</span> rb;   <span class="source-comment">// the player&#39;s rigidbody</span>
+    <span class="source-keyword">private</span> <span class="source-keyword">int</span> count;      <span class="source-comment">// the number of pickups collected</span>
+    <span class="source-keyword">private</span> <span class="source-keyword">float</span> movementX;    <span class="source-comment">// input for horizontal movement</span>
+    <span class="source-keyword">private</span> <span class="source-keyword">float</span> movementY;    <span class="source-comment">// input for vertical movement</span>
+    <span class="source-keyword">public</span> <span class="source-keyword">float</span> jumpPower = <span class="source-number">5f</span>;    <span class="source-comment">// starting jump power</span>
+    <span class="source-keyword">public</span> <span class="source-type">Transform</span> respawnPoint;  <span class="source-comment">// where the player respawns if they die</span>
+
+    <span class="source-keyword">public</span> <span class="source-keyword">float</span> dashCooldown = <span class="source-number">1f</span>; <span class="source-comment">// how long between dashes</span>
+    <span class="source-keyword">private</span> <span class="source-keyword">float</span> nextDashTime = <span class="source-number">0f</span>;    <span class="source-comment">// when the next dash is available</span>
+
+    <span class="source-keyword">public</span> <span class="source-keyword">float</span> maxSpeed = <span class="source-number">8f</span>;          <span class="source-comment">// normal top speed</span>
+    <span class="source-keyword">public</span> <span class="source-keyword">float</span> dashMaxSpeed = <span class="source-number">20f</span>;     <span class="source-comment">// top speed while dashing</span>
+    <span class="source-keyword">public</span> <span class="source-keyword">float</span> dashDuration = <span class="source-number">0.3f</span>;    <span class="source-comment">// how long the higher speed lasts</span>
+    <span class="source-keyword">private</span> <span class="source-keyword">float</span> dashEndTime = <span class="source-number">0f</span>;      <span class="source-comment">// when the dash ends</span>
+
+    <span class="source-keyword">public</span> <span class="source-type">GameObject</span> pauseMenuObject;  <span class="source-comment">// pause menu (starts disabled)</span>
+    <span class="source-keyword">private</span> <span class="source-keyword">bool</span> isPaused;  <span class="source-comment">// whether the game is paused</span>
+    <span class="source-keyword">private</span> <span class="source-keyword">bool</span> gameEnded; <span class="source-comment">// whether the game has ended</span>
+    <span class="source-keyword">private</span> <span class="source-keyword">bool</span> gameWon;   <span class="source-comment">// whether the game has won</span>
+
+    <span class="source-keyword">public</span> <span class="source-type">AudioClip</span> pickupSound; <span class="source-comment">// sound to play when a pickup is collected</span>
+    <span class="source-keyword">private</span> <span class="source-type">AudioSource</span> audioSource;    <span class="source-comment">// the player&#39;s audio source</span>
+
+    <span class="source-keyword">public</span> <span class="source-keyword">float</span> startTimeSeconds = <span class="source-number">60f</span>;         <span class="source-comment">// how long the player gets to complete the level</span>
+    <span class="source-keyword">public</span> <span class="source-type">TextMeshProUGUI</span> timerText;            <span class="source-comment">// on-screen timer text</span>
+    <span class="source-keyword">public</span> <span class="source-type">GameObject</span> gameOverTextObject;        <span class="source-comment">// &quot;Game Over&quot; text</span>
+    <span class="source-keyword">private</span> <span class="source-keyword">float</span> timeRemaining;                 <span class="source-comment">// how much time is left</span>
+    <span class="source-keyword">private</span> <span class="source-keyword">bool</span> timerRunning;                   <span class="source-comment">// whether the timer is running</span>
+
+    <span class="source-keyword">public</span> <span class="source-keyword">int</span> startingLives = <span class="source-number">3</span>;                <span class="source-comment">// starting number of lives</span>
+    <span class="source-keyword">public</span> <span class="source-type">GameObject</span>[] lifeIcons;               <span class="source-comment">// 3D objects, one per life</span>
+    <span class="source-keyword">public</span> <span class="source-keyword">float</span> invulnerableSeconds = <span class="source-number">1.5f</span>;     <span class="source-comment">// grace period after respawning</span>
+    <span class="source-keyword">private</span> <span class="source-keyword">int</span> lives;                           <span class="source-comment">// current number of lives</span>
+    <span class="source-keyword">private</span> <span class="source-keyword">float</span> invulnerableUntil = <span class="source-number">0f</span>;        <span class="source-comment">// when the player becomes invulnerable</span>
+    <span class="source-keyword">private</span> <span class="source-type">Vector3</span> startPosition;               <span class="source-comment">// player&#39;s starting position for respawning</span>
+
+    <span class="source-keyword">public</span> <span class="source-type">GameObject</span> exitPortal;               <span class="source-comment">// exit portal</span>
+    <span class="source-keyword">public</span> <span class="source-keyword">int</span> pickupsNeeded = <span class="source-number">13</span>;              <span class="source-comment">// how many pickups are needed to win</span>
+    <span class="source-keyword">public</span> <span class="source-keyword">string</span> finalSceneName = <span class="source-string">&quot;LevelTwo&quot;</span>;  <span class="source-comment">// name of the final level</span>
+    <span class="source-keyword">private</span> <span class="source-keyword">bool</span> exitUnlocked = <span class="source-keyword">false</span>;          <span class="source-comment">// whether the exit has been unlocked</span>
+    <span class="source-keyword">public</span> <span class="source-keyword">bool</span> ExitOpen =&gt; exitUnlocked;       <span class="source-comment">// whether the exit is open</span>
+
+    <span class="source-keyword">public</span> <span class="source-keyword">bool</span> cameraRelativeMovement = <span class="source-keyword">false</span>; <span class="source-comment">// tank controls for the camera</span>
+    <span class="source-keyword">public</span> <span class="source-keyword">bool</span> tankControls = <span class="source-keyword">false</span>;           <span class="source-comment">// tank controls for the player</span>
+    <span class="source-keyword">public</span> <span class="source-keyword">float</span> TurnInput =&gt; movementX;        <span class="source-comment">// input for turning</span>
+
+    <span class="source-keyword">void</span> Start()
+    {
+        <span class="source-comment">// Pause the game.</span>
+        <span class="source-type">Time</span>.timeScale = <span class="source-number">1f</span>;
+        <span class="source-keyword">if</span> (pauseMenuObject != <span class="source-keyword">null</span>) pauseMenuObject.SetActive(<span class="source-keyword">false</span>);
+
+        <span class="source-comment">// Get the player&#39;s rigidbody</span>
+        rb = GetComponent&lt;<span class="source-type">Rigidbody</span>&gt;();
+        count = <span class="source-number">0</span>;
+
+        <span class="source-comment">// Get the player&#39;s starting position.</span>
+        startPosition = transform.position;
+        lives = startingLives;
+        UpdateLivesDisplay();
+
+        <span class="source-comment">// Get the player&#39;s audio source</span>
+        audioSource = GetComponent&lt;<span class="source-type">AudioSource</span>&gt;();
+
+        <span class="source-comment">// Start the timer and hide the win text and exit portal.</span>
+        <span class="source-keyword">if</span> (winTextObject != <span class="source-keyword">null</span>) winTextObject.SetActive(<span class="source-keyword">false</span>);
+        <span class="source-keyword">if</span> (exitPortal != <span class="source-keyword">null</span>) exitPortal.SetActive(<span class="source-keyword">false</span>);
+        timeRemaining = startTimeSeconds;
+        timerRunning = <span class="source-keyword">true</span>;
+
+        <span class="source-comment">// Hide the game over text.</span>
+        <span class="source-keyword">if</span> (gameOverTextObject != <span class="source-keyword">null</span>) gameOverTextObject.SetActive(<span class="source-keyword">false</span>);
+
+        SetCountText();
+        UpdateTimerText();
+
+    }
+
+    <span class="source-comment">// Called when the player moves.</span>
+    <span class="source-keyword">void</span> OnMove(<span class="source-type">InputValue</span> movementValue)
+    {
+        <span class="source-type">Vector2</span> movementVector = movementValue.Get&lt;<span class="source-type">Vector2</span>&gt;();
+
+        movementX = movementVector.x;
+        movementY = movementVector.y;
+    }
+
+    <span class="source-comment">// Function is called when the player picks up a pickup.</span>
+    <span class="source-comment">// Function also checks if level can be unlocked and game can be won.</span>
+    <span class="source-keyword">void</span> SetCountText()
+    {
+        <span class="source-keyword">if</span> (countText != <span class="source-keyword">null</span>)
+        countText.text = <span class="source-string">&quot;Count: &quot;</span> + count.ToString();
+
+        <span class="source-keyword">if</span> (count &gt;= pickupsNeeded &amp;&amp; !gameWon &amp;&amp; !exitUnlocked)
+        {
+            <span class="source-keyword">bool</span> finalLevel = <span class="source-type">SceneManager</span>.GetActiveScene().name == finalSceneName;
+
+            <span class="source-keyword">if</span> (finalLevel)
+            {
+            <span class="source-comment">// Level is won</span>
+                gameWon = <span class="source-keyword">true</span>;
+                timerRunning = <span class="source-keyword">false</span>;
+                <span class="source-keyword">if</span> (winTextObject != <span class="source-keyword">null</span>) winTextObject.SetActive(<span class="source-keyword">true</span>);
+            }
+        <span class="source-keyword">else</span>
+        {
+            <span class="source-comment">// Level is unlocked</span>
+            exitUnlocked = <span class="source-keyword">true</span>;
+
+            <span class="source-keyword">if</span> (exitPortal != <span class="source-keyword">null</span>) exitPortal.SetActive(<span class="source-keyword">true</span>);
+        }
+
+            <span class="source-type">GameObject</span> enemy = <span class="source-type">GameObject</span>.FindGameObjectWithTag(<span class="source-string">&quot;Enemy&quot;</span>);
+            <span class="source-keyword">if</span> (enemy != <span class="source-keyword">null</span>) Destroy(enemy);
+        }
+    }
+
+    <span class="source-comment">// Function is called when the player moves and camera moves.</span>
+    <span class="source-keyword">void</span> FixedUpdate()
+{
+    <span class="source-type">Vector3</span> input;
+    <span class="source-comment">// if statement that moves the camera in the direction of the player when tank controls are on. Used for the second level.</span>
+    <span class="source-keyword">if</span> (tankControls &amp;&amp; <span class="source-type">Camera</span>.main != <span class="source-keyword">null</span>)
+    {
+        <span class="source-type">Transform</span> cam = <span class="source-type">Camera</span>.main.transform;
+        <span class="source-type">Vector3</span> forward = cam.forward; forward.y = <span class="source-number">0f</span>; forward.Normalize();
+        input = forward * movementY;
+    }
+    <span class="source-comment">// else if statement that moves the player in the direction of the camera when tank controls are off. Mainly used for the first level.</span>
+    <span class="source-keyword">else</span> <span class="source-keyword">if</span> (cameraRelativeMovement &amp;&amp; <span class="source-type">Camera</span>.main != <span class="source-keyword">null</span>)
+    {
+        <span class="source-type">Transform</span> cam = <span class="source-type">Camera</span>.main.transform;
+        <span class="source-type">Vector3</span> forward = cam.forward; forward.y = <span class="source-number">0f</span>; forward.Normalize();
+        <span class="source-type">Vector3</span> right = cam.right; right.y = <span class="source-number">0f</span>; right.Normalize();
+        input = forward * movementY + right * movementX;
+    }
+    <span class="source-keyword">else</span>
+    {
+        input = <span class="source-keyword">new</span> <span class="source-type">Vector3</span>(movementX, <span class="source-number">0f</span>, movementY);
+    }
+
+    <span class="source-comment">// if statement that nmakes sure the player doesn&#39;t move faster than the max speed.</span>
+    <span class="source-keyword">if</span> (input.sqrMagnitude &gt; <span class="source-number">1f</span>) input.Normalize();
+    <span class="source-keyword">float</span> currentSpeed = <span class="source-type">Time</span>.time &lt; dashEndTime ? dashMaxSpeed : maxSpeed;
+
+    <span class="source-type">Vector3</span> v = rb.linearVelocity;
+    rb.linearVelocity = <span class="source-keyword">new</span> <span class="source-type">Vector3</span>(input.x * currentSpeed, v.y, input.z * currentSpeed); <span class="source-comment">//moves the player</span>
+}
+
+    <span class="source-comment">// Called when the player jumps.</span>
+    <span class="source-keyword">void</span> OnJump(<span class="source-type">InputValue</span> value)
+    {
+        <span class="source-keyword">if</span> (isPaused || gameEnded) <span class="source-keyword">return</span>;
+
+        <span class="source-keyword">if</span> (value.isPressed &amp;&amp; IsGrounded())
+        {
+            <span class="source-type">Vector3</span> v = rb.linearVelocity;
+            rb.linearVelocity = <span class="source-keyword">new</span> <span class="source-type">Vector3</span>(v.x, jumpPower, v.z);
+        }
+    }
+
+    <span class="source-comment">// Called every frame</span>
+    <span class="source-keyword">void</span> Update()
+    {
+        <span class="source-keyword">if</span> (gameEnded) <span class="source-keyword">return</span>;
+
+        <span class="source-comment">// Pause the game when P is pressed. Calls the function TogglePause()</span>
+        <span class="source-keyword">if</span> (<span class="source-type">Keyboard</span>.current != <span class="source-keyword">null</span> &amp;&amp; <span class="source-type">Keyboard</span>.current.pKey.wasPressedThisFrame)
+        {
+            TogglePause();
+        }
+
+        <span class="source-comment">// Dash. Calls the function Dash().</span>
+        <span class="source-keyword">if</span> (<span class="source-type">Keyboard</span>.current != <span class="source-keyword">null</span> &amp;&amp; (<span class="source-type">Keyboard</span>.current.leftShiftKey.isPressed || <span class="source-type">Keyboard</span>.current.rightShiftKey.isPressed))
+        {
+            Dash();
+        }
+                <span class="source-comment">// Timer</span>
+                <span class="source-keyword">if</span> (timerRunning)
+        {
+            timeRemaining -= <span class="source-type">Time</span>.deltaTime;
+
+            <span class="source-keyword">if</span> (timeRemaining &lt;= <span class="source-number">0f</span>)
+            {
+                timeRemaining = <span class="source-number">0f</span>;
+                UpdateTimerText();
+                GameOver();
+            }
+            <span class="source-keyword">else</span>
+            {
+                UpdateTimerText();
+            }
+        }
+    }
+
+    <span class="source-comment">// Function is called when the player dashes. This dictates the dash duration and cooldown.</span>
+    <span class="source-keyword">void</span> Dash()
+    {
+        <span class="source-keyword">if</span> (<span class="source-type">Time</span>.time &lt; nextDashTime) <span class="source-keyword">return</span>;
+
+        <span class="source-type">Vector3</span> direction = <span class="source-keyword">new</span> <span class="source-type">Vector3</span>(movementX, <span class="source-number">0.0f</span>, movementY);
+
+        <span class="source-keyword">if</span> (direction.sqrMagnitude &gt; <span class="source-number">0.01f</span>)
+        {
+            dashEndTime = <span class="source-type">Time</span>.time + dashDuration;
+            nextDashTime = <span class="source-type">Time</span>.time + dashCooldown;
+        }
+    }
+
+    <span class="source-comment">// Function is called when the player pauses. This toggles the pause menu.</span>
+    <span class="source-keyword">void</span> TogglePause()
+    {
+        isPaused = !isPaused;
+        <span class="source-type">Time</span>.timeScale = isPaused ? <span class="source-number">0f</span> : <span class="source-number">1f</span>;
+
+        <span class="source-keyword">if</span> (pauseMenuObject != <span class="source-keyword">null</span>)
+            pauseMenuObject.SetActive(isPaused);
+    }
+
+    <span class="source-comment">// Checks if the player is on the ground.</span>
+    <span class="source-keyword">private</span> <span class="source-keyword">bool</span> IsGrounded()
+    {
+        <span class="source-keyword">return</span> <span class="source-type">Physics</span>.Raycast(transform.position, <span class="source-type">Vector3</span>.down, <span class="source-number">0.6f</span>, ~<span class="source-number">0</span>, <span class="source-type">QueryTriggerInteraction</span>.Ignore);
+    }
+
+    <span class="source-comment">// Function shows the time remaining.</span>
+    <span class="source-keyword">void</span> UpdateTimerText()
+    {
+        <span class="source-keyword">if</span> (timerText == <span class="source-keyword">null</span>) <span class="source-keyword">return</span>;
+
+        <span class="source-keyword">int</span> totalSeconds = <span class="source-type">Mathf</span>.CeilToInt(timeRemaining);
+        <span class="source-keyword">int</span> minutes = totalSeconds / <span class="source-number">60</span>;
+        <span class="source-keyword">int</span> seconds = totalSeconds % <span class="source-number">60</span>;
+        timerText.text = <span class="source-string">&quot;Time: &quot;</span> + minutes.ToString(<span class="source-string">&quot;00&quot;</span>) + <span class="source-string">&quot;:&quot;</span> + seconds.ToString(<span class="source-string">&quot;00&quot;</span>);
+    }
+        <span class="source-comment">// Function shows the number of lives.</span>
+        <span class="source-keyword">void</span> UpdateLivesDisplay()
+    {
+        <span class="source-keyword">if</span> (lifeIcons == <span class="source-keyword">null</span>) <span class="source-keyword">return</span>;
+
+        <span class="source-keyword">for</span> (<span class="source-keyword">int</span> i = <span class="source-number">0</span>; i &lt; lifeIcons.Length; i++)
+        {
+            <span class="source-keyword">if</span> (lifeIcons[i] != <span class="source-keyword">null</span>)
+                lifeIcons[i].SetActive(i &lt; lives);
+        }
+    }
+
+    <span class="source-comment">// Function is called when the player loses a life.</span>
+    <span class="source-keyword">void</span> LoseLife()
+    {
+        <span class="source-keyword">if</span> (gameEnded || gameWon) <span class="source-keyword">return</span>;
+        <span class="source-keyword">if</span> (<span class="source-type">Time</span>.time &lt; invulnerableUntil) <span class="source-keyword">return</span>;
+
+        lives--;
+        UpdateLivesDisplay();
+
+        <span class="source-keyword">if</span> (lives &lt;= <span class="source-number">0</span>)
+        {
+            GameOver();
+            <span class="source-keyword">return</span>;
+        }
+
+        invulnerableUntil = <span class="source-type">Time</span>.time + invulnerableSeconds;
+    }
+
+    <span class="source-comment">//Resapwn the player to the starting position.</span>
+    <span class="source-keyword">void</span> Respawn()
+    {
+        rb.linearVelocity = <span class="source-type">Vector3</span>.zero;
+        rb.angularVelocity = <span class="source-type">Vector3</span>.zero;
+        movementX = <span class="source-number">0f</span>;
+        movementY = <span class="source-number">0f</span>;
+        transform.position = respawnPoint != <span class="source-keyword">null</span> ? respawnPoint.position : startPosition;
+    }
+
+    <span class="source-comment">// Function is called when the timer runs out.</span>
+     <span class="source-keyword">void</span> GameOver()
+    {
+        timerRunning = <span class="source-keyword">false</span>;
+        gameEnded = <span class="source-keyword">true</span>;
+
+        <span class="source-keyword">if</span> (gameOverTextObject != <span class="source-keyword">null</span>) gameOverTextObject.SetActive(<span class="source-keyword">true</span>);
+
+        <span class="source-type">Time</span>.timeScale = <span class="source-number">0f</span>;
+    }
+
+    <span class="source-comment">// Function is called when the player collides with an enemy.</span>
+    <span class="source-keyword">private</span> <span class="source-keyword">void</span> OnCollisionEnter(<span class="source-type">Collision</span> collision)
+    {
+        <span class="source-keyword">if</span> (collision.gameObject.CompareTag(<span class="source-string">&quot;Enemy&quot;</span>))
+        {
+            LoseLife();
+        }
+    }
+
+    <span class="source-comment">// Function is called when the player collides with a pickup.</span>
+    <span class="source-keyword">private</span> <span class="source-keyword">void</span> OnTriggerEnter(<span class="source-type">Collider</span> other)
+    {
+        <span class="source-keyword">if</span>(other.gameObject.CompareTag(<span class="source-string">&quot;PickUp&quot;</span>))
+        {
+            other.gameObject.SetActive(<span class="source-keyword">false</span>);
+            count = count + <span class="source-number">1</span>;
+
+            <span class="source-keyword">if</span> (audioSource != <span class="source-keyword">null</span> &amp;&amp; pickupSound != <span class="source-keyword">null</span>)
+                audioSource.PlayOneShot(pickupSound);
+
+            SetCountText();
+        }
+
+        <span class="source-comment">// if statement is called when the player collides with a kill floor.</span>
+        <span class="source-keyword">if</span> (other.gameObject.CompareTag(<span class="source-string">&quot;killFloor&quot;</span>))
+        {
+            LoseLife();
+            <span class="source-keyword">if</span> (!gameEnded) Respawn();
+        }
+
+        <span class="source-comment">//if statement is called when the player collides with a life pickup.</span>
+        <span class="source-keyword">if</span> (other.gameObject.CompareTag(<span class="source-string">&quot;LifePickup&quot;</span>))
+        {
+            <span class="source-keyword">if</span> (lives &lt; startingLives &amp;&amp; !gameEnded)
+            {
+                lives++;
+                UpdateLivesDisplay();
+                other.gameObject.SetActive(<span class="source-keyword">false</span>);
+
+                <span class="source-keyword">if</span> (audioSource != <span class="source-keyword">null</span> &amp;&amp; pickupSound != <span class="source-keyword">null</span>)
+                    audioSource.PlayOneShot(pickupSound);
+            }
+        }
+    }
+}</code></pre>
     </dialog>
     <footer>
       <p>&copy; 2026 Louis Valderrama</p>
