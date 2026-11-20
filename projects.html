@@ -55,36 +55,33 @@
           <div class="chapter-progress" aria-hidden="true"><span></span></div>
         </nav>
         <div class="code-projects">
-          <article class="code-project" id="chapter-1" aria-labelledby="project-1">
+          <article class="code-project game-project" id="chapter-1" aria-labelledby="project-1">
             <div class="code-project-body">
               <div class="project-brief">
-                <div class="chapter-instrument" aria-hidden="true"></div>
-                <p class="chapter-hook" data-reveal>First, build a world.</p>
                 <p class="eyebrow">01 / Unity &amp; C#</p>
                 <h3 data-reveal id="project-1">Alien Escape</h3>
-                <p data-reveal>A Unity game set in a nighttime forest. Click inside the game to give it keyboard focus. The screenshot shows the C# player controller behind the game.</p>
-                <p data-reveal><a class="button" href="https://play.unity.com/en/games/ecff1250-1a35-46a9-8a32-bf8d7f8c786b/week7">Open on Unity Play</a></p>
-                <ol class="project-flow" aria-label="Project sequence" data-reveal>
-                  <li>Play Alien Escape</li>
-                  <li>Read the controller</li>
-                  <li>Follow the game logic</li>
-                </ol>
+                <p data-reveal>A Unity game set in a nighttime forest.</p>
               </div>
               <div class="project-visual">
-                <iframe
-                  class="project-game"
-                  src="https://play-prod.struckd.com/api/v1/games/game/ecff1250-1a35-46a9-8a32-bf8d7f8c786b/build/latest/frame"
-                  title="Play Alien Escape"
-                  width="960"
-                  height="600"
-                  loading="lazy"
-                  allow="fullscreen"
-                  allowfullscreen></iframe>
+                <div class="game-player">
+                  <p id="game-instructions">Click inside the game to use the keyboard controls.</p>
+                  <iframe
+                    class="project-game"
+                    src="https://play-prod.struckd.com/api/v1/games/game/ecff1250-1a35-46a9-8a32-bf8d7f8c786b/build/latest/frame"
+                    title="Play Alien Escape"
+                    aria-describedby="game-instructions"
+                    width="960"
+                    height="600"
+                    loading="lazy"
+                    allow="fullscreen"
+                    allowfullscreen></iframe>
+                  <a class="button" href="https://play.unity.com/en/games/ecff1250-1a35-46a9-8a32-bf8d7f8c786b/week7">Open on Unity Play</a>
+                </div>
                 <figure class="project-screenshot" data-reveal>
                   <a href="images/project-1-player-controller.png">
                     <img src="images/project-1-player-controller.png" alt="Visual Studio Code showing the C# PlayerController script, including startup, movement input, and pickup-count logic." width="2559" height="1377" loading="lazy" decoding="async">
                   </a>
-                  <figcaption>Behind the scene / C# PlayerController</figcaption>
+                  <figcaption>Behind the scenes / C# PlayerController</figcaption>
                 </figure>
               </div>
             </div>
