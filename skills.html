@@ -17,7 +17,7 @@
     </script>
     <script src="js/theme.js?v=theme-action-1" defer></script>
     <link rel="preload" href="fonts/Rajdhani-Bold.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="css/style.css?v=stable-header-1&amp;theme=action-1&amp;artwork=1">
+    <link rel="stylesheet" href="css/style.css?v=stable-header-1&amp;theme=action-1&amp;artwork=2">
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -87,22 +87,41 @@
             <p>Illustrated by Louis Valderrama</p>
             <div class="design-gallery">
               <figure class="hud-picture design-artwork">
-                <img src="images/heroes-for-mental-health-2024.png" alt="Denim Day poster with red lettering and an illustrated woman in glasses and a patterned dress." width="850" height="1100" loading="lazy" decoding="async">
-                <figcaption><a href="images/heroes-for-mental-health-2024.pdf">Denim Day 2024 (PDF)</a></figcaption>
-              </figure>
-              <figure class="hud-picture design-artwork">
-                <img src="images/heroes-for-mental-health-portrait.png" alt="Comic-style illustration of a man holding a colorful folding fan beside two speech bubbles." width="1545" height="1999" loading="lazy" decoding="async">
-                <figcaption><a href="images/heroes-for-mental-health-portrait.png">Folding fan illustration</a></figcaption>
-              </figure>
-              <figure class="hud-picture design-artwork">
-                <img src="images/heroes-for-mental-health.webp" alt="Two men talking on a couch beneath the Fiserv and Rutgers Veteran logos." width="2550" height="3300" loading="lazy" decoding="async">
+                <a class="artwork-preview" href="images/heroes-for-mental-health.png">
+                  <img src="images/heroes-for-mental-health.webp" alt="Two men talking on a couch beneath the Fiserv and Rutgers Veteran logos." width="2550" height="3300" loading="lazy" decoding="async">
+                </a>
                 <figcaption><a href="images/heroes-for-mental-health.png">Conversation illustration</a></figcaption>
               </figure>
               <figure class="hud-picture design-artwork">
-                <img src="images/heroes-for-mental-health-2026.png" alt="Black-and-yellow Rutgers Veteran poster with a weightlifter, a cartoon dumbbell, and a cartoon kettlebell." width="2550" height="3300" loading="lazy" decoding="async">
+                <a class="artwork-preview" href="images/heroes-for-mental-health-2026.png">
+                  <img src="images/heroes-for-mental-health-2026.png" alt="Black-and-yellow Rutgers Veteran poster with a weightlifter, a cartoon dumbbell, and a cartoon kettlebell." width="2550" height="3300" loading="lazy" decoding="async">
+                </a>
                 <figcaption><a href="images/heroes-for-mental-health-2026.png">Weightlifting illustration (2026)</a></figcaption>
               </figure>
+              <figure class="hud-picture design-artwork">
+                <a class="artwork-preview" href="images/heroes-for-mental-health-2024.png">
+                  <img src="images/heroes-for-mental-health-2024.png" alt="Denim Day poster with red lettering and an illustrated woman in glasses and a patterned dress." width="850" height="1100" loading="lazy" decoding="async">
+                </a>
+                <figcaption><a href="images/heroes-for-mental-health-2024.pdf">Denim Day 2024 (PDF)</a></figcaption>
+              </figure>
+              <figure class="hud-picture design-artwork">
+                <a class="artwork-preview" href="images/heroes-for-mental-health-portrait.png">
+                  <img src="images/heroes-for-mental-health-portrait.png" alt="Comic-style illustration of a man holding a colorful folding fan beside two speech bubbles." width="1545" height="1999" loading="lazy" decoding="async">
+                </a>
+                <figcaption><a href="images/heroes-for-mental-health-portrait.png">Folding fan illustration</a></figcaption>
+              </figure>
             </div>
+            <dialog class="artwork-viewer" aria-labelledby="artwork-heading">
+              <form method="dialog"><button type="submit" autofocus>Close</button></form>
+              <figure>
+                <img alt="">
+                <figcaption aria-live="polite"></figcaption>
+              </figure>
+              <div class="artwork-controls">
+                <button type="button" data-artwork-step="-1">Previous image</button>
+                <button type="button" data-artwork-step="1">Next image</button>
+              </div>
+            </dialog>
           </section>
         </article>
       </section>
@@ -122,5 +141,6 @@
     <script src="js/navigation.js?v=stable-header-1" defer onerror="document.documentElement.removeAttribute('data-js')"></script>
     <script src="js/hud-motion.js" defer></script>
     <script src="js/projects-story.js" defer></script>
+    <script src="js/artwork-viewer.js" defer></script>
   </body>
 </html>
