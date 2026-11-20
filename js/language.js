@@ -33,7 +33,7 @@
     'I’m Louis Valderrama, a student at NJIT majoring in Software and Data Engineering.': 'Soy Louis Valderrama, estudiante de Ingeniería de Software y Datos en NJIT.',
     '01 / My background': '01 / Mi trayectoria',
     'Learning across disciplines.': 'Aprender entre disciplinas.',
-    'I currently work at Rutgers–Newark University as the Program Coordinator for the Office of Veteran Affairs.': 'Actualmente trabajo en la Universidad Rutgers–Newark como coordinador de programas de la Oficina de Asuntos de Veteranos.',
+    'I currently work at Rutgers University - Newark as the Program Coordinator for the Office of Veteran Affairs.': 'Actualmente trabajo en Rutgers University - Newark como coordinador de programas de la Oficina de Asuntos de Veteranos.',
     'I hold two associate degrees, two bachelor’s degrees, and a master’s degree. My education includes fine arts, computer science, animation and illustration, and public administration.': 'Tengo dos títulos de grado asociado, dos licenciaturas y una maestría. Mi formación incluye bellas artes, informática, animación e ilustración y administración pública.',
     '02 / Education': '02 / Formación académica',
     'The education behind the perspective.': 'La formación detrás de mi perspectiva.',
