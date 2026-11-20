@@ -366,6 +366,14 @@ nav a::before, .brand::before { content: none; }
 .code-project-body { gap: 48px; align-items: center; }
 .project-brief { padding: 0; }
 .project-visual { border: 0; padding: 0; background: none; gap: 24px; }
+.project-game {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 8 / 5;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
 .project-screenshot {
   position: relative;
   margin: 0;
