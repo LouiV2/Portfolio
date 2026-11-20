@@ -9,7 +9,7 @@
     const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
     let stopTransition;
 
-    function playThemeTransition(nextTheme) {
+    function playThemeTransition() {
       stopTransition?.();
       if (motionPreference.matches || root.hasAttribute('data-hud-paused')) return;
 
@@ -52,7 +52,7 @@
           return;
         }
 
-        context.fillStyle = nextTheme === 'light' ? '#071c15' : '#080b10';
+        context.fillStyle = '#725000';
         context.fillRect(0, 0, width, height);
         columns.forEach(({ offset, speed, trail }, column) => {
           const head = Math.floor((offset + progress * height * speed) / spacing);
@@ -81,7 +81,7 @@
 
     toggle.addEventListener('click', () => {
       const nextTheme = root.dataset.theme === 'light' ? 'dark' : 'light';
-      playThemeTransition(nextTheme);
+      playThemeTransition();
       root.dataset.theme = nextTheme;
       updateToggle();
       try {
