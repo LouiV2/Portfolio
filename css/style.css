@@ -855,6 +855,32 @@ footer { padding-block: 30px; }
   margin-block-start: 20px;
 }
 .artwork-preview { display: block; }
+.design-artwork::before, .design-artwork::after { animation: none; }
+
+@media (prefers-reduced-motion: no-preference) {
+  html:not([data-hud-paused]) .design-artwork::before,
+  html:not([data-hud-paused]) .design-artwork::after {
+    transition: width 220ms ease-out, height 220ms ease-out;
+  }
+
+  html:not([data-hud-paused]) .design-artwork:has(.artwork-preview:is(:focus-visible, :active))::before,
+  html:not([data-hud-paused]) .design-artwork:has(.artwork-preview:is(:focus-visible, :active))::after {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine) {
+  html:not([data-hud-paused]) .artwork-preview img { transition: transform 220ms ease-out; }
+  html:not([data-hud-paused]) .design-artwork:hover .artwork-preview img { transform: scale(1.025); }
+
+  html:not([data-hud-paused]) .design-artwork:hover::before,
+  html:not([data-hud-paused]) .design-artwork:hover::after {
+    width: 44px;
+    height: 44px;
+  }
+}
+
 .artwork-viewer {
   width: min(46rem, calc(100% - 24px));
   max-height: calc(100% - 24px);
