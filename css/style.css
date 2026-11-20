@@ -1020,8 +1020,8 @@ html[data-theme="light"] main::after { filter: brightness(.55); }
   background: var(--muted);
   pointer-events: none;
 }
-.language-toggle[aria-checked="true"]::before, .theme-toggle[aria-checked="true"]::before { border-color: var(--accent); }
-.language-toggle[aria-checked="true"]::after, .theme-toggle[aria-checked="true"]::after { transform: translateX(12px); background: var(--accent); }
+.language-toggle[aria-checked="true"]::before, html[data-theme="light"] .theme-toggle::before { border-color: var(--accent); }
+.language-toggle[aria-checked="true"]::after, html[data-theme="light"] .theme-toggle::after { transform: translateX(12px); background: var(--accent); }
 @media (prefers-reduced-motion: no-preference) {
   .language-toggle::after, .theme-toggle::after { transition: transform 160ms ease, background-color 160ms ease; }
 }

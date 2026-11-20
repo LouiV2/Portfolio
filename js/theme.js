@@ -8,8 +8,8 @@
 
     function updateToggle() {
       const light = root.dataset.theme === 'light';
-      toggle.setAttribute('aria-checked', String(light));
-      toggle.textContent = (window.portfolioTranslate || ((text) => text))('Light mode');
+      const label = light ? 'Dark mode' : 'Light mode';
+      toggle.textContent = window.portfolioTranslate?.(label) ?? label;
     }
 
     toggle.addEventListener('click', () => {

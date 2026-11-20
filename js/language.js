@@ -121,6 +121,7 @@
 
   Object.assign(spanish, {
     'Light mode': 'Modo claro',
+    'Dark mode': 'Modo oscuro',
     'Spanish language': 'Idioma español',
     'About page sections': 'Secciones de la página sobre mí',
     'Menu': 'Menú',
