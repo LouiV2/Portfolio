@@ -226,8 +226,8 @@ async function keyboardActivate(locator, page) {
         const ctx = await context({ viewport: { width, height } });
         const p = await ctx.newPage();
         await goto(p, pages[i]);
-        for (const theme of ["dark", "light"]) {
-          if (theme === "light") await p.locator(".theme-toggle").click();
+        for (const theme of ["light", "dark"]) {
+          if (theme === "dark") await p.locator(".theme-toggle").click();
           await p
             .locator("details")
             .evaluateAll((ds) => ds.forEach((d) => (d.open = true)));
@@ -491,19 +491,23 @@ async function keyboardActivate(locator, page) {
       await goto(p, file);
       await p.evaluate(() => localStorage.clear());
       await p.reload();
-      await p.locator(".theme-toggle").click();
       check(
         (await p.locator("html").getAttribute("data-theme")) === "light",
+        "Light theme is not the default",
+      );
+      await p.locator(".theme-toggle").click();
+      check(
+        (await p.locator("html").getAttribute("data-theme")) === "dark",
         "Theme failed",
       );
       await p.reload();
       check(
-        (await p.locator("html").getAttribute("data-theme")) === "light",
+        (await p.locator("html").getAttribute("data-theme")) === "dark",
         "Theme not saved",
       );
       await goto(p, "contact.html");
       check(
-        (await p.locator("html").getAttribute("data-theme")) === "light",
+        (await p.locator("html").getAttribute("data-theme")) === "dark",
         "Theme lost across pages",
       );
     }
@@ -721,6 +725,10 @@ async function keyboardActivate(locator, page) {
     q.on("pageerror", (e) => errors.push(e.message));
     for (const file of pages) {
       await goto(q, file);
+      check(
+        (await q.locator("html").getAttribute("data-theme")) === "light",
+        "Storage blocked default theme",
+      );
       await q.locator(".theme-toggle").click();
       await q.locator(".language-toggle").click();
       check(
@@ -728,7 +736,7 @@ async function keyboardActivate(locator, page) {
         "Storage language fallback",
       );
       check(
-        (await q.locator("html").getAttribute("data-theme")) === "light",
+        (await q.locator("html").getAttribute("data-theme")) === "dark",
         "Storage theme fallback",
       );
     }
@@ -745,7 +753,7 @@ async function keyboardActivate(locator, page) {
       await p.locator(".motion-toggle").click();
       await p.locator(".language-toggle").click();
       check(
-        (await p.locator("html").getAttribute("data-theme")) === "light",
+        (await p.locator("html").getAttribute("data-theme")) === "dark",
         "Theme changed with language",
       );
       check(
