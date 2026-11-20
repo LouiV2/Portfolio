@@ -520,10 +520,46 @@ footer { padding-block: 30px; }
   border: 1px solid var(--line);
   background: var(--paper);
 }
-.projects-page .game-project .project-screenshot {
+.project-source {
   width: min(100%, 720px);
-  margin: 0;
-  transform: none;
+  min-width: 0;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  text-align: left;
+}
+.project-source summary {
+  padding: 16px;
+  cursor: pointer;
+}
+.project-source summary::marker,
+.project-source summary:hover .project-source-title { color: var(--accent); }
+.project-source summary:focus-visible,
+.project-source-full:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.project-source-title { font: bold 1rem Consolas, "Courier New", monospace; }
+.project-source-expand,
+.project-source-collapse { color: var(--muted); font-size: .875rem; }
+.project-source-collapse,
+.project-source[open] .project-source-expand,
+.project-source[open] .project-source-preview { display: none; }
+.project-source[open] .project-source-collapse { display: inline; }
+.project-source-preview,
+.project-source-full {
+  padding: 14px;
+  background: var(--paper);
+  font: .875rem/1.6 Consolas, "Courier New", monospace;
+  tab-size: 4;
+}
+.project-source-preview {
+  display: block;
+  margin-top: 12px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.project-source-full {
+  max-height: min(60vh, 30rem);
+  margin: 0 16px 16px;
+  overflow: auto;
+  border: 1px solid var(--line);
 }
 /* The homepage moves from background, to service, to the work itself. */
 .home-page .story-chapter { padding-block: 100px; scroll-margin-top: 110px; align-items: start; }

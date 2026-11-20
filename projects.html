@@ -77,12 +77,362 @@
                     allowfullscreen></iframe>
                   <a class="button" href="https://play.unity.com/en/games/ecff1250-1a35-46a9-8a32-bf8d7f8c786b/week7">Open on Unity Play</a>
                 </div>
-                <figure class="project-screenshot" data-reveal>
-                  <a href="images/project-1-player-controller.png">
-                    <img src="images/project-1-player-controller.png" alt="Visual Studio Code showing the C# PlayerController script, including startup, movement input, and pickup-count logic." width="2559" height="1377" loading="lazy" decoding="async">
-                  </a>
-                  <figcaption>Behind the scenes / C# PlayerController</figcaption>
-                </figure>
+                <details class="project-source">
+                  <summary>
+                    <span class="project-source-title">PlayerController.cs</span>
+                    <span class="project-source-expand">Expand full C# source</span>
+                    <span class="project-source-collapse">Collapse C# source</span>
+                    <code class="project-source-preview" aria-hidden="true">using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+using TMPro;
+
+public class PlayerController : MonoBehaviour
+{</code>
+                  </summary>
+                  <pre class="project-source-full" tabindex="0" role="region" aria-label="PlayerController.cs source code"><code>using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+using TMPro;
+
+public class PlayerController : MonoBehaviour
+{
+    public TextMeshProUGUI countText;   // UI text to display the number of pickups collected
+    public GameObject winTextObject;    // "You win!" text (starts disabled)
+
+    private Rigidbody rb;   // the player's rigidbody
+    private int count;      // the number of pickups collected
+    private float movementX;    // input for horizontal movement
+    private float movementY;    // input for vertical movement
+    public float jumpPower = 5f;    // starting jump power
+    public Transform respawnPoint;  // where the player respawns if they die
+
+    public float dashCooldown = 1f; // how long between dashes
+    private float nextDashTime = 0f;    // when the next dash is available
+
+    public float maxSpeed = 8f;          // normal top speed
+    public float dashMaxSpeed = 20f;     // top speed while dashing
+    public float dashDuration = 0.3f;    // how long the higher speed lasts
+    private float dashEndTime = 0f;      // when the dash ends
+
+    public GameObject pauseMenuObject;  // pause menu (starts disabled)
+    private bool isPaused;  // whether the game is paused
+    private bool gameEnded; // whether the game has ended
+    private bool gameWon;   // whether the game has won
+
+    public AudioClip pickupSound; // sound to play when a pickup is collected
+    private AudioSource audioSource;    // the player's audio source
+
+    public float startTimeSeconds = 60f;         // how long the player gets to complete the level
+    public TextMeshProUGUI timerText;            // on-screen timer text
+    public GameObject gameOverTextObject;        // "Game Over" text
+    private float timeRemaining;                 // how much time is left
+    private bool timerRunning;                   // whether the timer is running
+
+    public int startingLives = 3;                // starting number of lives
+    public GameObject[] lifeIcons;               // 3D objects, one per life
+    public float invulnerableSeconds = 1.5f;     // grace period after respawning
+    private int lives;                           // current number of lives
+    private float invulnerableUntil = 0f;        // when the player becomes invulnerable
+    private Vector3 startPosition;               // player's starting position for respawning
+
+    public GameObject exitPortal;               // exit portal
+    public int pickupsNeeded = 13;              // how many pickups are needed to win
+    public string finalSceneName = "LevelTwo";  // name of the final level
+    private bool exitUnlocked = false;          // whether the exit has been unlocked
+    public bool ExitOpen =&gt; exitUnlocked;       // whether the exit is open
+
+    public bool cameraRelativeMovement = false; // tank controls for the camera
+    public bool tankControls = false;           // tank controls for the player
+    public float TurnInput =&gt; movementX;        // input for turning
+
+    void Start()
+    {
+        // Pause the game.
+        Time.timeScale = 1f;
+        if (pauseMenuObject != null) pauseMenuObject.SetActive(false);
+
+        // Get the player's rigidbody
+        rb = GetComponent&lt;Rigidbody&gt;();
+        count = 0;
+
+        // Get the player's starting position.
+        startPosition = transform.position;
+        lives = startingLives;
+        UpdateLivesDisplay();
+
+        // Get the player's audio source
+        audioSource = GetComponent&lt;AudioSource&gt;();
+
+        // Start the timer and hide the win text and exit portal.
+        if (winTextObject != null) winTextObject.SetActive(false);
+        if (exitPortal != null) exitPortal.SetActive(false);
+        timeRemaining = startTimeSeconds;
+        timerRunning = true;
+
+        // Hide the game over text.
+        if (gameOverTextObject != null) gameOverTextObject.SetActive(false);
+
+        SetCountText();
+        UpdateTimerText();
+
+    }
+
+    // Called when the player moves.
+    void OnMove(InputValue movementValue)
+    {
+        Vector2 movementVector = movementValue.Get&lt;Vector2&gt;();
+
+        movementX = movementVector.x;
+        movementY = movementVector.y;
+    }
+
+    // Function is called when the player picks up a pickup.
+    // Function also checks if level can be unlocked and game can be won.
+    void SetCountText()
+    {
+        if (countText != null)
+        countText.text = "Count: " + count.ToString();
+
+        if (count &gt;= pickupsNeeded &amp;&amp; !gameWon &amp;&amp; !exitUnlocked)
+        {
+            bool finalLevel = SceneManager.GetActiveScene().name == finalSceneName;
+
+            if (finalLevel)
+            {
+            // Level is won
+                gameWon = true;
+                timerRunning = false;
+                if (winTextObject != null) winTextObject.SetActive(true);
+            }
+        else
+        {
+            // Level is unlocked
+            exitUnlocked = true;
+
+            if (exitPortal != null) exitPortal.SetActive(true);
+        }
+
+            GameObject enemy = GameObject.FindGameObjectWithTag("Enemy");
+            if (enemy != null) Destroy(enemy);
+        }
+    }
+
+    // Function is called when the player moves and camera moves.
+    void FixedUpdate()
+{
+    Vector3 input;
+    // if statement that moves the camera in the direction of the player when tank controls are on. Used for the second level.
+    if (tankControls &amp;&amp; Camera.main != null)
+    {
+        Transform cam = Camera.main.transform;
+        Vector3 forward = cam.forward; forward.y = 0f; forward.Normalize();
+        input = forward * movementY;
+    }
+    // else if statement that moves the player in the direction of the camera when tank controls are off. Mainly used for the first level.
+    else if (cameraRelativeMovement &amp;&amp; Camera.main != null)
+    {
+        Transform cam = Camera.main.transform;
+        Vector3 forward = cam.forward; forward.y = 0f; forward.Normalize();
+        Vector3 right = cam.right; right.y = 0f; right.Normalize();
+        input = forward * movementY + right * movementX;
+    }
+    else
+    {
+        input = new Vector3(movementX, 0f, movementY);
+    }
+
+    // if statement that nmakes sure the player doesn't move faster than the max speed.
+    if (input.sqrMagnitude &gt; 1f) input.Normalize();
+    float currentSpeed = Time.time &lt; dashEndTime ? dashMaxSpeed : maxSpeed;
+
+    Vector3 v = rb.linearVelocity;
+    rb.linearVelocity = new Vector3(input.x * currentSpeed, v.y, input.z * currentSpeed); //moves the player
+}
+
+    // Called when the player jumps.
+    void OnJump(InputValue value)
+    {
+        if (isPaused || gameEnded) return;
+
+        if (value.isPressed &amp;&amp; IsGrounded())
+        {
+            Vector3 v = rb.linearVelocity;
+            rb.linearVelocity = new Vector3(v.x, jumpPower, v.z);
+        }
+    }
+
+    // Called every frame
+    void Update()
+    {
+        if (gameEnded) return;
+
+        // Pause the game when P is pressed. Calls the function TogglePause()
+        if (Keyboard.current != null &amp;&amp; Keyboard.current.pKey.wasPressedThisFrame)
+        {
+            TogglePause();
+        }
+
+        // Dash. Calls the function Dash().
+        if (Keyboard.current != null &amp;&amp; (Keyboard.current.leftShiftKey.isPressed || Keyboard.current.rightShiftKey.isPressed))
+        {
+            Dash();
+        }
+                // Timer
+                if (timerRunning)
+        {
+            timeRemaining -= Time.deltaTime;
+
+            if (timeRemaining &lt;= 0f)
+            {
+                timeRemaining = 0f;
+                UpdateTimerText();
+                GameOver();
+            }
+            else
+            {
+                UpdateTimerText();
+            }
+        }
+    }
+
+    // Function is called when the player dashes. This dictates the dash duration and cooldown.
+    void Dash()
+    {
+        if (Time.time &lt; nextDashTime) return;
+
+        Vector3 direction = new Vector3(movementX, 0.0f, movementY);
+
+        if (direction.sqrMagnitude &gt; 0.01f)
+        {
+            dashEndTime = Time.time + dashDuration;
+            nextDashTime = Time.time + dashCooldown;
+        }
+    }
+
+    // Function is called when the player pauses. This toggles the pause menu.
+    void TogglePause()
+    {
+        isPaused = !isPaused;
+        Time.timeScale = isPaused ? 0f : 1f;
+
+        if (pauseMenuObject != null)
+            pauseMenuObject.SetActive(isPaused);
+    }
+
+    // Checks if the player is on the ground.
+    private bool IsGrounded()
+    {
+        return Physics.Raycast(transform.position, Vector3.down, 0.6f, ~0, QueryTriggerInteraction.Ignore);
+    }
+
+    // Function shows the time remaining.
+    void UpdateTimerText()
+    {
+        if (timerText == null) return;
+
+        int totalSeconds = Mathf.CeilToInt(timeRemaining);
+        int minutes = totalSeconds / 60;
+        int seconds = totalSeconds % 60;
+        timerText.text = "Time: " + minutes.ToString("00") + ":" + seconds.ToString("00");
+    }
+        // Function shows the number of lives.
+        void UpdateLivesDisplay()
+    {
+        if (lifeIcons == null) return;
+
+        for (int i = 0; i &lt; lifeIcons.Length; i++)
+        {
+            if (lifeIcons[i] != null)
+                lifeIcons[i].SetActive(i &lt; lives);
+        }
+    }
+
+    // Function is called when the player loses a life.
+    void LoseLife()
+    {
+        if (gameEnded || gameWon) return;
+        if (Time.time &lt; invulnerableUntil) return;
+
+        lives--;
+        UpdateLivesDisplay();
+
+        if (lives &lt;= 0)
+        {
+            GameOver();
+            return;
+        }
+
+        invulnerableUntil = Time.time + invulnerableSeconds;
+    }
+
+    //Resapwn the player to the starting position.
+    void Respawn()
+    {
+        rb.linearVelocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+        movementX = 0f;
+        movementY = 0f;
+        transform.position = respawnPoint != null ? respawnPoint.position : startPosition;
+    }
+
+    // Function is called when the timer runs out.
+     void GameOver()
+    {
+        timerRunning = false;
+        gameEnded = true;
+
+        if (gameOverTextObject != null) gameOverTextObject.SetActive(true);
+
+        Time.timeScale = 0f;
+    }
+
+    // Function is called when the player collides with an enemy.
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            LoseLife();
+        }
+    }
+
+    // Function is called when the player collides with a pickup.
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("PickUp"))
+        {
+            other.gameObject.SetActive(false);
+            count = count + 1;
+
+            if (audioSource != null &amp;&amp; pickupSound != null)
+                audioSource.PlayOneShot(pickupSound);
+
+            SetCountText();
+        }
+
+        // if statement is called when the player collides with a kill floor.
+        if (other.gameObject.CompareTag("killFloor"))
+        {
+            LoseLife();
+            if (!gameEnded) Respawn();
+        }
+
+        //if statement is called when the player collides with a life pickup.
+        if (other.gameObject.CompareTag("LifePickup"))
+        {
+            if (lives &lt; startingLives &amp;&amp; !gameEnded)
+            {
+                lives++;
+                UpdateLivesDisplay();
+                other.gameObject.SetActive(false);
+
+                if (audioSource != null &amp;&amp; pickupSound != null)
+                    audioSource.PlayOneShot(pickupSound);
+            }
+        }
+    }
+}</code></pre>
+                </details>
               </div>
             </div>
           </article>
