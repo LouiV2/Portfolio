@@ -64,17 +64,21 @@
               </div>
               <div class="project-visual">
                 <div class="game-player">
-                  <p id="game-instructions">Click inside the game to use the keyboard controls.</p>
-                  <iframe
-                    class="project-game"
-                    src="https://play-prod.struckd.com/api/v1/games/game/ecff1250-1a35-46a9-8a32-bf8d7f8c786b/build/latest/frame"
-                    title="Play Alien Escape"
-                    aria-describedby="game-instructions"
-                    width="960"
-                    height="600"
-                    loading="lazy"
-                    allow="fullscreen"
-                    allowfullscreen></iframe>
+                  <p id="game-instructions">Select Play to start the game with sound.</p>
+                  <a class="project-game game-launch" href="https://play.unity.com/en/games/ecff1250-1a35-46a9-8a32-bf8d7f8c786b/week7" aria-describedby="game-instructions">
+                    <span class="button">Play Alien Escape</span>
+                  </a>
+                  <template id="game-frame">
+                    <iframe
+                      class="project-game"
+                      src="https://play-prod.struckd.com/api/v1/games/game/ecff1250-1a35-46a9-8a32-bf8d7f8c786b/build/latest/frame"
+                      title="Play Alien Escape"
+                      aria-describedby="game-instructions"
+                      width="960"
+                      height="600"
+                      allow="autoplay; fullscreen"
+                      allowfullscreen></iframe>
+                  </template>
                   <a class="button" href="https://play.unity.com/en/games/ecff1250-1a35-46a9-8a32-bf8d7f8c786b/week7">Open on Unity Play</a>
                 </div>
                 <details class="project-source">
@@ -541,6 +545,7 @@
     <script src="js/navigation.js?v=stable-header-1" defer onerror="document.documentElement.removeAttribute('data-js')"></script>
     <script src="js/hud-motion.js" defer></script>
     <script src="js/projects-story.js" defer></script>
+    <script src="js/game-player.js" defer></script>
     <script src="js/project-gallery.js" defer></script>
   </body>
 </html>

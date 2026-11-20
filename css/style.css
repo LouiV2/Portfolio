@@ -520,6 +520,15 @@ footer { padding-block: 30px; }
   border: 1px solid var(--line);
   background: var(--paper);
 }
+.game-launch {
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+}
+.game-launch:is(:hover, :focus-visible) .button {
+  background: var(--panel);
+  color: var(--ink);
+}
 .project-source {
   width: min(100%, 720px);
   min-width: 0;
