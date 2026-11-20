@@ -17,7 +17,7 @@
     </script>
     <script src="js/theme.js?v=theme-action-1" defer></script>
     <link rel="preload" href="fonts/Rajdhani-Bold.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="css/style.css?v=stable-header-1&amp;theme=action-1">
+    <link rel="stylesheet" href="css/style.css?v=stable-header-1&amp;theme=action-1&amp;artwork=1">
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -46,7 +46,6 @@
       <nav class="chapter-nav" aria-label="Skill chapters">
         <a href="#skill-chapter-1"><span>01</span> Languages</a>
         <a href="#skill-chapter-2"><span>02</span> Creative tools</a>
-        <a href="#skill-chapter-3"><span>03</span> Everyday tools</a>
         <div class="chapter-progress" aria-hidden="true"><span></span></div>
       </nav>
       <section class="section skill-list" aria-label="Technical skills">
@@ -71,16 +70,10 @@
             </ul>
           </div>
         </article>
-        <article id="skill-chapter-2">
-          <div class="skill-visual">
-            <p class="eyebrow">02 / Shape the experience</p>
-            <figure class="hud-picture design-artwork" data-reveal>
-              <img src="images/heroes-for-mental-health.webp" alt="Heroes for Mental Health illustration showing two men talking on a couch, with Fiserv and Rutgers Veteran logos." width="2550" height="3300" loading="lazy" decoding="async">
-              <figcaption><a href="images/heroes-for-mental-health.png">Heroes for Mental Health — View full image</a><br><span>Illustrated by Louis Valderrama</span></figcaption>
-            </figure>
-          </div>
+        <article id="skill-chapter-2" class="design-chapter">
           <div class="skill-copy">
             <div class="chapter-instrument" aria-hidden="true"></div>
+            <p class="eyebrow">02 / Shape the experience</p>
             <h2 data-reveal>Design &amp; development</h2>
             <p class="skill-context" data-reveal>Give an idea its visual form with tools for design and interactive development.</p>
             <p class="skill-hint">Select a skill to explore its role.</p>
@@ -89,24 +82,28 @@
               <li><details><summary>Unity</summary><p>A game engine for building scenes and interactive experiences. See the forest scene in Alien Escape.</p><a href="projects.html#chapter-1"><span>See Alien Escape</span> &rarr;</a></details></li>
             </ul>
           </div>
-        </article>
-        <article id="skill-chapter-3">
-          <div class="skill-visual">
-            <p class="eyebrow">03 / Bring it together</p>
-            <figure class="hud-picture" data-reveal>
-              <img src="images/skills-planning-desk.jpg" alt="Overhead view of a planner, laptop, smartphone, and stationery on a glass desk." width="1000" height="667" loading="lazy" decoding="async">
-              <figcaption><a href="https://www.pexels.com/photo/an-organizer-and-pen-beside-a-notebook-on-a-glass-desk-with-wireless-gadgets-5712118/">Photo: Arina Krasnikova / Pexels</a></figcaption>
-            </figure>
-          </div>
-          <div class="skill-copy">
-            <div class="chapter-instrument" aria-hidden="true"></div>
-            <h2 data-reveal>Everyday tools</h2>
-            <p class="skill-context" data-reveal>Bring the pieces together with documents, presentations, and everyday organization.</p>
-            <p class="skill-hint">Select a skill to explore its role.</p>
-            <ul class="skill-explorer">
-              <li><details><summary>Microsoft 365</summary><p>Tools for documents, spreadsheets, and presentations: the everyday side of bringing work together.</p></details></li>
-            </ul>
-          </div>
+          <section aria-labelledby="artwork-heading">
+            <h3 id="artwork-heading">Heroes for Mental Health</h3>
+            <p>Illustrated by Louis Valderrama</p>
+            <div class="design-gallery">
+              <figure class="hud-picture design-artwork">
+                <img src="images/heroes-for-mental-health-2024.png" alt="Denim Day poster with red lettering and an illustrated woman in glasses and a patterned dress." width="850" height="1100" loading="lazy" decoding="async">
+                <figcaption><a href="images/heroes-for-mental-health-2024.pdf">Denim Day 2024 (PDF)</a></figcaption>
+              </figure>
+              <figure class="hud-picture design-artwork">
+                <img src="images/heroes-for-mental-health-portrait.png" alt="Comic-style illustration of a man holding a colorful folding fan beside two speech bubbles." width="1545" height="1999" loading="lazy" decoding="async">
+                <figcaption><a href="images/heroes-for-mental-health-portrait.png">Folding fan illustration</a></figcaption>
+              </figure>
+              <figure class="hud-picture design-artwork">
+                <img src="images/heroes-for-mental-health.webp" alt="Two men talking on a couch beneath the Fiserv and Rutgers Veteran logos." width="2550" height="3300" loading="lazy" decoding="async">
+                <figcaption><a href="images/heroes-for-mental-health.png">Conversation illustration</a></figcaption>
+              </figure>
+              <figure class="hud-picture design-artwork">
+                <img src="images/heroes-for-mental-health-2026.png" alt="Black-and-yellow Rutgers Veteran poster with a weightlifter, a cartoon dumbbell, and a cartoon kettlebell." width="2550" height="3300" loading="lazy" decoding="async">
+                <figcaption><a href="images/heroes-for-mental-health-2026.png">Weightlifting illustration (2026)</a></figcaption>
+              </figure>
+            </div>
+          </section>
         </article>
       </section>
       <section class="story-next" aria-labelledby="continue-heading">
@@ -121,7 +118,7 @@
       <span>Art. Service. Technology.</span>
       <button class="motion-toggle" type="button" aria-pressed="false" hidden>Pause HUD motion</button>
     </footer>
-    <script src="js/language.js?v=theme-action-1" defer></script>
+    <script src="js/language.js?v=theme-action-1&amp;artwork=1" defer></script>
     <script src="js/navigation.js?v=stable-header-1" defer onerror="document.documentElement.removeAttribute('data-js')"></script>
     <script src="js/hud-motion.js" defer></script>
     <script src="js/projects-story.js" defer></script>
