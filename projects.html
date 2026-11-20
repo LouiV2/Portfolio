@@ -17,7 +17,7 @@
     </script>
     <script src="js/theme.js?v=deferred-theme-1" defer></script>
     <link rel="preload" href="fonts/Rajdhani-Bold.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="css/style.css?v=mobile-gameplay-video-1">
+    <link rel="stylesheet" href="css/style.css?v=interactive-sorting-1">
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -55,7 +55,7 @@
           <div class="chapter-progress" aria-hidden="true"><span></span></div>
         </nav>
         <div class="code-projects">
-          <article class="code-project game-project" id="chapter-1" aria-labelledby="project-1">
+          <article class="code-project interactive-project" id="chapter-1" aria-labelledby="project-1">
             <div class="code-project-body">
               <div class="project-brief">
                 <p class="eyebrow">01 / Unity &amp; C#</p>
@@ -446,40 +446,211 @@
               </div>
             </div>
           </article>
-          <article class="code-project" id="chapter-2" aria-labelledby="project-2">
+          <article class="code-project interactive-project" id="chapter-2" aria-labelledby="project-2">
             <div class="code-project-body">
               <div class="project-brief">
-                <div class="chapter-instrument" aria-hidden="true"></div>
-                <p class="chapter-hook" data-reveal>Then, bring order to the logic.</p>
                 <p class="eyebrow">02 / C++</p>
                 <h3 data-reveal id="project-2">Sorting Algorithms</h3>
-                <p data-reveal>A C++ console program that accepts 5 to 10 integers and lets the user choose insertion sort, selection sort, or bubble sort. It displays the array before and after sorting.</p>
-                <p data-reveal>The screenshots follow the code from the sorting functions to the input menu and final output logic. Select any image to read it at full size.</p>
-                <ol class="project-flow" aria-label="Project sequence" data-reveal>
-                  <li>Enter integers</li>
-                  <li>Choose a sort</li>
-                  <li>Print the result</li>
-                </ol>
+                <p data-reveal>Try a browser version of my C++ sorting program. The result updates as you edit the numbers or choose a different algorithm.</p>
               </div>
               <div class="project-visual">
-                <figure class="project-screenshot sorting-screenshot" data-reveal>
-                  <a href="images/project-2-sorting-1.png">
-                    <img src="images/project-2-sorting-1.png" alt="C++ implementations of insertion sort, selection sort, and bubble sort." width="746" height="1315" loading="lazy" decoding="async">
-                  </a>
-                  <figcaption>01 / Sorting functions</figcaption>
-                </figure>
-                <figure class="project-screenshot sorting-screenshot" data-reveal>
-                  <a href="images/project-2-sorting-2.png">
-                    <img src="images/project-2-sorting-2.png" alt="C++ array-printing function, integer input, range checks, and sorting algorithm menu." width="805" height="1162" loading="lazy" decoding="async">
-                  </a>
-                  <figcaption>02 / Input and algorithm selection</figcaption>
-                </figure>
-                <figure class="project-screenshot sorting-screenshot" data-reveal>
-                  <a href="images/project-2-sorting-3.png">
-                    <img src="images/project-2-sorting-3.png" alt="C++ switch statement calling the selected sorting function and printing the sorted array." width="408" height="399" loading="lazy" decoding="async">
-                  </a>
-                  <figcaption>03 / Sort and print the result</figcaption>
-                </figure>
+                <form class="sorting-demo" id="sorting-demo" aria-labelledby="sorting-demo-title" hidden>
+                  <h4 id="sorting-demo-title">Try the sort</h4>
+                  <div class="sorting-fields">
+                    <div class="form-field">
+                      <label for="sorting-input">Numbers to sort</label>
+                      <p id="sorting-help">Enter 5 to 10 integers separated by commas or spaces.</p>
+                      <input id="sorting-input" type="text" value="42, -3, 17, 8, 17, 0" aria-describedby="sorting-help sorting-error" autocomplete="off" spellcheck="false">
+                    </div>
+                    <div class="form-field">
+                      <label for="sorting-algorithm">Algorithm</label>
+                      <select id="sorting-algorithm">
+                        <option value="insertion">Insertion sort</option>
+                        <option value="selection">Selection sort</option>
+                        <option value="bubble">Bubble sort</option>
+                      </select>
+                    </div>
+                  </div>
+                  <p class="field-error" id="sorting-error" role="status" hidden></p>
+                  <div class="sorting-results">
+                    <div class="sorting-result">
+                      <label for="sorting-output">Sorted output</label>
+                      <output id="sorting-output" for="sorting-input sorting-algorithm"></output>
+                    </div>
+                    <div class="sorting-result">
+                      <p class="sorting-pass" aria-live="polite" aria-atomic="true">
+                        <strong id="sorting-position"></strong>
+                        <span id="sorting-current"></span>
+                      </p>
+                      <div class="sorting-actions">
+                        <button type="button" id="sorting-previous">Previous pass</button>
+                        <button type="button" id="sorting-next">Next pass</button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+                <noscript><p>Enable JavaScript to try the sorting demo.</p></noscript>
+                <details class="project-source">
+                  <summary>
+                    <span class="source-toolbar">
+                      <span class="source-filename">sorting_Homework_Valderrama.cpp</span>
+                      <span class="source-action source-expand">Expand full code</span>
+                      <span class="source-action source-collapse">Collapse code</span>
+                    </span>
+                    <code class="project-source-preview" aria-hidden="true"><span class="source-comment">// Homework sorting</span>
+
+<span class="source-keyword">#include</span> &lt;iostream&gt;
+<span class="source-keyword">using</span> <span class="source-keyword">namespace</span> <span class="source-type">std</span>;
+
+<span class="source-comment">//Insertion Sort</span>
+<span class="source-keyword">void</span> insertionSort(<span class="source-keyword">int</span> arr[], <span class="source-keyword">int</span> n)
+{
+    <span class="source-keyword">int</span> i, j, key;
+    <span class="source-keyword">for</span> (i = <span class="source-number">1</span>; i &lt; n; i++)</code>
+                  </summary>
+                  <pre class="project-source-full" tabindex="0" role="region" aria-label="C++ source code"><code><span class="source-comment">// Homework sorting</span>
+
+<span class="source-keyword">#include</span> &lt;iostream&gt;
+<span class="source-keyword">using</span> <span class="source-keyword">namespace</span> <span class="source-type">std</span>;
+
+<span class="source-comment">//Insertion Sort</span>
+<span class="source-keyword">void</span> insertionSort(<span class="source-keyword">int</span> arr[], <span class="source-keyword">int</span> n)
+{
+    <span class="source-keyword">int</span> i, j, key;
+    <span class="source-keyword">for</span> (i = <span class="source-number">1</span>; i &lt; n; i++)
+    {
+        key = arr[i];
+        j = i - <span class="source-number">1</span>;
+        <span class="source-keyword">while</span> (j &gt;= <span class="source-number">0</span> &amp;&amp; arr[j] &gt; key)
+        {
+            arr[j + <span class="source-number">1</span>] = arr[j];
+            j--;
+        }
+        arr[j + <span class="source-number">1</span>] = key;
+    }
+}
+
+<span class="source-comment">//Selection Sort</span>
+<span class="source-keyword">void</span> selectionSort(<span class="source-keyword">int</span> arr[], <span class="source-keyword">int</span> n)
+{
+    <span class="source-keyword">int</span> i, j, smallIndex, swap;
+
+    <span class="source-keyword">for</span> (i = <span class="source-number">0</span>; i &lt; n - <span class="source-number">1</span>; i++)
+    {
+        <span class="source-comment">// Find the minimum value in the array</span>
+        smallIndex = i;
+        <span class="source-keyword">for</span> (j = i + <span class="source-number">1</span>; j &lt; n; j++)
+        {
+            <span class="source-keyword">if</span> (arr[j] &lt; arr[smallIndex])
+                smallIndex = j;
+        }
+        <span class="source-keyword">if</span> (smallIndex != i)
+        {
+            swap = arr[i];
+            arr[i] = arr[smallIndex];
+            arr[smallIndex] = swap;
+        }
+    }
+}
+
+<span class="source-comment">//Bubble Sort</span>
+<span class="source-keyword">void</span> bubbleSort(<span class="source-keyword">int</span> arr[], <span class="source-keyword">int</span> n)
+{
+    <span class="source-keyword">int</span> i, j, swap;
+    <span class="source-keyword">bool</span> swapped;
+
+    <span class="source-comment">// Compare 1st two elements and swaps if they are out of order.</span>
+    swapped = <span class="source-keyword">false</span>;
+    <span class="source-keyword">for</span> (i = <span class="source-number">0</span>; i &lt; n - <span class="source-number">1</span>; i++)
+    {
+        <span class="source-keyword">for</span> (j = <span class="source-number">0</span>; j &lt; n - i - <span class="source-number">1</span>; j++)
+        {
+            <span class="source-keyword">if</span> (arr[j] &gt; arr[j + <span class="source-number">1</span>])
+            {
+                swap = arr[j];
+                arr[j] = arr[j + <span class="source-number">1</span>];
+                arr[j + <span class="source-number">1</span>] = swap;
+                swapped = <span class="source-keyword">true</span>;
+            }
+        }
+        <span class="source-keyword">if</span> (!swapped) <span class="source-keyword">break</span>;
+    }
+}
+
+<span class="source-comment">// Print the array</span>
+<span class="source-keyword">void</span> printArray(<span class="source-keyword">int</span> arr[], <span class="source-keyword">int</span> size)
+{
+    <span class="source-keyword">int</span> i;
+    <span class="source-keyword">for</span> (i = <span class="source-number">0</span>; i &lt; size; i++)
+        <span class="source-type">cout</span> &lt;&lt; arr[i] &lt;&lt; <span class="source-string">&quot; &quot;</span>;
+    <span class="source-type">cout</span> &lt;&lt; <span class="source-type">endl</span>;
+}
+
+<span class="source-comment">// Main function</span>
+<span class="source-keyword">int</span> main()
+{
+    <span class="source-keyword">int</span> n = <span class="source-number">0</span>;
+
+    <span class="source-comment">// Input validation</span>
+    <span class="source-keyword">while</span> (n &lt;<span class="source-number">5</span> || n &gt; <span class="source-number">10</span>)
+    {
+        <span class="source-type">cout</span> &lt;&lt; <span class="source-string">&quot;How many integers would you like to enter? (5 to 10 only!): &quot;</span>;
+        <span class="source-type">cin</span> &gt;&gt; n;
+
+        <span class="source-keyword">if</span> (n &lt; <span class="source-number">5</span> || n &gt; <span class="source-number">10</span>)
+            <span class="source-type">cout</span> &lt;&lt; <span class="source-string">&quot;Invalid input. Please enter 5 to 10 integers.&quot;</span> &lt;&lt; <span class="source-type">endl</span>;
+    }
+
+    <span class="source-keyword">int</span> data[<span class="source-number">10</span>];
+
+    <span class="source-comment">// Input</span>
+
+    <span class="source-keyword">for</span> (<span class="source-keyword">int</span> i = <span class="source-number">0</span>; i &lt; n; i++)
+    {
+        <span class="source-type">cout</span> &lt;&lt; <span class="source-string">&quot;Enter integer &quot;</span> &lt;&lt; i + <span class="source-number">1</span> &lt;&lt; <span class="source-string">&quot;: &quot;</span>;
+        <span class="source-type">cin</span> &gt;&gt; data[i];
+    }
+
+    <span class="source-type">cout</span> &lt;&lt; <span class="source-string">&quot;Unsorted array: &quot;</span>;
+    printArray(data, n);
+
+    <span class="source-comment">//Menu Selection</span>
+
+    <span class="source-keyword">int</span> choice = <span class="source-number">0</span>;
+
+    <span class="source-keyword">while</span> (choice &lt; <span class="source-number">1</span> || choice &gt; <span class="source-number">3</span>)
+    {
+        <span class="source-type">cout</span> &lt;&lt; <span class="source-string">&quot;Select a sorting algorithm:\n&quot;</span>;
+        <span class="source-type">cout</span> &lt;&lt; <span class="source-string">&quot;1. Insertion Sorting\n&quot;</span>;
+        <span class="source-type">cout</span> &lt;&lt; <span class="source-string">&quot;2. Selection Sorting\n&quot;</span>;
+        <span class="source-type">cout</span> &lt;&lt; <span class="source-string">&quot;3. Bubble Sorting\n&quot;</span>;
+        <span class="source-type">cout</span> &lt;&lt; <span class="source-string">&quot;Enter your choice: &quot;</span>;
+        <span class="source-type">cin</span> &gt;&gt; choice;
+
+        <span class="source-keyword">if</span> (choice &lt; <span class="source-number">1</span> || choice &gt; <span class="source-number">3</span>)
+            <span class="source-type">cout</span> &lt;&lt; <span class="source-string">&quot;Invalid choice. Please select a valid sorting algorithm.&quot;</span> &lt;&lt; <span class="source-type">endl</span>;
+    }
+
+    <span class="source-keyword">switch</span> (choice)
+    {
+        <span class="source-keyword">case</span> <span class="source-number">1</span>:
+            insertionSort(data, n);
+            <span class="source-keyword">break</span>;
+        <span class="source-keyword">case</span> <span class="source-number">2</span>:
+            selectionSort(data, n);
+            <span class="source-keyword">break</span>;
+        <span class="source-keyword">case</span> <span class="source-number">3</span>:
+            bubbleSort(data, n);
+            <span class="source-keyword">break</span>;
+    }
+
+    <span class="source-comment">// Print the sorted array</span>
+    <span class="source-type">cout</span> &lt;&lt; <span class="source-string">&quot;Sorted array: &quot;</span>;
+    printArray(data, n);
+
+    <span class="source-keyword">return</span> <span class="source-number">0</span>;
+}</code></pre>
+                </details>
               </div>
             </div>
           </article>
@@ -550,6 +721,7 @@
     <script src="js/hud-motion.js" defer></script>
     <script src="js/projects-story.js" defer></script>
     <script src="js/game-player.js" defer></script>
+    <script src="js/sorting-demo.js" defer></script>
     <script src="js/project-gallery.js" defer></script>
   </body>
 </html>

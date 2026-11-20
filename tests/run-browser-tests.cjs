@@ -742,7 +742,9 @@ async function keyboardActivate(locator, page) {
   });
   await test("T52", async () => {
     await goto(p, "projects.html");
-    await p.locator(".project-screenshot a").first().click();
+    const screenshots = p.locator(".project-screenshot a");
+    const screenshotCount = await screenshots.count();
+    await screenshots.first().click();
     async function swipe(dx, dy, multi = false, cancel = false) {
       await p.locator(".gallery-stage").evaluate(
         (el, { dx, dy, multi, cancel }) => {
@@ -790,7 +792,7 @@ async function keyboardActivate(locator, page) {
       HTMLDialogElement.prototype.showModal = undefined;
     });
     const q = await c.newPage();
-    for (let i = 0; i < 7; i++) {
+    for (let i = 0; i < screenshotCount; i++) {
       await goto(q, "projects.html");
       const a = q.locator(".project-screenshot a").nth(i),
         href = await a.getAttribute("href");
@@ -798,7 +800,7 @@ async function keyboardActivate(locator, page) {
       check(q.url().endsWith(href), "Dialog fallback failed");
     }
     await c.close();
-    return "Synthetic touch gestures and all seven unsupported-dialog links passed; physical-device touch not tested.";
+    return `Synthetic touch gestures and all ${screenshotCount} unsupported-dialog links passed; physical-device touch not tested.`;
   });
   await test("T53", async () => {
     const c = await context();
