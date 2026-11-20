@@ -581,6 +581,12 @@ footer { padding-block: 30px; }
   margin: 0;
   overflow: auto;
 }
+@media (max-width: 850px) {
+  .project-source-full {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
+}
 .game-player,
 .project-source { box-shadow: 0 0 0 0 transparent; }
 .game-player:is(:hover, :focus-within),
@@ -1128,6 +1134,17 @@ html.gallery-open { overflow: hidden; }
 @media (max-width: 580px) {
   .gallery-image { height: 50dvh; }
   .project-gallery button { padding-inline: 10px; font-size: 14px; }
+}
+@media (orientation: landscape) and (max-height: 500px) {
+  .project-gallery[open] {
+    display: grid;
+    height: 94dvh;
+    grid-template-rows: auto minmax(0, 1fr) auto auto auto;
+    gap: 6px;
+    padding: 12px;
+  }
+  .gallery-stage, .gallery-caption, .gallery-hint { margin: 0; }
+  .gallery-image { height: 100%; }
 }
 
 .menu-toggle {
